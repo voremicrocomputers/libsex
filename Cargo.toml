@@ -1,0 +1,15 @@
+[package]
+name = "libsex"
+version = "0.1.0"
+edition = "2021"
+license-file = "LICENSE"
+description = "Some Extensions for using glX (in rust)"
+homepage = "https://github.com/realmicrosoft/libsex"
+repository = "https://github.com/realmicrosoft/libsex"
+readme = "README.md"
+
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.53.1"
