@@ -6,6 +6,7 @@
 #include <X11/extensions/Xfixes.h>
 #include <X11/extensions/shape.h>
 #include <GL/gl.h>
+#include <GL/glcorearb.h>
 #include <GL/glext.h>
 #include <GL/glx.h>
 #include <GL/glxext.h>
