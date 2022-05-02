@@ -28475,6 +28475,166 @@ pub type PFNGLBLENDCOLORPROC = ::std::option::Option<
     unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat),
 >;
 pub type PFNGLBLENDEQUATIONPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glBlendFuncSeparate(
+        sfactorRGB: GLenum,
+        dfactorRGB: GLenum,
+        sfactorAlpha: GLenum,
+        dfactorAlpha: GLenum,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawArrays(
+        mode: GLenum,
+        first: *const GLint,
+        count: *const GLsizei,
+        drawcount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElements(
+        mode: GLenum,
+        count: *const GLsizei,
+        type_: GLenum,
+        indices: *const *const ::std::os::raw::c_void,
+        drawcount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glPointParameterf(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPointParameterfv(pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glPointParameteri(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glPointParameteriv(pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glFogCoordf(coord: GLfloat);
+}
+extern "C" {
+    pub fn glFogCoordfv(coord: *const GLfloat);
+}
+extern "C" {
+    pub fn glFogCoordd(coord: GLdouble);
+}
+extern "C" {
+    pub fn glFogCoorddv(coord: *const GLdouble);
+}
+extern "C" {
+    pub fn glFogCoordPointer(
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glSecondaryColor3b(red: GLbyte, green: GLbyte, blue: GLbyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3bv(v: *const GLbyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3d(red: GLdouble, green: GLdouble, blue: GLdouble);
+}
+extern "C" {
+    pub fn glSecondaryColor3dv(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glSecondaryColor3f(red: GLfloat, green: GLfloat, blue: GLfloat);
+}
+extern "C" {
+    pub fn glSecondaryColor3fv(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glSecondaryColor3i(red: GLint, green: GLint, blue: GLint);
+}
+extern "C" {
+    pub fn glSecondaryColor3iv(v: *const GLint);
+}
+extern "C" {
+    pub fn glSecondaryColor3s(red: GLshort, green: GLshort, blue: GLshort);
+}
+extern "C" {
+    pub fn glSecondaryColor3sv(v: *const GLshort);
+}
+extern "C" {
+    pub fn glSecondaryColor3ub(red: GLubyte, green: GLubyte, blue: GLubyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3ubv(v: *const GLubyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3ui(red: GLuint, green: GLuint, blue: GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColor3uiv(v: *const GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColor3us(red: GLushort, green: GLushort, blue: GLushort);
+}
+extern "C" {
+    pub fn glSecondaryColor3usv(v: *const GLushort);
+}
+extern "C" {
+    pub fn glSecondaryColorPointer(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glWindowPos2d(x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2dv(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2f(x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2fv(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2i(x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glWindowPos2iv(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos2s(x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos2sv(v: *const GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3d(x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3dv(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3f(x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3fv(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3i(x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glWindowPos3iv(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos3s(x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3sv(v: *const GLshort);
+}
 pub type GLsizeiptr = khronos_ssize_t;
 pub type GLintptr = khronos_intptr_t;
 pub type PFNGLGENQUERIESPROC =
@@ -28533,6 +28693,82 @@ pub type PFNGLGETBUFFERPARAMETERIVPROC =
 pub type PFNGLGETBUFFERPOINTERVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glGenQueries(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteQueries(n: GLsizei, ids: *const GLuint);
+}
+extern "C" {
+    pub fn glIsQuery(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBeginQuery(target: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glEndQuery(target: GLenum);
+}
+extern "C" {
+    pub fn glGetQueryiv(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetQueryObjectiv(id: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetQueryObjectuiv(id: GLuint, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glBindBuffer(target: GLenum, buffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteBuffers(n: GLsizei, buffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenBuffers(n: GLsizei, buffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsBuffer(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBufferData(
+        target: GLenum,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        usage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glBufferSubData(
+        target: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetBufferSubData(
+        target: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapBuffer(target: GLenum, access: GLenum) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glUnmapBuffer(target: GLenum) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetBufferParameteriv(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetBufferPointerv(
+        target: GLenum,
+        pname: GLenum,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
 pub type GLchar = ::std::os::raw::c_char;
 pub type PFNGLBLENDEQUATIONSEPARATEPROC =
     ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
@@ -28810,6 +29046,352 @@ pub type PFNGLVERTEXATTRIBPOINTERPROC = ::std::option::Option<
         pointer: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glBlendEquationSeparate(modeRGB: GLenum, modeAlpha: GLenum);
+}
+extern "C" {
+    pub fn glDrawBuffers(n: GLsizei, bufs: *const GLenum);
+}
+extern "C" {
+    pub fn glStencilOpSeparate(face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum);
+}
+extern "C" {
+    pub fn glStencilFuncSeparate(face: GLenum, func: GLenum, ref_: GLint, mask: GLuint);
+}
+extern "C" {
+    pub fn glStencilMaskSeparate(face: GLenum, mask: GLuint);
+}
+extern "C" {
+    pub fn glAttachShader(program: GLuint, shader: GLuint);
+}
+extern "C" {
+    pub fn glBindAttribLocation(program: GLuint, index: GLuint, name: *const GLchar);
+}
+extern "C" {
+    pub fn glCompileShader(shader: GLuint);
+}
+extern "C" {
+    pub fn glCreateProgram() -> GLuint;
+}
+extern "C" {
+    pub fn glCreateShader(type_: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glDeleteProgram(program: GLuint);
+}
+extern "C" {
+    pub fn glDeleteShader(shader: GLuint);
+}
+extern "C" {
+    pub fn glDetachShader(program: GLuint, shader: GLuint);
+}
+extern "C" {
+    pub fn glDisableVertexAttribArray(index: GLuint);
+}
+extern "C" {
+    pub fn glEnableVertexAttribArray(index: GLuint);
+}
+extern "C" {
+    pub fn glGetActiveAttrib(
+        program: GLuint,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLint,
+        type_: *mut GLenum,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetActiveUniform(
+        program: GLuint,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLint,
+        type_: *mut GLenum,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetAttachedShaders(
+        program: GLuint,
+        maxCount: GLsizei,
+        count: *mut GLsizei,
+        shaders: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetAttribLocation(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glGetProgramiv(program: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetProgramInfoLog(
+        program: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        infoLog: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetShaderiv(shader: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetShaderInfoLog(
+        shader: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        infoLog: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetShaderSource(
+        shader: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        source: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetUniformLocation(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glGetUniformfv(program: GLuint, location: GLint, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetUniformiv(program: GLuint, location: GLint, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribdv(index: GLuint, pname: GLenum, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetVertexAttribfv(index: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVertexAttribiv(index: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribPointerv(
+        index: GLuint,
+        pname: GLenum,
+        pointer: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glIsProgram(program: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glIsShader(shader: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glLinkProgram(program: GLuint);
+}
+extern "C" {
+    pub fn glShaderSource(
+        shader: GLuint,
+        count: GLsizei,
+        string: *const *const GLchar,
+        length: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glUseProgram(program: GLuint);
+}
+extern "C" {
+    pub fn glUniform1f(location: GLint, v0: GLfloat);
+}
+extern "C" {
+    pub fn glUniform2f(location: GLint, v0: GLfloat, v1: GLfloat);
+}
+extern "C" {
+    pub fn glUniform3f(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat);
+}
+extern "C" {
+    pub fn glUniform4f(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat);
+}
+extern "C" {
+    pub fn glUniform1i(location: GLint, v0: GLint);
+}
+extern "C" {
+    pub fn glUniform2i(location: GLint, v0: GLint, v1: GLint);
+}
+extern "C" {
+    pub fn glUniform3i(location: GLint, v0: GLint, v1: GLint, v2: GLint);
+}
+extern "C" {
+    pub fn glUniform4i(location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint);
+}
+extern "C" {
+    pub fn glUniform1fv(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform2fv(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform3fv(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform4fv(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform1iv(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform2iv(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform3iv(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform4iv(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniformMatrix2fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glValidateProgram(program: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttrib1d(index: GLuint, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1f(index: GLuint, x: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1fv(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1s(index: GLuint, x: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib1sv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2d(index: GLuint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2f(index: GLuint, x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2fv(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2s(index: GLuint, x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2sv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3d(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3f(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3fv(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3s(index: GLuint, x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3sv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nbv(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4Niv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nsv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nub(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nubv(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nuiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttrib4Nusv(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glVertexAttrib4bv(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4d(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4f(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4fv(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4iv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttrib4s(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4sv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4ubv(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4uiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttrib4usv(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glVertexAttribPointer(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLUNIFORMMATRIX2X3FVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         location: GLint,
@@ -28858,6 +29440,54 @@ pub type PFNGLUNIFORMMATRIX4X3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
+extern "C" {
+    pub fn glUniformMatrix2x3fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3x2fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix2x4fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4x2fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3x4fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4x3fv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
 pub type GLhalf = khronos_uint16_t;
 pub type PFNGLCOLORMASKIPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean),
@@ -29133,6 +29763,345 @@ pub type PFNGLGENVERTEXARRAYSPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
 pub type PFNGLISVERTEXARRAYPROC =
     ::std::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
+extern "C" {
+    pub fn glColorMaski(index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean);
+}
+extern "C" {
+    pub fn glGetBooleani_v(target: GLenum, index: GLuint, data: *mut GLboolean);
+}
+extern "C" {
+    pub fn glGetIntegeri_v(target: GLenum, index: GLuint, data: *mut GLint);
+}
+extern "C" {
+    pub fn glEnablei(target: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glDisablei(target: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glIsEnabledi(target: GLenum, index: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBeginTransformFeedback(primitiveMode: GLenum);
+}
+extern "C" {
+    pub fn glEndTransformFeedback();
+}
+extern "C" {
+    pub fn glBindBufferRange(
+        target: GLenum,
+        index: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glBindBufferBase(target: GLenum, index: GLuint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glTransformFeedbackVaryings(
+        program: GLuint,
+        count: GLsizei,
+        varyings: *const *const GLchar,
+        bufferMode: GLenum,
+    );
+}
+extern "C" {
+    pub fn glGetTransformFeedbackVarying(
+        program: GLuint,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLsizei,
+        type_: *mut GLenum,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glClampColor(target: GLenum, clamp: GLenum);
+}
+extern "C" {
+    pub fn glBeginConditionalRender(id: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glEndConditionalRender();
+}
+extern "C" {
+    pub fn glVertexAttribIPointer(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetVertexAttribIiv(index: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribIuiv(index: GLuint, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI1i(index: GLuint, x: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI2i(index: GLuint, x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI3i(index: GLuint, x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI4i(index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI1ui(index: GLuint, x: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI2ui(index: GLuint, x: GLuint, y: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI3ui(index: GLuint, x: GLuint, y: GLuint, z: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4ui(index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI1iv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI2iv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI3iv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI4iv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI1uiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI2uiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI3uiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4uiv(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4bv(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttribI4sv(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribI4ubv(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttribI4usv(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glGetUniformuiv(program: GLuint, location: GLint, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glBindFragDataLocation(program: GLuint, color: GLuint, name: *const GLchar);
+}
+extern "C" {
+    pub fn glGetFragDataLocation(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glUniform1ui(location: GLint, v0: GLuint);
+}
+extern "C" {
+    pub fn glUniform2ui(location: GLint, v0: GLuint, v1: GLuint);
+}
+extern "C" {
+    pub fn glUniform3ui(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint);
+}
+extern "C" {
+    pub fn glUniform4ui(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint);
+}
+extern "C" {
+    pub fn glUniform1uiv(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform2uiv(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform3uiv(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform4uiv(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glTexParameterIiv(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glTexParameterIuiv(target: GLenum, pname: GLenum, params: *const GLuint);
+}
+extern "C" {
+    pub fn glGetTexParameterIiv(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTexParameterIuiv(target: GLenum, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glClearBufferiv(buffer: GLenum, drawbuffer: GLint, value: *const GLint);
+}
+extern "C" {
+    pub fn glClearBufferuiv(buffer: GLenum, drawbuffer: GLint, value: *const GLuint);
+}
+extern "C" {
+    pub fn glClearBufferfv(buffer: GLenum, drawbuffer: GLint, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glClearBufferfi(buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint);
+}
+extern "C" {
+    pub fn glGetStringi(name: GLenum, index: GLuint) -> *const GLubyte;
+}
+extern "C" {
+    pub fn glIsRenderbuffer(renderbuffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindRenderbuffer(target: GLenum, renderbuffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteRenderbuffers(n: GLsizei, renderbuffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenRenderbuffers(n: GLsizei, renderbuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glRenderbufferStorage(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetRenderbufferParameteriv(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glIsFramebuffer(framebuffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindFramebuffer(target: GLenum, framebuffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteFramebuffers(n: GLsizei, framebuffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenFramebuffers(n: GLsizei, framebuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glCheckFramebufferStatus(target: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glFramebufferTexture1D(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTexture2D(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTexture3D(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+        zoffset: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferRenderbuffer(
+        target: GLenum,
+        attachment: GLenum,
+        renderbuffertarget: GLenum,
+        renderbuffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetFramebufferAttachmentParameteriv(
+        target: GLenum,
+        attachment: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGenerateMipmap(target: GLenum);
+}
+extern "C" {
+    pub fn glBlitFramebuffer(
+        srcX0: GLint,
+        srcY0: GLint,
+        srcX1: GLint,
+        srcY1: GLint,
+        dstX0: GLint,
+        dstY0: GLint,
+        dstX1: GLint,
+        dstY1: GLint,
+        mask: GLbitfield,
+        filter: GLenum,
+    );
+}
+extern "C" {
+    pub fn glRenderbufferStorageMultisample(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTextureLayer(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        layer: GLint,
+    );
+}
+extern "C" {
+    pub fn glMapBufferRange(
+        target: GLenum,
+        offset: GLintptr,
+        length: GLsizeiptr,
+        access: GLbitfield,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glFlushMappedBufferRange(target: GLenum, offset: GLintptr, length: GLsizeiptr);
+}
+extern "C" {
+    pub fn glBindVertexArray(array: GLuint);
+}
+extern "C" {
+    pub fn glDeleteVertexArrays(n: GLsizei, arrays: *const GLuint);
+}
+extern "C" {
+    pub fn glGenVertexArrays(n: GLsizei, arrays: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsVertexArray(array: GLuint) -> GLboolean;
+}
 pub type PFNGLDRAWARRAYSINSTANCEDPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei),
 >;
@@ -29208,6 +30177,91 @@ pub type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = ::std::option::Option<
 pub type PFNGLUNIFORMBLOCKBINDINGPROC = ::std::option::Option<
     unsafe extern "C" fn(program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint),
 >;
+extern "C" {
+    pub fn glDrawArraysInstanced(
+        mode: GLenum,
+        first: GLint,
+        count: GLsizei,
+        instancecount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glDrawElementsInstanced(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        instancecount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTexBuffer(target: GLenum, internalformat: GLenum, buffer: GLuint);
+}
+extern "C" {
+    pub fn glPrimitiveRestartIndex(index: GLuint);
+}
+extern "C" {
+    pub fn glCopyBufferSubData(
+        readTarget: GLenum,
+        writeTarget: GLenum,
+        readOffset: GLintptr,
+        writeOffset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glGetUniformIndices(
+        program: GLuint,
+        uniformCount: GLsizei,
+        uniformNames: *const *const GLchar,
+        uniformIndices: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetActiveUniformsiv(
+        program: GLuint,
+        uniformCount: GLsizei,
+        uniformIndices: *const GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetActiveUniformName(
+        program: GLuint,
+        uniformIndex: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        uniformName: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetUniformBlockIndex(program: GLuint, uniformBlockName: *const GLchar) -> GLuint;
+}
+extern "C" {
+    pub fn glGetActiveUniformBlockiv(
+        program: GLuint,
+        uniformBlockIndex: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetActiveUniformBlockName(
+        program: GLuint,
+        uniformBlockIndex: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        uniformBlockName: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glUniformBlockBinding(
+        program: GLuint,
+        uniformBlockIndex: GLuint,
+        uniformBlockBinding: GLuint,
+    );
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __GLsync {
@@ -29310,6 +30364,112 @@ pub type PFNGLGETMULTISAMPLEFVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
 pub type PFNGLSAMPLEMASKIPROC =
     ::std::option::Option<unsafe extern "C" fn(maskNumber: GLuint, mask: GLbitfield)>;
+extern "C" {
+    pub fn glDrawElementsBaseVertex(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        basevertex: GLint,
+    );
+}
+extern "C" {
+    pub fn glDrawRangeElementsBaseVertex(
+        mode: GLenum,
+        start: GLuint,
+        end: GLuint,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        basevertex: GLint,
+    );
+}
+extern "C" {
+    pub fn glDrawElementsInstancedBaseVertex(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        instancecount: GLsizei,
+        basevertex: GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsBaseVertex(
+        mode: GLenum,
+        count: *const GLsizei,
+        type_: GLenum,
+        indices: *const *const ::std::os::raw::c_void,
+        drawcount: GLsizei,
+        basevertex: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProvokingVertex(mode: GLenum);
+}
+extern "C" {
+    pub fn glFenceSync(condition: GLenum, flags: GLbitfield) -> GLsync;
+}
+extern "C" {
+    pub fn glIsSync(sync: GLsync) -> GLboolean;
+}
+extern "C" {
+    pub fn glDeleteSync(sync: GLsync);
+}
+extern "C" {
+    pub fn glClientWaitSync(sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> GLenum;
+}
+extern "C" {
+    pub fn glWaitSync(sync: GLsync, flags: GLbitfield, timeout: GLuint64);
+}
+extern "C" {
+    pub fn glGetInteger64v(pname: GLenum, data: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetSynciv(
+        sync: GLsync,
+        pname: GLenum,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        values: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetInteger64i_v(target: GLenum, index: GLuint, data: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetBufferParameteri64v(target: GLenum, pname: GLenum, params: *mut GLint64);
+}
+extern "C" {
+    pub fn glFramebufferTexture(target: GLenum, attachment: GLenum, texture: GLuint, level: GLint);
+}
+extern "C" {
+    pub fn glTexImage2DMultisample(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTexImage3DMultisample(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glGetMultisamplefv(pname: GLenum, index: GLuint, val: *mut GLfloat);
+}
+extern "C" {
+    pub fn glSampleMaski(maskNumber: GLuint, mask: GLbitfield);
+}
 pub type PFNGLBINDFRAGDATALOCATIONINDEXEDPROC = ::std::option::Option<
     unsafe extern "C" fn(program: GLuint, colorNumber: GLuint, index: GLuint, name: *const GLchar),
 >;
@@ -29445,6 +30605,205 @@ pub type PFNGLSECONDARYCOLORP3UIPROC =
     ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
 pub type PFNGLSECONDARYCOLORP3UIVPROC =
     ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
+extern "C" {
+    pub fn glBindFragDataLocationIndexed(
+        program: GLuint,
+        colorNumber: GLuint,
+        index: GLuint,
+        name: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetFragDataIndex(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glGenSamplers(count: GLsizei, samplers: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteSamplers(count: GLsizei, samplers: *const GLuint);
+}
+extern "C" {
+    pub fn glIsSampler(sampler: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindSampler(unit: GLuint, sampler: GLuint);
+}
+extern "C" {
+    pub fn glSamplerParameteri(sampler: GLuint, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glSamplerParameteriv(sampler: GLuint, pname: GLenum, param: *const GLint);
+}
+extern "C" {
+    pub fn glSamplerParameterf(sampler: GLuint, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glSamplerParameterfv(sampler: GLuint, pname: GLenum, param: *const GLfloat);
+}
+extern "C" {
+    pub fn glSamplerParameterIiv(sampler: GLuint, pname: GLenum, param: *const GLint);
+}
+extern "C" {
+    pub fn glSamplerParameterIuiv(sampler: GLuint, pname: GLenum, param: *const GLuint);
+}
+extern "C" {
+    pub fn glGetSamplerParameteriv(sampler: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetSamplerParameterIiv(sampler: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetSamplerParameterfv(sampler: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetSamplerParameterIuiv(sampler: GLuint, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glQueryCounter(id: GLuint, target: GLenum);
+}
+extern "C" {
+    pub fn glGetQueryObjecti64v(id: GLuint, pname: GLenum, params: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetQueryObjectui64v(id: GLuint, pname: GLenum, params: *mut GLuint64);
+}
+extern "C" {
+    pub fn glVertexAttribDivisor(index: GLuint, divisor: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribP1ui(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribP1uiv(
+        index: GLuint,
+        type_: GLenum,
+        normalized: GLboolean,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribP2ui(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribP2uiv(
+        index: GLuint,
+        type_: GLenum,
+        normalized: GLboolean,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribP3ui(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribP3uiv(
+        index: GLuint,
+        type_: GLenum,
+        normalized: GLboolean,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribP4ui(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribP4uiv(
+        index: GLuint,
+        type_: GLenum,
+        normalized: GLboolean,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexP2ui(type_: GLenum, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexP2uiv(type_: GLenum, value: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexP3ui(type_: GLenum, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexP3uiv(type_: GLenum, value: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexP4ui(type_: GLenum, value: GLuint);
+}
+extern "C" {
+    pub fn glVertexP4uiv(type_: GLenum, value: *const GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP1ui(type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP1uiv(type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP2ui(type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP2uiv(type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP3ui(type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP3uiv(type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP4ui(type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glTexCoordP4uiv(type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP1ui(texture: GLenum, type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP1uiv(texture: GLenum, type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP2ui(texture: GLenum, type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP2uiv(texture: GLenum, type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP3ui(texture: GLenum, type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP3uiv(texture: GLenum, type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP4ui(texture: GLenum, type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordP4uiv(texture: GLenum, type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glNormalP3ui(type_: GLenum, coords: GLuint);
+}
+extern "C" {
+    pub fn glNormalP3uiv(type_: GLenum, coords: *const GLuint);
+}
+extern "C" {
+    pub fn glColorP3ui(type_: GLenum, color: GLuint);
+}
+extern "C" {
+    pub fn glColorP3uiv(type_: GLenum, color: *const GLuint);
+}
+extern "C" {
+    pub fn glColorP4ui(type_: GLenum, color: GLuint);
+}
+extern "C" {
+    pub fn glColorP4uiv(type_: GLenum, color: *const GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColorP3ui(type_: GLenum, color: GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColorP3uiv(type_: GLenum, color: *const GLuint);
+}
 pub type PFNGLMINSAMPLESHADINGPROC = ::std::option::Option<unsafe extern "C" fn(value: GLfloat)>;
 pub type PFNGLBLENDEQUATIONIPROC =
     ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
@@ -29633,6 +30992,229 @@ pub type PFNGLENDQUERYINDEXEDPROC =
 pub type PFNGLGETQUERYINDEXEDIVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint),
 >;
+extern "C" {
+    pub fn glMinSampleShading(value: GLfloat);
+}
+extern "C" {
+    pub fn glBlendEquationi(buf: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glBlendEquationSeparatei(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum);
+}
+extern "C" {
+    pub fn glBlendFunci(buf: GLuint, src: GLenum, dst: GLenum);
+}
+extern "C" {
+    pub fn glBlendFuncSeparatei(
+        buf: GLuint,
+        srcRGB: GLenum,
+        dstRGB: GLenum,
+        srcAlpha: GLenum,
+        dstAlpha: GLenum,
+    );
+}
+extern "C" {
+    pub fn glDrawArraysIndirect(mode: GLenum, indirect: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glDrawElementsIndirect(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glUniform1d(location: GLint, x: GLdouble);
+}
+extern "C" {
+    pub fn glUniform2d(location: GLint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glUniform3d(location: GLint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glUniform4d(location: GLint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glUniform1dv(location: GLint, count: GLsizei, value: *const GLdouble);
+}
+extern "C" {
+    pub fn glUniform2dv(location: GLint, count: GLsizei, value: *const GLdouble);
+}
+extern "C" {
+    pub fn glUniform3dv(location: GLint, count: GLsizei, value: *const GLdouble);
+}
+extern "C" {
+    pub fn glUniform4dv(location: GLint, count: GLsizei, value: *const GLdouble);
+}
+extern "C" {
+    pub fn glUniformMatrix2dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix2x3dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix2x4dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3x2dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3x4dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4x2dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4x3dv(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetUniformdv(program: GLuint, location: GLint, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetSubroutineUniformLocation(
+        program: GLuint,
+        shadertype: GLenum,
+        name: *const GLchar,
+    ) -> GLint;
+}
+extern "C" {
+    pub fn glGetSubroutineIndex(program: GLuint, shadertype: GLenum, name: *const GLchar)
+        -> GLuint;
+}
+extern "C" {
+    pub fn glGetActiveSubroutineUniformiv(
+        program: GLuint,
+        shadertype: GLenum,
+        index: GLuint,
+        pname: GLenum,
+        values: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetActiveSubroutineUniformName(
+        program: GLuint,
+        shadertype: GLenum,
+        index: GLuint,
+        bufsize: GLsizei,
+        length: *mut GLsizei,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetActiveSubroutineName(
+        program: GLuint,
+        shadertype: GLenum,
+        index: GLuint,
+        bufsize: GLsizei,
+        length: *mut GLsizei,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glUniformSubroutinesuiv(shadertype: GLenum, count: GLsizei, indices: *const GLuint);
+}
+extern "C" {
+    pub fn glGetUniformSubroutineuiv(shadertype: GLenum, location: GLint, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetProgramStageiv(
+        program: GLuint,
+        shadertype: GLenum,
+        pname: GLenum,
+        values: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glPatchParameteri(pname: GLenum, value: GLint);
+}
+extern "C" {
+    pub fn glPatchParameterfv(pname: GLenum, values: *const GLfloat);
+}
+extern "C" {
+    pub fn glBindTransformFeedback(target: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glDeleteTransformFeedbacks(n: GLsizei, ids: *const GLuint);
+}
+extern "C" {
+    pub fn glGenTransformFeedbacks(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsTransformFeedback(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glPauseTransformFeedback();
+}
+extern "C" {
+    pub fn glResumeTransformFeedback();
+}
+extern "C" {
+    pub fn glDrawTransformFeedback(mode: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glDrawTransformFeedbackStream(mode: GLenum, id: GLuint, stream: GLuint);
+}
+extern "C" {
+    pub fn glBeginQueryIndexed(target: GLenum, index: GLuint, id: GLuint);
+}
+extern "C" {
+    pub fn glEndQueryIndexed(target: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glGetQueryIndexediv(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint);
+}
 pub type PFNGLRELEASESHADERCOMPILERPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLSHADERBINARYPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -30047,6 +31629,547 @@ pub type PFNGLGETFLOATI_VPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLfloat)>;
 pub type PFNGLGETDOUBLEI_VPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLdouble)>;
+extern "C" {
+    pub fn glReleaseShaderCompiler();
+}
+extern "C" {
+    pub fn glShaderBinary(
+        count: GLsizei,
+        shaders: *const GLuint,
+        binaryformat: GLenum,
+        binary: *const ::std::os::raw::c_void,
+        length: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetShaderPrecisionFormat(
+        shadertype: GLenum,
+        precisiontype: GLenum,
+        range: *mut GLint,
+        precision: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glDepthRangef(n: GLfloat, f: GLfloat);
+}
+extern "C" {
+    pub fn glClearDepthf(d: GLfloat);
+}
+extern "C" {
+    pub fn glGetProgramBinary(
+        program: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        binaryFormat: *mut GLenum,
+        binary: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glProgramBinary(
+        program: GLuint,
+        binaryFormat: GLenum,
+        binary: *const ::std::os::raw::c_void,
+        length: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glProgramParameteri(program: GLuint, pname: GLenum, value: GLint);
+}
+extern "C" {
+    pub fn glUseProgramStages(pipeline: GLuint, stages: GLbitfield, program: GLuint);
+}
+extern "C" {
+    pub fn glActiveShaderProgram(pipeline: GLuint, program: GLuint);
+}
+extern "C" {
+    pub fn glCreateShaderProgramv(
+        type_: GLenum,
+        count: GLsizei,
+        strings: *const *const GLchar,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glBindProgramPipeline(pipeline: GLuint);
+}
+extern "C" {
+    pub fn glDeleteProgramPipelines(n: GLsizei, pipelines: *const GLuint);
+}
+extern "C" {
+    pub fn glGenProgramPipelines(n: GLsizei, pipelines: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsProgramPipeline(pipeline: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetProgramPipelineiv(pipeline: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glProgramUniform1i(program: GLuint, location: GLint, v0: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform1iv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1f(program: GLuint, location: GLint, v0: GLfloat);
+}
+extern "C" {
+    pub fn glProgramUniform1fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1d(program: GLuint, location: GLint, v0: GLdouble);
+}
+extern "C" {
+    pub fn glProgramUniform1dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ui(program: GLuint, location: GLint, v0: GLuint);
+}
+extern "C" {
+    pub fn glProgramUniform1uiv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2i(program: GLuint, location: GLint, v0: GLint, v1: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform2iv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2f(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat);
+}
+extern "C" {
+    pub fn glProgramUniform2fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2d(program: GLuint, location: GLint, v0: GLdouble, v1: GLdouble);
+}
+extern "C" {
+    pub fn glProgramUniform2dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2ui(program: GLuint, location: GLint, v0: GLuint, v1: GLuint);
+}
+extern "C" {
+    pub fn glProgramUniform2uiv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3i(program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform3iv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3f(
+        program: GLuint,
+        location: GLint,
+        v0: GLfloat,
+        v1: GLfloat,
+        v2: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3d(
+        program: GLuint,
+        location: GLint,
+        v0: GLdouble,
+        v1: GLdouble,
+        v2: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3ui(
+        program: GLuint,
+        location: GLint,
+        v0: GLuint,
+        v1: GLuint,
+        v2: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3uiv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4i(
+        program: GLuint,
+        location: GLint,
+        v0: GLint,
+        v1: GLint,
+        v2: GLint,
+        v3: GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4iv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4f(
+        program: GLuint,
+        location: GLint,
+        v0: GLfloat,
+        v1: GLfloat,
+        v2: GLfloat,
+        v3: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4d(
+        program: GLuint,
+        location: GLint,
+        v0: GLdouble,
+        v1: GLdouble,
+        v2: GLdouble,
+        v3: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ui(
+        program: GLuint,
+        location: GLint,
+        v0: GLuint,
+        v1: GLuint,
+        v2: GLuint,
+        v3: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4uiv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x3fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x2fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x4fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x2fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x4fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x3fv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x3dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x2dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x4dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x2dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x4dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x3dv(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glValidateProgramPipeline(pipeline: GLuint);
+}
+extern "C" {
+    pub fn glGetProgramPipelineInfoLog(
+        pipeline: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        infoLog: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribL1d(index: GLuint, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL2d(index: GLuint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL3d(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL4d(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL1dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL2dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL3dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL4dv(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribLPointer(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetVertexAttribLdv(index: GLuint, pname: GLenum, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glViewportArrayv(first: GLuint, count: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glViewportIndexedf(index: GLuint, x: GLfloat, y: GLfloat, w: GLfloat, h: GLfloat);
+}
+extern "C" {
+    pub fn glViewportIndexedfv(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glScissorArrayv(first: GLuint, count: GLsizei, v: *const GLint);
+}
+extern "C" {
+    pub fn glScissorIndexed(
+        index: GLuint,
+        left: GLint,
+        bottom: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glScissorIndexedv(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glDepthRangeArrayv(first: GLuint, count: GLsizei, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glDepthRangeIndexed(index: GLuint, n: GLdouble, f: GLdouble);
+}
+extern "C" {
+    pub fn glGetFloati_v(target: GLenum, index: GLuint, data: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetDoublei_v(target: GLenum, index: GLuint, data: *mut GLdouble);
+}
 pub type PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -30128,6 +32251,100 @@ pub type PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC =
 pub type PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, id: GLuint, stream: GLuint, instancecount: GLsizei),
 >;
+extern "C" {
+    pub fn glDrawArraysInstancedBaseInstance(
+        mode: GLenum,
+        first: GLint,
+        count: GLsizei,
+        instancecount: GLsizei,
+        baseinstance: GLuint,
+    );
+}
+extern "C" {
+    pub fn glDrawElementsInstancedBaseInstance(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        instancecount: GLsizei,
+        baseinstance: GLuint,
+    );
+}
+extern "C" {
+    pub fn glDrawElementsInstancedBaseVertexBaseInstance(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        instancecount: GLsizei,
+        basevertex: GLint,
+        baseinstance: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetInternalformativ(
+        target: GLenum,
+        internalformat: GLenum,
+        pname: GLenum,
+        bufSize: GLsizei,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetActiveAtomicCounterBufferiv(
+        program: GLuint,
+        bufferIndex: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glBindImageTexture(
+        unit: GLuint,
+        texture: GLuint,
+        level: GLint,
+        layered: GLboolean,
+        layer: GLint,
+        access: GLenum,
+        format: GLenum,
+    );
+}
+extern "C" {
+    pub fn glMemoryBarrier(barriers: GLbitfield);
+}
+extern "C" {
+    pub fn glTexStorage1D(target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei);
+}
+extern "C" {
+    pub fn glTexStorage2D(
+        target: GLenum,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTexStorage3D(
+        target: GLenum,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glDrawTransformFeedbackInstanced(mode: GLenum, id: GLuint, instancecount: GLsizei);
+}
+extern "C" {
+    pub fn glDrawTransformFeedbackStreamInstanced(
+        mode: GLenum,
+        id: GLuint,
+        stream: GLuint,
+        instancecount: GLsizei,
+    );
+}
 pub type GLDEBUGPROC = ::std::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
@@ -30414,6 +32631,329 @@ pub type PFNGLGETOBJECTPTRLABELPROC = ::std::option::Option<
         label: *mut GLchar,
     ),
 >;
+extern "C" {
+    pub fn glClearBufferData(
+        target: GLenum,
+        internalformat: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glClearBufferSubData(
+        target: GLenum,
+        internalformat: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glDispatchCompute(num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint);
+}
+extern "C" {
+    pub fn glDispatchComputeIndirect(indirect: GLintptr);
+}
+extern "C" {
+    pub fn glCopyImageSubData(
+        srcName: GLuint,
+        srcTarget: GLenum,
+        srcLevel: GLint,
+        srcX: GLint,
+        srcY: GLint,
+        srcZ: GLint,
+        dstName: GLuint,
+        dstTarget: GLenum,
+        dstLevel: GLint,
+        dstX: GLint,
+        dstY: GLint,
+        dstZ: GLint,
+        srcWidth: GLsizei,
+        srcHeight: GLsizei,
+        srcDepth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glFramebufferParameteri(target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glGetFramebufferParameteriv(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetInternalformati64v(
+        target: GLenum,
+        internalformat: GLenum,
+        pname: GLenum,
+        bufSize: GLsizei,
+        params: *mut GLint64,
+    );
+}
+extern "C" {
+    pub fn glInvalidateTexSubImage(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glInvalidateTexImage(texture: GLuint, level: GLint);
+}
+extern "C" {
+    pub fn glInvalidateBufferSubData(buffer: GLuint, offset: GLintptr, length: GLsizeiptr);
+}
+extern "C" {
+    pub fn glInvalidateBufferData(buffer: GLuint);
+}
+extern "C" {
+    pub fn glInvalidateFramebuffer(
+        target: GLenum,
+        numAttachments: GLsizei,
+        attachments: *const GLenum,
+    );
+}
+extern "C" {
+    pub fn glInvalidateSubFramebuffer(
+        target: GLenum,
+        numAttachments: GLsizei,
+        attachments: *const GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawArraysIndirect(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirect(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetProgramInterfaceiv(
+        program: GLuint,
+        programInterface: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetProgramResourceIndex(
+        program: GLuint,
+        programInterface: GLenum,
+        name: *const GLchar,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glGetProgramResourceName(
+        program: GLuint,
+        programInterface: GLenum,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetProgramResourceiv(
+        program: GLuint,
+        programInterface: GLenum,
+        index: GLuint,
+        propCount: GLsizei,
+        props: *const GLenum,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetProgramResourceLocation(
+        program: GLuint,
+        programInterface: GLenum,
+        name: *const GLchar,
+    ) -> GLint;
+}
+extern "C" {
+    pub fn glGetProgramResourceLocationIndex(
+        program: GLuint,
+        programInterface: GLenum,
+        name: *const GLchar,
+    ) -> GLint;
+}
+extern "C" {
+    pub fn glShaderStorageBlockBinding(
+        program: GLuint,
+        storageBlockIndex: GLuint,
+        storageBlockBinding: GLuint,
+    );
+}
+extern "C" {
+    pub fn glTexBufferRange(
+        target: GLenum,
+        internalformat: GLenum,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glTexStorage2DMultisample(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTexStorage3DMultisample(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureView(
+        texture: GLuint,
+        target: GLenum,
+        origtexture: GLuint,
+        internalformat: GLenum,
+        minlevel: GLuint,
+        numlevels: GLuint,
+        minlayer: GLuint,
+        numlayers: GLuint,
+    );
+}
+extern "C" {
+    pub fn glBindVertexBuffer(
+        bindingindex: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribFormat(
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribIFormat(
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribLFormat(
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribBinding(attribindex: GLuint, bindingindex: GLuint);
+}
+extern "C" {
+    pub fn glVertexBindingDivisor(bindingindex: GLuint, divisor: GLuint);
+}
+extern "C" {
+    pub fn glDebugMessageControl(
+        source: GLenum,
+        type_: GLenum,
+        severity: GLenum,
+        count: GLsizei,
+        ids: *const GLuint,
+        enabled: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageInsert(
+        source: GLenum,
+        type_: GLenum,
+        id: GLuint,
+        severity: GLenum,
+        length: GLsizei,
+        buf: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageCallback(callback: GLDEBUGPROC, userParam: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glGetDebugMessageLog(
+        count: GLuint,
+        bufSize: GLsizei,
+        sources: *mut GLenum,
+        types: *mut GLenum,
+        ids: *mut GLuint,
+        severities: *mut GLenum,
+        lengths: *mut GLsizei,
+        messageLog: *mut GLchar,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glPushDebugGroup(source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar);
+}
+extern "C" {
+    pub fn glPopDebugGroup();
+}
+extern "C" {
+    pub fn glObjectLabel(identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar);
+}
+extern "C" {
+    pub fn glGetObjectLabel(
+        identifier: GLenum,
+        name: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        label: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glObjectPtrLabel(
+        ptr: *const ::std::os::raw::c_void,
+        length: GLsizei,
+        label: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetObjectPtrLabel(
+        ptr: *const ::std::os::raw::c_void,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        label: *mut GLchar,
+    );
+}
 pub type PFNGLBUFFERSTORAGEPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -30477,6 +33017,69 @@ pub type PFNGLBINDVERTEXBUFFERSPROC = ::std::option::Option<
         strides: *const GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glBufferStorage(
+        target: GLenum,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        flags: GLbitfield,
+    );
+}
+extern "C" {
+    pub fn glClearTexImage(
+        texture: GLuint,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glClearTexSubImage(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glBindBuffersBase(target: GLenum, first: GLuint, count: GLsizei, buffers: *const GLuint);
+}
+extern "C" {
+    pub fn glBindBuffersRange(
+        target: GLenum,
+        first: GLuint,
+        count: GLsizei,
+        buffers: *const GLuint,
+        offsets: *const GLintptr,
+        sizes: *const GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glBindTextures(first: GLuint, count: GLsizei, textures: *const GLuint);
+}
+extern "C" {
+    pub fn glBindSamplers(first: GLuint, count: GLsizei, samplers: *const GLuint);
+}
+extern "C" {
+    pub fn glBindImageTextures(first: GLuint, count: GLsizei, textures: *const GLuint);
+}
+extern "C" {
+    pub fn glBindVertexBuffers(
+        first: GLuint,
+        count: GLsizei,
+        buffers: *const GLuint,
+        offsets: *const GLintptr,
+        strides: *const GLsizei,
+    );
+}
 pub type PFNGLCLIPCONTROLPROC =
     ::std::option::Option<unsafe extern "C" fn(origin: GLenum, depth: GLenum)>;
 pub type PFNGLCREATETRANSFORMFEEDBACKSPROC =
@@ -31172,6 +33775,798 @@ pub type PFNGLGETNMINMAXPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLTEXTUREBARRIERPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glClipControl(origin: GLenum, depth: GLenum);
+}
+extern "C" {
+    pub fn glCreateTransformFeedbacks(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glTransformFeedbackBufferBase(xfb: GLuint, index: GLuint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glTransformFeedbackBufferRange(
+        xfb: GLuint,
+        index: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glGetTransformFeedbackiv(xfb: GLuint, pname: GLenum, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTransformFeedbacki_v(xfb: GLuint, pname: GLenum, index: GLuint, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTransformFeedbacki64_v(
+        xfb: GLuint,
+        pname: GLenum,
+        index: GLuint,
+        param: *mut GLint64,
+    );
+}
+extern "C" {
+    pub fn glCreateBuffers(n: GLsizei, buffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glNamedBufferStorage(
+        buffer: GLuint,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        flags: GLbitfield,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferData(
+        buffer: GLuint,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        usage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferSubData(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyNamedBufferSubData(
+        readBuffer: GLuint,
+        writeBuffer: GLuint,
+        readOffset: GLintptr,
+        writeOffset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glClearNamedBufferData(
+        buffer: GLuint,
+        internalformat: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glClearNamedBufferSubData(
+        buffer: GLuint,
+        internalformat: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapNamedBuffer(buffer: GLuint, access: GLenum) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glMapNamedBufferRange(
+        buffer: GLuint,
+        offset: GLintptr,
+        length: GLsizeiptr,
+        access: GLbitfield,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glUnmapNamedBuffer(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glFlushMappedNamedBufferRange(buffer: GLuint, offset: GLintptr, length: GLsizeiptr);
+}
+extern "C" {
+    pub fn glGetNamedBufferParameteriv(buffer: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetNamedBufferParameteri64v(buffer: GLuint, pname: GLenum, params: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetNamedBufferPointerv(
+        buffer: GLuint,
+        pname: GLenum,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetNamedBufferSubData(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCreateFramebuffers(n: GLsizei, framebuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glNamedFramebufferRenderbuffer(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        renderbuffertarget: GLenum,
+        renderbuffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferParameteri(framebuffer: GLuint, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glNamedFramebufferTexture(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTextureLayer(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        layer: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferDrawBuffer(framebuffer: GLuint, buf: GLenum);
+}
+extern "C" {
+    pub fn glNamedFramebufferDrawBuffers(framebuffer: GLuint, n: GLsizei, bufs: *const GLenum);
+}
+extern "C" {
+    pub fn glNamedFramebufferReadBuffer(framebuffer: GLuint, src: GLenum);
+}
+extern "C" {
+    pub fn glInvalidateNamedFramebufferData(
+        framebuffer: GLuint,
+        numAttachments: GLsizei,
+        attachments: *const GLenum,
+    );
+}
+extern "C" {
+    pub fn glInvalidateNamedFramebufferSubData(
+        framebuffer: GLuint,
+        numAttachments: GLsizei,
+        attachments: *const GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glClearNamedFramebufferiv(
+        framebuffer: GLuint,
+        buffer: GLenum,
+        drawbuffer: GLint,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glClearNamedFramebufferuiv(
+        framebuffer: GLuint,
+        buffer: GLenum,
+        drawbuffer: GLint,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glClearNamedFramebufferfv(
+        framebuffer: GLuint,
+        buffer: GLenum,
+        drawbuffer: GLint,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glClearNamedFramebufferfi(
+        framebuffer: GLuint,
+        buffer: GLenum,
+        drawbuffer: GLint,
+        depth: GLfloat,
+        stencil: GLint,
+    );
+}
+extern "C" {
+    pub fn glBlitNamedFramebuffer(
+        readFramebuffer: GLuint,
+        drawFramebuffer: GLuint,
+        srcX0: GLint,
+        srcY0: GLint,
+        srcX1: GLint,
+        srcY1: GLint,
+        dstX0: GLint,
+        dstY0: GLint,
+        dstX1: GLint,
+        dstY1: GLint,
+        mask: GLbitfield,
+        filter: GLenum,
+    );
+}
+extern "C" {
+    pub fn glCheckNamedFramebufferStatus(framebuffer: GLuint, target: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glGetNamedFramebufferParameteriv(framebuffer: GLuint, pname: GLenum, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetNamedFramebufferAttachmentParameteriv(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glCreateRenderbuffers(n: GLsizei, renderbuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorage(
+        renderbuffer: GLuint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorageMultisample(
+        renderbuffer: GLuint,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetNamedRenderbufferParameteriv(
+        renderbuffer: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glCreateTextures(target: GLenum, n: GLsizei, textures: *mut GLuint);
+}
+extern "C" {
+    pub fn glTextureBuffer(texture: GLuint, internalformat: GLenum, buffer: GLuint);
+}
+extern "C" {
+    pub fn glTextureBufferRange(
+        texture: GLuint,
+        internalformat: GLenum,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage1D(
+        texture: GLuint,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage2D(
+        texture: GLuint,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage3D(
+        texture: GLuint,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage2DMultisample(
+        texture: GLuint,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage3DMultisample(
+        texture: GLuint,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage1D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage2D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage3D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage1D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage2D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage3D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage1D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage2D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage3D(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureParameterf(texture: GLuint, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glTextureParameterfv(texture: GLuint, pname: GLenum, param: *const GLfloat);
+}
+extern "C" {
+    pub fn glTextureParameteri(texture: GLuint, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glTextureParameterIiv(texture: GLuint, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glTextureParameterIuiv(texture: GLuint, pname: GLenum, params: *const GLuint);
+}
+extern "C" {
+    pub fn glTextureParameteriv(texture: GLuint, pname: GLenum, param: *const GLint);
+}
+extern "C" {
+    pub fn glGenerateTextureMipmap(texture: GLuint);
+}
+extern "C" {
+    pub fn glBindTextureUnit(unit: GLuint, texture: GLuint);
+}
+extern "C" {
+    pub fn glGetTextureImage(
+        texture: GLuint,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetCompressedTextureImage(
+        texture: GLuint,
+        level: GLint,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetTextureLevelParameterfv(
+        texture: GLuint,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetTextureLevelParameteriv(
+        texture: GLuint,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetTextureParameterfv(texture: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetTextureParameterIiv(texture: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTextureParameterIuiv(texture: GLuint, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetTextureParameteriv(texture: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glCreateVertexArrays(n: GLsizei, arrays: *mut GLuint);
+}
+extern "C" {
+    pub fn glDisableVertexArrayAttrib(vaobj: GLuint, index: GLuint);
+}
+extern "C" {
+    pub fn glEnableVertexArrayAttrib(vaobj: GLuint, index: GLuint);
+}
+extern "C" {
+    pub fn glVertexArrayElementBuffer(vaobj: GLuint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glVertexArrayVertexBuffer(
+        vaobj: GLuint,
+        bindingindex: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexBuffers(
+        vaobj: GLuint,
+        first: GLuint,
+        count: GLsizei,
+        buffers: *const GLuint,
+        offsets: *const GLintptr,
+        strides: *const GLsizei,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayAttribBinding(vaobj: GLuint, attribindex: GLuint, bindingindex: GLuint);
+}
+extern "C" {
+    pub fn glVertexArrayAttribFormat(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayAttribIFormat(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayAttribLFormat(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayBindingDivisor(vaobj: GLuint, bindingindex: GLuint, divisor: GLuint);
+}
+extern "C" {
+    pub fn glGetVertexArrayiv(vaobj: GLuint, pname: GLenum, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexArrayIndexediv(
+        vaobj: GLuint,
+        index: GLuint,
+        pname: GLenum,
+        param: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetVertexArrayIndexed64iv(
+        vaobj: GLuint,
+        index: GLuint,
+        pname: GLenum,
+        param: *mut GLint64,
+    );
+}
+extern "C" {
+    pub fn glCreateSamplers(n: GLsizei, samplers: *mut GLuint);
+}
+extern "C" {
+    pub fn glCreateProgramPipelines(n: GLsizei, pipelines: *mut GLuint);
+}
+extern "C" {
+    pub fn glCreateQueries(target: GLenum, n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetQueryBufferObjecti64v(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+}
+extern "C" {
+    pub fn glGetQueryBufferObjectiv(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+}
+extern "C" {
+    pub fn glGetQueryBufferObjectui64v(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+}
+extern "C" {
+    pub fn glGetQueryBufferObjectuiv(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr);
+}
+extern "C" {
+    pub fn glMemoryBarrierByRegion(barriers: GLbitfield);
+}
+extern "C" {
+    pub fn glGetTextureSubImage(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetCompressedTextureSubImage(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetGraphicsResetStatus() -> GLenum;
+}
+extern "C" {
+    pub fn glGetnCompressedTexImage(
+        target: GLenum,
+        lod: GLint,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnTexImage(
+        target: GLenum,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformdv(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformfv(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformiv(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetnUniformuiv(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glReadnPixels(
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnMapdv(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetnMapfv(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetnMapiv(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLint);
+}
+extern "C" {
+    pub fn glGetnPixelMapfv(map: GLenum, bufSize: GLsizei, values: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetnPixelMapuiv(map: GLenum, bufSize: GLsizei, values: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetnPixelMapusv(map: GLenum, bufSize: GLsizei, values: *mut GLushort);
+}
+extern "C" {
+    pub fn glGetnPolygonStipple(bufSize: GLsizei, pattern: *mut GLubyte);
+}
+extern "C" {
+    pub fn glGetnColorTable(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        table: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnConvolutionFilter(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        image: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnSeparableFilter(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        rowBufSize: GLsizei,
+        row: *mut ::std::os::raw::c_void,
+        columnBufSize: GLsizei,
+        column: *mut ::std::os::raw::c_void,
+        span: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnHistogram(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnMinmax(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureBarrier();
+}
 pub type PFNGLSPECIALIZESHADERPROC = ::std::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
@@ -31202,6 +34597,37 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = ::std::option::Option<
 >;
 pub type PFNGLPOLYGONOFFSETCLAMPPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
+extern "C" {
+    pub fn glSpecializeShader(
+        shader: GLuint,
+        pEntryPoint: *const GLchar,
+        numSpecializationConstants: GLuint,
+        pConstantIndex: *const GLuint,
+        pConstantValue: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawArraysIndirectCount(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLintptr,
+        maxdrawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirectCount(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLintptr,
+        maxdrawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glPolygonOffsetClamp(factor: GLfloat, units: GLfloat, clamp: GLfloat);
+}
 pub type PFNGLPRIMITIVEBOUNDINGBOXARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         minX: GLfloat,
@@ -31214,6 +34640,18 @@ pub type PFNGLPRIMITIVEBOUNDINGBOXARBPROC = ::std::option::Option<
         maxW: GLfloat,
     ),
 >;
+extern "C" {
+    pub fn glPrimitiveBoundingBoxARB(
+        minX: GLfloat,
+        minY: GLfloat,
+        minZ: GLfloat,
+        minW: GLfloat,
+        maxX: GLfloat,
+        maxY: GLfloat,
+        maxZ: GLfloat,
+        maxW: GLfloat,
+    );
+}
 pub type GLuint64EXT = khronos_uint64_t;
 pub type PFNGLGETTEXTUREHANDLEARBPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
@@ -31257,6 +34695,65 @@ pub type PFNGLVERTEXATTRIBL1UI64VARBPROC =
 pub type PFNGLGETVERTEXATTRIBLUI64VARBPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
+extern "C" {
+    pub fn glGetTextureHandleARB(texture: GLuint) -> GLuint64;
+}
+extern "C" {
+    pub fn glGetTextureSamplerHandleARB(texture: GLuint, sampler: GLuint) -> GLuint64;
+}
+extern "C" {
+    pub fn glMakeTextureHandleResidentARB(handle: GLuint64);
+}
+extern "C" {
+    pub fn glMakeTextureHandleNonResidentARB(handle: GLuint64);
+}
+extern "C" {
+    pub fn glGetImageHandleARB(
+        texture: GLuint,
+        level: GLint,
+        layered: GLboolean,
+        layer: GLint,
+        format: GLenum,
+    ) -> GLuint64;
+}
+extern "C" {
+    pub fn glMakeImageHandleResidentARB(handle: GLuint64, access: GLenum);
+}
+extern "C" {
+    pub fn glMakeImageHandleNonResidentARB(handle: GLuint64);
+}
+extern "C" {
+    pub fn glUniformHandleui64ARB(location: GLint, value: GLuint64);
+}
+extern "C" {
+    pub fn glUniformHandleui64vARB(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniformHandleui64ARB(program: GLuint, location: GLint, value: GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniformHandleui64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        values: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glIsTextureHandleResidentARB(handle: GLuint64) -> GLboolean;
+}
+extern "C" {
+    pub fn glIsImageHandleResidentARB(handle: GLuint64) -> GLboolean;
+}
+extern "C" {
+    pub fn glVertexAttribL1ui64ARB(index: GLuint, x: GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL1ui64vARB(index: GLuint, v: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glGetVertexAttribLui64vARB(index: GLuint, pname: GLenum, params: *mut GLuint64EXT);
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _cl_context {
@@ -31274,8 +34771,18 @@ pub type PFNGLCREATESYNCFROMCLEVENTARBPROC = ::std::option::Option<
         flags: GLbitfield,
     ) -> GLsync,
 >;
+extern "C" {
+    pub fn glCreateSyncFromCLeventARB(
+        context: *mut _cl_context,
+        event: *mut _cl_event,
+        flags: GLbitfield,
+    ) -> GLsync;
+}
 pub type PFNGLCLAMPCOLORARBPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, clamp: GLenum)>;
+extern "C" {
+    pub fn glClampColorARB(target: GLenum, clamp: GLenum);
+}
 pub type PFNGLDISPATCHCOMPUTEGROUPSIZEARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         num_groups_x: GLuint,
@@ -31286,6 +34793,16 @@ pub type PFNGLDISPATCHCOMPUTEGROUPSIZEARBPROC = ::std::option::Option<
         group_size_z: GLuint,
     ),
 >;
+extern "C" {
+    pub fn glDispatchComputeGroupSizeARB(
+        num_groups_x: GLuint,
+        num_groups_y: GLuint,
+        num_groups_z: GLuint,
+        group_size_x: GLuint,
+        group_size_y: GLuint,
+        group_size_z: GLuint,
+    );
+}
 pub type GLDEBUGPROCARB = ::std::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
@@ -31332,8 +34849,49 @@ pub type PFNGLGETDEBUGMESSAGELOGARBPROC = ::std::option::Option<
         messageLog: *mut GLchar,
     ) -> GLuint,
 >;
+extern "C" {
+    pub fn glDebugMessageControlARB(
+        source: GLenum,
+        type_: GLenum,
+        severity: GLenum,
+        count: GLsizei,
+        ids: *const GLuint,
+        enabled: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageInsertARB(
+        source: GLenum,
+        type_: GLenum,
+        id: GLuint,
+        severity: GLenum,
+        length: GLsizei,
+        buf: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageCallbackARB(
+        callback: GLDEBUGPROCARB,
+        userParam: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetDebugMessageLogARB(
+        count: GLuint,
+        bufSize: GLsizei,
+        sources: *mut GLenum,
+        types: *mut GLenum,
+        ids: *mut GLuint,
+        severities: *mut GLenum,
+        lengths: *mut GLsizei,
+        messageLog: *mut GLchar,
+    ) -> GLuint;
+}
 pub type PFNGLDRAWBUFFERSARBPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
+extern "C" {
+    pub fn glDrawBuffersARB(n: GLsizei, bufs: *const GLenum);
+}
 pub type PFNGLBLENDEQUATIONIARBPROC =
     ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
 pub type PFNGLBLENDEQUATIONSEPARATEIARBPROC =
@@ -31349,6 +34907,24 @@ pub type PFNGLBLENDFUNCSEPARATEIARBPROC = ::std::option::Option<
         dstAlpha: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glBlendEquationiARB(buf: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glBlendEquationSeparateiARB(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum);
+}
+extern "C" {
+    pub fn glBlendFunciARB(buf: GLuint, src: GLenum, dst: GLenum);
+}
+extern "C" {
+    pub fn glBlendFuncSeparateiARB(
+        buf: GLuint,
+        srcRGB: GLenum,
+        dstRGB: GLenum,
+        srcAlpha: GLenum,
+        dstAlpha: GLenum,
+    );
+}
 pub type PFNGLDRAWARRAYSINSTANCEDARBPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, primcount: GLsizei),
 >;
@@ -31361,6 +34937,18 @@ pub type PFNGLDRAWELEMENTSINSTANCEDARBPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glDrawArraysInstancedARB(mode: GLenum, first: GLint, count: GLsizei, primcount: GLsizei);
+}
+extern "C" {
+    pub fn glDrawElementsInstancedARB(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+    );
+}
 pub type PFNGLPROGRAMSTRINGARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -31446,6 +35034,100 @@ pub type PFNGLGETPROGRAMSTRINGARBPROC = ::std::option::Option<
 >;
 pub type PFNGLISPROGRAMARBPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint) -> GLboolean>;
+extern "C" {
+    pub fn glProgramStringARB(
+        target: GLenum,
+        format: GLenum,
+        len: GLsizei,
+        string: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glBindProgramARB(target: GLenum, program: GLuint);
+}
+extern "C" {
+    pub fn glDeleteProgramsARB(n: GLsizei, programs: *const GLuint);
+}
+extern "C" {
+    pub fn glGenProgramsARB(n: GLsizei, programs: *mut GLuint);
+}
+extern "C" {
+    pub fn glProgramEnvParameter4dARB(
+        target: GLenum,
+        index: GLuint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameter4dvARB(target: GLenum, index: GLuint, params: *const GLdouble);
+}
+extern "C" {
+    pub fn glProgramEnvParameter4fARB(
+        target: GLenum,
+        index: GLuint,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameter4fvARB(target: GLenum, index: GLuint, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glProgramLocalParameter4dARB(
+        target: GLenum,
+        index: GLuint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameter4dvARB(target: GLenum, index: GLuint, params: *const GLdouble);
+}
+extern "C" {
+    pub fn glProgramLocalParameter4fARB(
+        target: GLenum,
+        index: GLuint,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameter4fvARB(target: GLenum, index: GLuint, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetProgramEnvParameterdvARB(target: GLenum, index: GLuint, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetProgramEnvParameterfvARB(target: GLenum, index: GLuint, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetProgramLocalParameterdvARB(target: GLenum, index: GLuint, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetProgramLocalParameterfvARB(target: GLenum, index: GLuint, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetProgramivARB(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetProgramStringARB(
+        target: GLenum,
+        pname: GLenum,
+        string: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glIsProgramARB(program: GLuint) -> GLboolean;
+}
 pub type PFNGLPROGRAMPARAMETERIARBPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
 pub type PFNGLFRAMEBUFFERTEXTUREARBPROC = ::std::option::Option<
@@ -31469,6 +35151,35 @@ pub type PFNGLFRAMEBUFFERTEXTUREFACEARBPROC = ::std::option::Option<
         face: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glProgramParameteriARB(program: GLuint, pname: GLenum, value: GLint);
+}
+extern "C" {
+    pub fn glFramebufferTextureARB(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTextureLayerARB(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        layer: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTextureFaceARB(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        face: GLenum,
+    );
+}
 pub type PFNGLSPECIALIZESHADERARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
@@ -31478,6 +35189,15 @@ pub type PFNGLSPECIALIZESHADERARBPROC = ::std::option::Option<
         pConstantValue: *const GLuint,
     ),
 >;
+extern "C" {
+    pub fn glSpecializeShaderARB(
+        shader: GLuint,
+        pEntryPoint: *const GLchar,
+        numSpecializationConstants: GLuint,
+        pConstantIndex: *const GLuint,
+        pConstantValue: *const GLuint,
+    );
+}
 pub type PFNGLUNIFORM1I64ARBPROC =
     ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64)>;
 pub type PFNGLUNIFORM2I64ARBPROC =
@@ -31594,6 +35314,190 @@ pub type PFNGLPROGRAMUNIFORM3UI64VARBPROC = ::std::option::Option<
 pub type PFNGLPROGRAMUNIFORM4UI64VARBPROC = ::std::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint64),
 >;
+extern "C" {
+    pub fn glUniform1i64ARB(location: GLint, x: GLint64);
+}
+extern "C" {
+    pub fn glUniform2i64ARB(location: GLint, x: GLint64, y: GLint64);
+}
+extern "C" {
+    pub fn glUniform3i64ARB(location: GLint, x: GLint64, y: GLint64, z: GLint64);
+}
+extern "C" {
+    pub fn glUniform4i64ARB(location: GLint, x: GLint64, y: GLint64, z: GLint64, w: GLint64);
+}
+extern "C" {
+    pub fn glUniform1i64vARB(location: GLint, count: GLsizei, value: *const GLint64);
+}
+extern "C" {
+    pub fn glUniform2i64vARB(location: GLint, count: GLsizei, value: *const GLint64);
+}
+extern "C" {
+    pub fn glUniform3i64vARB(location: GLint, count: GLsizei, value: *const GLint64);
+}
+extern "C" {
+    pub fn glUniform4i64vARB(location: GLint, count: GLsizei, value: *const GLint64);
+}
+extern "C" {
+    pub fn glUniform1ui64ARB(location: GLint, x: GLuint64);
+}
+extern "C" {
+    pub fn glUniform2ui64ARB(location: GLint, x: GLuint64, y: GLuint64);
+}
+extern "C" {
+    pub fn glUniform3ui64ARB(location: GLint, x: GLuint64, y: GLuint64, z: GLuint64);
+}
+extern "C" {
+    pub fn glUniform4ui64ARB(location: GLint, x: GLuint64, y: GLuint64, z: GLuint64, w: GLuint64);
+}
+extern "C" {
+    pub fn glUniform1ui64vARB(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glUniform2ui64vARB(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glUniform3ui64vARB(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glUniform4ui64vARB(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glGetUniformi64vARB(program: GLuint, location: GLint, params: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetUniformui64vARB(program: GLuint, location: GLint, params: *mut GLuint64);
+}
+extern "C" {
+    pub fn glGetnUniformi64vARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLint64,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformui64vARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1i64ARB(program: GLuint, location: GLint, x: GLint64);
+}
+extern "C" {
+    pub fn glProgramUniform2i64ARB(program: GLuint, location: GLint, x: GLint64, y: GLint64);
+}
+extern "C" {
+    pub fn glProgramUniform3i64ARB(
+        program: GLuint,
+        location: GLint,
+        x: GLint64,
+        y: GLint64,
+        z: GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4i64ARB(
+        program: GLuint,
+        location: GLint,
+        x: GLint64,
+        y: GLint64,
+        z: GLint64,
+        w: GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1i64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2i64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3i64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4i64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ui64ARB(program: GLuint, location: GLint, x: GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniform2ui64ARB(program: GLuint, location: GLint, x: GLuint64, y: GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniform3ui64ARB(
+        program: GLuint,
+        location: GLint,
+        x: GLuint64,
+        y: GLuint64,
+        z: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ui64ARB(
+        program: GLuint,
+        location: GLint,
+        x: GLuint64,
+        y: GLuint64,
+        z: GLuint64,
+        w: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ui64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2ui64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3ui64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ui64vARB(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64,
+    );
+}
 pub type GLhalfARB = khronos_uint16_t;
 pub type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -31614,8 +35518,30 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTARBPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glMultiDrawArraysIndirectCountARB(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLintptr,
+        maxdrawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirectCountARB(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawcount: GLintptr,
+        maxdrawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
 pub type PFNGLVERTEXATTRIBDIVISORARBPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, divisor: GLuint)>;
+extern "C" {
+    pub fn glVertexAttribDivisorARB(index: GLuint, divisor: GLuint);
+}
 pub type PFNGLCURRENTPALETTEMATRIXARBPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLint)>;
 pub type PFNGLMATRIXINDEXUBVARBPROC =
@@ -31632,8 +35558,31 @@ pub type PFNGLMATRIXINDEXPOINTERARBPROC = ::std::option::Option<
         pointer: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glCurrentPaletteMatrixARB(index: GLint);
+}
+extern "C" {
+    pub fn glMatrixIndexubvARB(size: GLint, indices: *const GLubyte);
+}
+extern "C" {
+    pub fn glMatrixIndexusvARB(size: GLint, indices: *const GLushort);
+}
+extern "C" {
+    pub fn glMatrixIndexuivARB(size: GLint, indices: *const GLuint);
+}
+extern "C" {
+    pub fn glMatrixIndexPointerARB(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLSAMPLECOVERAGEARBPROC =
     ::std::option::Option<unsafe extern "C" fn(value: GLfloat, invert: GLboolean)>;
+extern "C" {
+    pub fn glSampleCoverageARB(value: GLfloat, invert: GLboolean);
+}
 pub type PFNGLGENQUERIESARBPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLDELETEQUERIESARBPROC =
@@ -31648,12 +35597,45 @@ pub type PFNGLGETQUERYOBJECTIVARBPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETQUERYOBJECTUIVARBPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
+extern "C" {
+    pub fn glGenQueriesARB(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteQueriesARB(n: GLsizei, ids: *const GLuint);
+}
+extern "C" {
+    pub fn glIsQueryARB(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBeginQueryARB(target: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glEndQueryARB(target: GLenum);
+}
+extern "C" {
+    pub fn glGetQueryivARB(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetQueryObjectivARB(id: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetQueryObjectuivARB(id: GLuint, pname: GLenum, params: *mut GLuint);
+}
 pub type PFNGLMAXSHADERCOMPILERTHREADSARBPROC =
     ::std::option::Option<unsafe extern "C" fn(count: GLuint)>;
+extern "C" {
+    pub fn glMaxShaderCompilerThreadsARB(count: GLuint);
+}
 pub type PFNGLPOINTPARAMETERFARBPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVARBPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+extern "C" {
+    pub fn glPointParameterfARB(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPointParameterfvARB(pname: GLenum, params: *const GLfloat);
+}
 pub type PFNGLGETGRAPHICSRESETSTATUSARBPROC =
     ::std::option::Option<unsafe extern "C" fn() -> GLenum>;
 pub type PFNGLGETNTEXIMAGEARBPROC = ::std::option::Option<
@@ -31767,6 +35749,142 @@ pub type PFNGLGETNMINMAXARBPROC = ::std::option::Option<
         values: *mut ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glGetGraphicsResetStatusARB() -> GLenum;
+}
+extern "C" {
+    pub fn glGetnTexImageARB(
+        target: GLenum,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        img: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glReadnPixelsARB(
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnCompressedTexImageARB(
+        target: GLenum,
+        lod: GLint,
+        bufSize: GLsizei,
+        img: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformfvARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformivARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformuivARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetnUniformdvARB(
+        program: GLuint,
+        location: GLint,
+        bufSize: GLsizei,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetnMapdvARB(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetnMapfvARB(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetnMapivARB(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLint);
+}
+extern "C" {
+    pub fn glGetnPixelMapfvARB(map: GLenum, bufSize: GLsizei, values: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetnPixelMapuivARB(map: GLenum, bufSize: GLsizei, values: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetnPixelMapusvARB(map: GLenum, bufSize: GLsizei, values: *mut GLushort);
+}
+extern "C" {
+    pub fn glGetnPolygonStippleARB(bufSize: GLsizei, pattern: *mut GLubyte);
+}
+extern "C" {
+    pub fn glGetnColorTableARB(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        table: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnConvolutionFilterARB(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        image: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnSeparableFilterARB(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        rowBufSize: GLsizei,
+        row: *mut ::std::os::raw::c_void,
+        columnBufSize: GLsizei,
+        column: *mut ::std::os::raw::c_void,
+        span: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnHistogramARB(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetnMinmaxARB(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        bufSize: GLsizei,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
@@ -31774,7 +35892,29 @@ pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::std::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
 pub type PFNGLEVALUATEDEPTHVALUESARBPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFramebufferSampleLocationsfvARB(
+        target: GLenum,
+        start: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferSampleLocationsfvARB(
+        framebuffer: GLuint,
+        start: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glEvaluateDepthValuesARB();
+}
 pub type PFNGLMINSAMPLESHADINGARBPROC = ::std::option::Option<unsafe extern "C" fn(value: GLfloat)>;
+extern "C" {
+    pub fn glMinSampleShadingARB(value: GLfloat);
+}
 pub type GLhandleARB = ::std::os::raw::c_uint;
 pub type GLcharARB = ::std::os::raw::c_char;
 pub type PFNGLDELETEOBJECTARBPROC = ::std::option::Option<unsafe extern "C" fn(obj: GLhandleARB)>;
@@ -31922,6 +36062,166 @@ pub type PFNGLGETSHADERSOURCEARBPROC = ::std::option::Option<
         source: *mut GLcharARB,
     ),
 >;
+extern "C" {
+    pub fn glDeleteObjectARB(obj: GLhandleARB);
+}
+extern "C" {
+    pub fn glGetHandleARB(pname: GLenum) -> GLhandleARB;
+}
+extern "C" {
+    pub fn glDetachObjectARB(containerObj: GLhandleARB, attachedObj: GLhandleARB);
+}
+extern "C" {
+    pub fn glCreateShaderObjectARB(shaderType: GLenum) -> GLhandleARB;
+}
+extern "C" {
+    pub fn glShaderSourceARB(
+        shaderObj: GLhandleARB,
+        count: GLsizei,
+        string: *mut *const GLcharARB,
+        length: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glCompileShaderARB(shaderObj: GLhandleARB);
+}
+extern "C" {
+    pub fn glCreateProgramObjectARB() -> GLhandleARB;
+}
+extern "C" {
+    pub fn glAttachObjectARB(containerObj: GLhandleARB, obj: GLhandleARB);
+}
+extern "C" {
+    pub fn glLinkProgramARB(programObj: GLhandleARB);
+}
+extern "C" {
+    pub fn glUseProgramObjectARB(programObj: GLhandleARB);
+}
+extern "C" {
+    pub fn glValidateProgramARB(programObj: GLhandleARB);
+}
+extern "C" {
+    pub fn glUniform1fARB(location: GLint, v0: GLfloat);
+}
+extern "C" {
+    pub fn glUniform2fARB(location: GLint, v0: GLfloat, v1: GLfloat);
+}
+extern "C" {
+    pub fn glUniform3fARB(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat);
+}
+extern "C" {
+    pub fn glUniform4fARB(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat);
+}
+extern "C" {
+    pub fn glUniform1iARB(location: GLint, v0: GLint);
+}
+extern "C" {
+    pub fn glUniform2iARB(location: GLint, v0: GLint, v1: GLint);
+}
+extern "C" {
+    pub fn glUniform3iARB(location: GLint, v0: GLint, v1: GLint, v2: GLint);
+}
+extern "C" {
+    pub fn glUniform4iARB(location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint);
+}
+extern "C" {
+    pub fn glUniform1fvARB(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform2fvARB(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform3fvARB(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform4fvARB(location: GLint, count: GLsizei, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glUniform1ivARB(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform2ivARB(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform3ivARB(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniform4ivARB(location: GLint, count: GLsizei, value: *const GLint);
+}
+extern "C" {
+    pub fn glUniformMatrix2fvARB(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix3fvARB(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glUniformMatrix4fvARB(
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetObjectParameterfvARB(obj: GLhandleARB, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetObjectParameterivARB(obj: GLhandleARB, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetInfoLogARB(
+        obj: GLhandleARB,
+        maxLength: GLsizei,
+        length: *mut GLsizei,
+        infoLog: *mut GLcharARB,
+    );
+}
+extern "C" {
+    pub fn glGetAttachedObjectsARB(
+        containerObj: GLhandleARB,
+        maxCount: GLsizei,
+        count: *mut GLsizei,
+        obj: *mut GLhandleARB,
+    );
+}
+extern "C" {
+    pub fn glGetUniformLocationARB(programObj: GLhandleARB, name: *const GLcharARB) -> GLint;
+}
+extern "C" {
+    pub fn glGetActiveUniformARB(
+        programObj: GLhandleARB,
+        index: GLuint,
+        maxLength: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLint,
+        type_: *mut GLenum,
+        name: *mut GLcharARB,
+    );
+}
+extern "C" {
+    pub fn glGetUniformfvARB(programObj: GLhandleARB, location: GLint, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetUniformivARB(programObj: GLhandleARB, location: GLint, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetShaderSourceARB(
+        obj: GLhandleARB,
+        maxLength: GLsizei,
+        length: *mut GLsizei,
+        source: *mut GLcharARB,
+    );
+}
 pub type PFNGLNAMEDSTRINGARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
@@ -31955,6 +36255,46 @@ pub type PFNGLGETNAMEDSTRINGARBPROC = ::std::option::Option<
 pub type PFNGLGETNAMEDSTRINGIVARBPROC = ::std::option::Option<
     unsafe extern "C" fn(namelen: GLint, name: *const GLchar, pname: GLenum, params: *mut GLint),
 >;
+extern "C" {
+    pub fn glNamedStringARB(
+        type_: GLenum,
+        namelen: GLint,
+        name: *const GLchar,
+        stringlen: GLint,
+        string: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glDeleteNamedStringARB(namelen: GLint, name: *const GLchar);
+}
+extern "C" {
+    pub fn glCompileShaderIncludeARB(
+        shader: GLuint,
+        count: GLsizei,
+        path: *const *const GLchar,
+        length: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glIsNamedStringARB(namelen: GLint, name: *const GLchar) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetNamedStringARB(
+        namelen: GLint,
+        name: *const GLchar,
+        bufSize: GLsizei,
+        stringlen: *mut GLint,
+        string: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetNamedStringivARB(
+        namelen: GLint,
+        name: *const GLchar,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
 pub type PFNGLBUFFERPAGECOMMITMENTARBPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, offset: GLintptr, size: GLsizeiptr, commit: GLboolean),
 >;
@@ -31964,6 +36304,30 @@ pub type PFNGLNAMEDBUFFERPAGECOMMITMENTEXTPROC = ::std::option::Option<
 pub type PFNGLNAMEDBUFFERPAGECOMMITMENTARBPROC = ::std::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, size: GLsizeiptr, commit: GLboolean),
 >;
+extern "C" {
+    pub fn glBufferPageCommitmentARB(
+        target: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        commit: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferPageCommitmentEXT(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        commit: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferPageCommitmentARB(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        commit: GLboolean,
+    );
+}
 pub type PFNGLTEXPAGECOMMITMENTARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -31977,9 +36341,25 @@ pub type PFNGLTEXPAGECOMMITMENTARBPROC = ::std::option::Option<
         commit: GLboolean,
     ),
 >;
+extern "C" {
+    pub fn glTexPageCommitmentARB(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        commit: GLboolean,
+    );
+}
 pub type PFNGLTEXBUFFERARBPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
+extern "C" {
+    pub fn glTexBufferARB(target: GLenum, internalformat: GLenum, buffer: GLuint);
+}
 pub type PFNGLCOMPRESSEDTEXIMAGE3DARBPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -32058,6 +36438,88 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DARBPROC = ::std::option::Option<
 pub type PFNGLGETCOMPRESSEDTEXIMAGEARBPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, level: GLint, img: *mut ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glCompressedTexImage3DARB(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTexImage2DARB(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTexImage1DARB(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTexSubImage3DARB(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTexSubImage2DARB(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTexSubImage1DARB(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetCompressedTexImageARB(
+        target: GLenum,
+        level: GLint,
+        img: *mut ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLLOADTRANSPOSEMATRIXFARBPROC =
     ::std::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
 pub type PFNGLLOADTRANSPOSEMATRIXDARBPROC =
@@ -32066,6 +36528,18 @@ pub type PFNGLMULTTRANSPOSEMATRIXFARBPROC =
     ::std::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
 pub type PFNGLMULTTRANSPOSEMATRIXDARBPROC =
     ::std::option::Option<unsafe extern "C" fn(m: *const GLdouble)>;
+extern "C" {
+    pub fn glLoadTransposeMatrixfARB(m: *const GLfloat);
+}
+extern "C" {
+    pub fn glLoadTransposeMatrixdARB(m: *const GLdouble);
+}
+extern "C" {
+    pub fn glMultTransposeMatrixfARB(m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMultTransposeMatrixdARB(m: *const GLdouble);
+}
 pub type PFNGLWEIGHTBVARBPROC =
     ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLbyte)>;
 pub type PFNGLWEIGHTSVARBPROC =
@@ -32091,6 +36565,41 @@ pub type PFNGLWEIGHTPOINTERARBPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVERTEXBLENDARBPROC = ::std::option::Option<unsafe extern "C" fn(count: GLint)>;
+extern "C" {
+    pub fn glWeightbvARB(size: GLint, weights: *const GLbyte);
+}
+extern "C" {
+    pub fn glWeightsvARB(size: GLint, weights: *const GLshort);
+}
+extern "C" {
+    pub fn glWeightivARB(size: GLint, weights: *const GLint);
+}
+extern "C" {
+    pub fn glWeightfvARB(size: GLint, weights: *const GLfloat);
+}
+extern "C" {
+    pub fn glWeightdvARB(size: GLint, weights: *const GLdouble);
+}
+extern "C" {
+    pub fn glWeightubvARB(size: GLint, weights: *const GLubyte);
+}
+extern "C" {
+    pub fn glWeightusvARB(size: GLint, weights: *const GLushort);
+}
+extern "C" {
+    pub fn glWeightuivARB(size: GLint, weights: *const GLuint);
+}
+extern "C" {
+    pub fn glWeightPointerARB(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glVertexBlendARB(count: GLint);
+}
 pub type GLsizeiptrARB = khronos_ssize_t;
 pub type GLintptrARB = khronos_intptr_t;
 pub type PFNGLBINDBUFFERARBPROC =
@@ -32135,6 +36644,58 @@ pub type PFNGLGETBUFFERPARAMETERIVARBPROC =
 pub type PFNGLGETBUFFERPOINTERVARBPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glBindBufferARB(target: GLenum, buffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteBuffersARB(n: GLsizei, buffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenBuffersARB(n: GLsizei, buffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsBufferARB(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBufferDataARB(
+        target: GLenum,
+        size: GLsizeiptrARB,
+        data: *const ::std::os::raw::c_void,
+        usage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glBufferSubDataARB(
+        target: GLenum,
+        offset: GLintptrARB,
+        size: GLsizeiptrARB,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetBufferSubDataARB(
+        target: GLenum,
+        offset: GLintptrARB,
+        size: GLsizeiptrARB,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapBufferARB(target: GLenum, access: GLenum) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glUnmapBufferARB(target: GLenum) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetBufferParameterivARB(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetBufferPointervARB(
+        target: GLenum,
+        pname: GLenum,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLVERTEXATTRIB1DARBPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIB1DVARBPROC =
@@ -32236,6 +36797,146 @@ pub type PFNGLGETVERTEXATTRIBIVARBPROC =
 pub type PFNGLGETVERTEXATTRIBPOINTERVARBPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glVertexAttrib1dARB(index: GLuint, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1dvARB(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1fARB(index: GLuint, x: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1fvARB(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1sARB(index: GLuint, x: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib1svARB(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2dARB(index: GLuint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2dvARB(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2fARB(index: GLuint, x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2fvARB(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2sARB(index: GLuint, x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2svARB(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3dARB(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3dvARB(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3fARB(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3fvARB(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3sARB(index: GLuint, x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3svARB(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4NbvARB(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4NivARB(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttrib4NsvARB(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4NubARB(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4NubvARB(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4NuivARB(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttrib4NusvARB(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glVertexAttrib4bvARB(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4dARB(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4dvARB(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4fARB(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4fvARB(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4ivARB(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttrib4sARB(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4svARB(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4ubvARB(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4uivARB(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttrib4usvARB(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glVertexAttribPointerARB(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glEnableVertexAttribArrayARB(index: GLuint);
+}
+extern "C" {
+    pub fn glDisableVertexAttribArrayARB(index: GLuint);
+}
+extern "C" {
+    pub fn glGetVertexAttribdvARB(index: GLuint, pname: GLenum, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetVertexAttribfvARB(index: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVertexAttribivARB(index: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribPointervARB(
+        index: GLuint,
+        pname: GLenum,
+        pointer: *mut *mut ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLBINDATTRIBLOCATIONARBPROC = ::std::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, index: GLuint, name: *const GLcharARB),
 >;
@@ -32253,6 +36954,23 @@ pub type PFNGLGETACTIVEATTRIBARBPROC = ::std::option::Option<
 pub type PFNGLGETATTRIBLOCATIONARBPROC = ::std::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, name: *const GLcharARB) -> GLint,
 >;
+extern "C" {
+    pub fn glBindAttribLocationARB(programObj: GLhandleARB, index: GLuint, name: *const GLcharARB);
+}
+extern "C" {
+    pub fn glGetActiveAttribARB(
+        programObj: GLhandleARB,
+        index: GLuint,
+        maxLength: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLint,
+        type_: *mut GLenum,
+        name: *mut GLcharARB,
+    );
+}
+extern "C" {
+    pub fn glGetAttribLocationARB(programObj: GLhandleARB, name: *const GLcharARB) -> GLint;
+}
 pub type PFNGLWINDOWPOS2DARBPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
 pub type PFNGLWINDOWPOS2DVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
@@ -32276,9 +36994,63 @@ pub type PFNGLWINDOWPOS3IVARBPROC = ::std::option::Option<unsafe extern "C" fn(v
 pub type PFNGLWINDOWPOS3SARBPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
 pub type PFNGLWINDOWPOS3SVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+extern "C" {
+    pub fn glWindowPos2dARB(x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2dvARB(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2fARB(x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2fvARB(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2iARB(x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glWindowPos2ivARB(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos2sARB(x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos2svARB(v: *const GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3dARB(x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3dvARB(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3fARB(x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3fvARB(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3iARB(x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glWindowPos3ivARB(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos3sARB(x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3svARB(v: *const GLshort);
+}
 pub type PFNGLBLENDBARRIERKHRPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glBlendBarrierKHR();
+}
 pub type PFNGLMAXSHADERCOMPILERTHREADSKHRPROC =
     ::std::option::Option<unsafe extern "C" fn(count: GLuint)>;
+extern "C" {
+    pub fn glMaxShaderCompilerThreadsKHR(count: GLuint);
+}
 pub type PFNGLMULTITEXCOORD1BOESPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte)>;
 pub type PFNGLMULTITEXCOORD1BVOESPROC =
@@ -32318,6 +37090,72 @@ pub type PFNGLVERTEX3BVOESPROC = ::std::option::Option<unsafe extern "C" fn(coor
 pub type PFNGLVERTEX4BOESPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte, z: GLbyte, w: GLbyte)>;
 pub type PFNGLVERTEX4BVOESPROC = ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+extern "C" {
+    pub fn glMultiTexCoord1bOES(texture: GLenum, s: GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord1bvOES(texture: GLenum, coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord2bOES(texture: GLenum, s: GLbyte, t: GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord2bvOES(texture: GLenum, coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord3bOES(texture: GLenum, s: GLbyte, t: GLbyte, r: GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord3bvOES(texture: GLenum, coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord4bOES(texture: GLenum, s: GLbyte, t: GLbyte, r: GLbyte, q: GLbyte);
+}
+extern "C" {
+    pub fn glMultiTexCoord4bvOES(texture: GLenum, coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord1bOES(s: GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord1bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord2bOES(s: GLbyte, t: GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord2bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord3bOES(s: GLbyte, t: GLbyte, r: GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord3bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord4bOES(s: GLbyte, t: GLbyte, r: GLbyte, q: GLbyte);
+}
+extern "C" {
+    pub fn glTexCoord4bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertex2bOES(x: GLbyte, y: GLbyte);
+}
+extern "C" {
+    pub fn glVertex2bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertex3bOES(x: GLbyte, y: GLbyte, z: GLbyte);
+}
+extern "C" {
+    pub fn glVertex3bvOES(coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertex4bOES(x: GLbyte, y: GLbyte, z: GLbyte, w: GLbyte);
+}
+extern "C" {
+    pub fn glVertex4bvOES(coords: *const GLbyte);
+}
 pub type GLfixed = khronos_int32_t;
 pub type PFNGLALPHAFUNCXOESPROC =
     ::std::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLfixed)>;
@@ -32563,9 +37401,356 @@ pub type PFNGLVERTEX4XOESPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLVERTEX4XVOESPROC =
     ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+extern "C" {
+    pub fn glAlphaFuncxOES(func: GLenum, ref_: GLfixed);
+}
+extern "C" {
+    pub fn glClearColorxOES(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed);
+}
+extern "C" {
+    pub fn glClearDepthxOES(depth: GLfixed);
+}
+extern "C" {
+    pub fn glClipPlanexOES(plane: GLenum, equation: *const GLfixed);
+}
+extern "C" {
+    pub fn glColor4xOES(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed);
+}
+extern "C" {
+    pub fn glDepthRangexOES(n: GLfixed, f: GLfixed);
+}
+extern "C" {
+    pub fn glFogxOES(pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glFogxvOES(pname: GLenum, param: *const GLfixed);
+}
+extern "C" {
+    pub fn glFrustumxOES(l: GLfixed, r: GLfixed, b: GLfixed, t: GLfixed, n: GLfixed, f: GLfixed);
+}
+extern "C" {
+    pub fn glGetClipPlanexOES(plane: GLenum, equation: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetFixedvOES(pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetTexEnvxvOES(target: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetTexParameterxvOES(target: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glLightModelxOES(pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glLightModelxvOES(pname: GLenum, param: *const GLfixed);
+}
+extern "C" {
+    pub fn glLightxOES(light: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glLightxvOES(light: GLenum, pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glLineWidthxOES(width: GLfixed);
+}
+extern "C" {
+    pub fn glLoadMatrixxOES(m: *const GLfixed);
+}
+extern "C" {
+    pub fn glMaterialxOES(face: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glMaterialxvOES(face: GLenum, pname: GLenum, param: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultMatrixxOES(m: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord4xOES(texture: GLenum, s: GLfixed, t: GLfixed, r: GLfixed, q: GLfixed);
+}
+extern "C" {
+    pub fn glNormal3xOES(nx: GLfixed, ny: GLfixed, nz: GLfixed);
+}
+extern "C" {
+    pub fn glOrthoxOES(l: GLfixed, r: GLfixed, b: GLfixed, t: GLfixed, n: GLfixed, f: GLfixed);
+}
+extern "C" {
+    pub fn glPointParameterxvOES(pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glPointSizexOES(size: GLfixed);
+}
+extern "C" {
+    pub fn glPolygonOffsetxOES(factor: GLfixed, units: GLfixed);
+}
+extern "C" {
+    pub fn glRotatexOES(angle: GLfixed, x: GLfixed, y: GLfixed, z: GLfixed);
+}
+extern "C" {
+    pub fn glScalexOES(x: GLfixed, y: GLfixed, z: GLfixed);
+}
+extern "C" {
+    pub fn glTexEnvxOES(target: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glTexEnvxvOES(target: GLenum, pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexParameterxOES(target: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glTexParameterxvOES(target: GLenum, pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glTranslatexOES(x: GLfixed, y: GLfixed, z: GLfixed);
+}
+extern "C" {
+    pub fn glAccumxOES(op: GLenum, value: GLfixed);
+}
+extern "C" {
+    pub fn glBitmapxOES(
+        width: GLsizei,
+        height: GLsizei,
+        xorig: GLfixed,
+        yorig: GLfixed,
+        xmove: GLfixed,
+        ymove: GLfixed,
+        bitmap: *const GLubyte,
+    );
+}
+extern "C" {
+    pub fn glBlendColorxOES(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed);
+}
+extern "C" {
+    pub fn glClearAccumxOES(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed);
+}
+extern "C" {
+    pub fn glColor3xOES(red: GLfixed, green: GLfixed, blue: GLfixed);
+}
+extern "C" {
+    pub fn glColor3xvOES(components: *const GLfixed);
+}
+extern "C" {
+    pub fn glColor4xvOES(components: *const GLfixed);
+}
+extern "C" {
+    pub fn glConvolutionParameterxOES(target: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glConvolutionParameterxvOES(target: GLenum, pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glEvalCoord1xOES(u: GLfixed);
+}
+extern "C" {
+    pub fn glEvalCoord1xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glEvalCoord2xOES(u: GLfixed, v: GLfixed);
+}
+extern "C" {
+    pub fn glEvalCoord2xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glFeedbackBufferxOES(n: GLsizei, type_: GLenum, buffer: *const GLfixed);
+}
+extern "C" {
+    pub fn glGetConvolutionParameterxvOES(target: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetHistogramParameterxvOES(target: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetLightxOES(light: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetMapxvOES(target: GLenum, query: GLenum, v: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetMaterialxOES(face: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glGetPixelMapxv(map: GLenum, size: GLint, values: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetTexGenxvOES(coord: GLenum, pname: GLenum, params: *mut GLfixed);
+}
+extern "C" {
+    pub fn glGetTexLevelParameterxvOES(
+        target: GLenum,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLfixed,
+    );
+}
+extern "C" {
+    pub fn glIndexxOES(component: GLfixed);
+}
+extern "C" {
+    pub fn glIndexxvOES(component: *const GLfixed);
+}
+extern "C" {
+    pub fn glLoadTransposeMatrixxOES(m: *const GLfixed);
+}
+extern "C" {
+    pub fn glMap1xOES(
+        target: GLenum,
+        u1: GLfixed,
+        u2: GLfixed,
+        stride: GLint,
+        order: GLint,
+        points: GLfixed,
+    );
+}
+extern "C" {
+    pub fn glMap2xOES(
+        target: GLenum,
+        u1: GLfixed,
+        u2: GLfixed,
+        ustride: GLint,
+        uorder: GLint,
+        v1: GLfixed,
+        v2: GLfixed,
+        vstride: GLint,
+        vorder: GLint,
+        points: GLfixed,
+    );
+}
+extern "C" {
+    pub fn glMapGrid1xOES(n: GLint, u1: GLfixed, u2: GLfixed);
+}
+extern "C" {
+    pub fn glMapGrid2xOES(n: GLint, u1: GLfixed, u2: GLfixed, v1: GLfixed, v2: GLfixed);
+}
+extern "C" {
+    pub fn glMultTransposeMatrixxOES(m: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord1xOES(texture: GLenum, s: GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord1xvOES(texture: GLenum, coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord2xOES(texture: GLenum, s: GLfixed, t: GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord2xvOES(texture: GLenum, coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord3xOES(texture: GLenum, s: GLfixed, t: GLfixed, r: GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord3xvOES(texture: GLenum, coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glMultiTexCoord4xvOES(texture: GLenum, coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glNormal3xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glPassThroughxOES(token: GLfixed);
+}
+extern "C" {
+    pub fn glPixelMapx(map: GLenum, size: GLint, values: *const GLfixed);
+}
+extern "C" {
+    pub fn glPixelStorex(pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glPixelTransferxOES(pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glPixelZoomxOES(xfactor: GLfixed, yfactor: GLfixed);
+}
+extern "C" {
+    pub fn glPrioritizeTexturesxOES(
+        n: GLsizei,
+        textures: *const GLuint,
+        priorities: *const GLfixed,
+    );
+}
+extern "C" {
+    pub fn glRasterPos2xOES(x: GLfixed, y: GLfixed);
+}
+extern "C" {
+    pub fn glRasterPos2xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glRasterPos3xOES(x: GLfixed, y: GLfixed, z: GLfixed);
+}
+extern "C" {
+    pub fn glRasterPos3xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glRasterPos4xOES(x: GLfixed, y: GLfixed, z: GLfixed, w: GLfixed);
+}
+extern "C" {
+    pub fn glRasterPos4xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glRectxOES(x1: GLfixed, y1: GLfixed, x2: GLfixed, y2: GLfixed);
+}
+extern "C" {
+    pub fn glRectxvOES(v1: *const GLfixed, v2: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord1xOES(s: GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord1xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord2xOES(s: GLfixed, t: GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord2xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord3xOES(s: GLfixed, t: GLfixed, r: GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord3xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord4xOES(s: GLfixed, t: GLfixed, r: GLfixed, q: GLfixed);
+}
+extern "C" {
+    pub fn glTexCoord4xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glTexGenxOES(coord: GLenum, pname: GLenum, param: GLfixed);
+}
+extern "C" {
+    pub fn glTexGenxvOES(coord: GLenum, pname: GLenum, params: *const GLfixed);
+}
+extern "C" {
+    pub fn glVertex2xOES(x: GLfixed);
+}
+extern "C" {
+    pub fn glVertex2xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glVertex3xOES(x: GLfixed, y: GLfixed);
+}
+extern "C" {
+    pub fn glVertex3xvOES(coords: *const GLfixed);
+}
+extern "C" {
+    pub fn glVertex4xOES(x: GLfixed, y: GLfixed, z: GLfixed);
+}
+extern "C" {
+    pub fn glVertex4xvOES(coords: *const GLfixed);
+}
 pub type PFNGLQUERYMATRIXXOESPROC = ::std::option::Option<
     unsafe extern "C" fn(mantissa: *mut GLfixed, exponent: *mut GLint) -> GLbitfield,
 >;
+extern "C" {
+    pub fn glQueryMatrixxOES(mantissa: *mut GLfixed, exponent: *mut GLint) -> GLbitfield;
+}
 pub type PFNGLCLEARDEPTHFOESPROC = ::std::option::Option<unsafe extern "C" fn(depth: GLclampf)>;
 pub type PFNGLCLIPPLANEFOESPROC =
     ::std::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *const GLfloat)>;
@@ -32579,7 +37764,28 @@ pub type PFNGLGETCLIPPLANEFOESPROC =
 pub type PFNGLORTHOFOESPROC = ::std::option::Option<
     unsafe extern "C" fn(l: GLfloat, r: GLfloat, b: GLfloat, t: GLfloat, n: GLfloat, f: GLfloat),
 >;
+extern "C" {
+    pub fn glClearDepthfOES(depth: GLclampf);
+}
+extern "C" {
+    pub fn glClipPlanefOES(plane: GLenum, equation: *const GLfloat);
+}
+extern "C" {
+    pub fn glDepthRangefOES(n: GLclampf, f: GLclampf);
+}
+extern "C" {
+    pub fn glFrustumfOES(l: GLfloat, r: GLfloat, b: GLfloat, t: GLfloat, n: GLfloat, f: GLfloat);
+}
+extern "C" {
+    pub fn glGetClipPlanefOES(plane: GLenum, equation: *mut GLfloat);
+}
+extern "C" {
+    pub fn glOrthofOES(l: GLfloat, r: GLfloat, b: GLfloat, t: GLfloat, n: GLfloat, f: GLfloat);
+}
 pub type PFNGLTBUFFERMASK3DFXPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLuint)>;
+extern "C" {
+    pub fn glTbufferMask3DFX(mask: GLuint);
+}
 pub type GLDEBUGPROCAMD = ::std::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
@@ -32622,6 +37828,41 @@ pub type PFNGLGETDEBUGMESSAGELOGAMDPROC = ::std::option::Option<
         message: *mut GLchar,
     ) -> GLuint,
 >;
+extern "C" {
+    pub fn glDebugMessageEnableAMD(
+        category: GLenum,
+        severity: GLenum,
+        count: GLsizei,
+        ids: *const GLuint,
+        enabled: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageInsertAMD(
+        category: GLenum,
+        severity: GLenum,
+        id: GLuint,
+        length: GLsizei,
+        buf: *const GLchar,
+    );
+}
+extern "C" {
+    pub fn glDebugMessageCallbackAMD(
+        callback: GLDEBUGPROCAMD,
+        userParam: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetDebugMessageLogAMD(
+        count: GLuint,
+        bufsize: GLsizei,
+        categories: *mut GLenum,
+        severities: *mut GLuint,
+        ids: *mut GLuint,
+        lengths: *mut GLsizei,
+        message: *mut GLchar,
+    ) -> GLuint;
+}
 pub type PFNGLBLENDFUNCINDEXEDAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
 pub type PFNGLBLENDFUNCSEPARATEINDEXEDAMDPROC = ::std::option::Option<
@@ -32637,6 +37878,24 @@ pub type PFNGLBLENDEQUATIONINDEXEDAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
 pub type PFNGLBLENDEQUATIONSEPARATEINDEXEDAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
+extern "C" {
+    pub fn glBlendFuncIndexedAMD(buf: GLuint, src: GLenum, dst: GLenum);
+}
+extern "C" {
+    pub fn glBlendFuncSeparateIndexedAMD(
+        buf: GLuint,
+        srcRGB: GLenum,
+        dstRGB: GLenum,
+        srcAlpha: GLenum,
+        dstAlpha: GLenum,
+    );
+}
+extern "C" {
+    pub fn glBlendEquationIndexedAMD(buf: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glBlendEquationSeparateIndexedAMD(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum);
+}
 pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -32657,6 +37916,26 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option
         height: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glRenderbufferStorageMultisampleAdvancedAMD(
+        target: GLenum,
+        samples: GLsizei,
+        storageSamples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorageMultisampleAdvancedAMD(
+        renderbuffer: GLuint,
+        samples: GLsizei,
+        storageSamples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
 pub type PFNGLFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -32693,6 +37972,42 @@ pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERFVAMDPROC = ::std::option::Option<
         values: *mut GLfloat,
     ),
 >;
+extern "C" {
+    pub fn glFramebufferSamplePositionsfvAMD(
+        target: GLenum,
+        numsamples: GLuint,
+        pixelindex: GLuint,
+        values: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferSamplePositionsfvAMD(
+        framebuffer: GLuint,
+        numsamples: GLuint,
+        pixelindex: GLuint,
+        values: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetFramebufferParameterfvAMD(
+        target: GLenum,
+        pname: GLenum,
+        numsamples: GLuint,
+        pixelindex: GLuint,
+        size: GLsizei,
+        values: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetNamedFramebufferParameterfvAMD(
+        framebuffer: GLuint,
+        pname: GLenum,
+        numsamples: GLuint,
+        pixelindex: GLuint,
+        size: GLsizei,
+        values: *mut GLfloat,
+    );
+}
 pub type GLint64EXT = khronos_int64_t;
 pub type PFNGLUNIFORM1I64NVPROC =
     ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64EXT)>;
@@ -32868,8 +38183,196 @@ pub type PFNGLPROGRAMUNIFORM4UI64VNVPROC = ::std::option::Option<
         value: *const GLuint64EXT,
     ),
 >;
+extern "C" {
+    pub fn glUniform1i64NV(location: GLint, x: GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform2i64NV(location: GLint, x: GLint64EXT, y: GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform3i64NV(location: GLint, x: GLint64EXT, y: GLint64EXT, z: GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform4i64NV(
+        location: GLint,
+        x: GLint64EXT,
+        y: GLint64EXT,
+        z: GLint64EXT,
+        w: GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glUniform1i64vNV(location: GLint, count: GLsizei, value: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform2i64vNV(location: GLint, count: GLsizei, value: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform3i64vNV(location: GLint, count: GLsizei, value: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform4i64vNV(location: GLint, count: GLsizei, value: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glUniform1ui64NV(location: GLint, x: GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform2ui64NV(location: GLint, x: GLuint64EXT, y: GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform3ui64NV(location: GLint, x: GLuint64EXT, y: GLuint64EXT, z: GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform4ui64NV(
+        location: GLint,
+        x: GLuint64EXT,
+        y: GLuint64EXT,
+        z: GLuint64EXT,
+        w: GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glUniform1ui64vNV(location: GLint, count: GLsizei, value: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform2ui64vNV(location: GLint, count: GLsizei, value: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform3ui64vNV(location: GLint, count: GLsizei, value: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniform4ui64vNV(location: GLint, count: GLsizei, value: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glGetUniformi64vNV(program: GLuint, location: GLint, params: *mut GLint64EXT);
+}
+extern "C" {
+    pub fn glGetUniformui64vNV(program: GLuint, location: GLint, params: *mut GLuint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniform1i64NV(program: GLuint, location: GLint, x: GLint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniform2i64NV(program: GLuint, location: GLint, x: GLint64EXT, y: GLint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniform3i64NV(
+        program: GLuint,
+        location: GLint,
+        x: GLint64EXT,
+        y: GLint64EXT,
+        z: GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4i64NV(
+        program: GLuint,
+        location: GLint,
+        x: GLint64EXT,
+        y: GLint64EXT,
+        z: GLint64EXT,
+        w: GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1i64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2i64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3i64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4i64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ui64NV(program: GLuint, location: GLint, x: GLuint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniform2ui64NV(
+        program: GLuint,
+        location: GLint,
+        x: GLuint64EXT,
+        y: GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3ui64NV(
+        program: GLuint,
+        location: GLint,
+        x: GLuint64EXT,
+        y: GLuint64EXT,
+        z: GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ui64NV(
+        program: GLuint,
+        location: GLint,
+        x: GLuint64EXT,
+        y: GLuint64EXT,
+        z: GLuint64EXT,
+        w: GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2ui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3ui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64EXT,
+    );
+}
 pub type PFNGLVERTEXATTRIBPARAMETERIAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, param: GLint)>;
+extern "C" {
+    pub fn glVertexAttribParameteriAMD(index: GLuint, pname: GLenum, param: GLint);
+}
 pub type PFNGLMULTIDRAWARRAYSINDIRECTAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -32887,6 +38390,23 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glMultiDrawArraysIndirectAMD(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirectAMD(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+        stride: GLsizei,
+    );
+}
 pub type PFNGLGENNAMESAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(identifier: GLenum, num: GLuint, names: *mut GLuint),
 >;
@@ -32895,9 +38415,21 @@ pub type PFNGLDELETENAMESAMDPROC = ::std::option::Option<
 >;
 pub type PFNGLISNAMEAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(identifier: GLenum, name: GLuint) -> GLboolean>;
+extern "C" {
+    pub fn glGenNamesAMD(identifier: GLenum, num: GLuint, names: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteNamesAMD(identifier: GLenum, num: GLuint, names: *const GLuint);
+}
+extern "C" {
+    pub fn glIsNameAMD(identifier: GLenum, name: GLuint) -> GLboolean;
+}
 pub type PFNGLQUERYOBJECTPARAMETERUIAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, id: GLuint, pname: GLenum, param: GLuint),
 >;
+extern "C" {
+    pub fn glQueryObjectParameteruiAMD(target: GLenum, id: GLuint, pname: GLenum, param: GLuint);
+}
 pub type PFNGLGETPERFMONITORGROUPSAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(numGroups: *mut GLint, groupsSize: GLsizei, groups: *mut GLuint),
 >;
@@ -32960,8 +38492,82 @@ pub type PFNGLGETPERFMONITORCOUNTERDATAAMDPROC = ::std::option::Option<
         bytesWritten: *mut GLint,
     ),
 >;
+extern "C" {
+    pub fn glGetPerfMonitorGroupsAMD(
+        numGroups: *mut GLint,
+        groupsSize: GLsizei,
+        groups: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetPerfMonitorCountersAMD(
+        group: GLuint,
+        numCounters: *mut GLint,
+        maxActiveCounters: *mut GLint,
+        counterSize: GLsizei,
+        counters: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetPerfMonitorGroupStringAMD(
+        group: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        groupString: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetPerfMonitorCounterStringAMD(
+        group: GLuint,
+        counter: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        counterString: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetPerfMonitorCounterInfoAMD(
+        group: GLuint,
+        counter: GLuint,
+        pname: GLenum,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGenPerfMonitorsAMD(n: GLsizei, monitors: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeletePerfMonitorsAMD(n: GLsizei, monitors: *mut GLuint);
+}
+extern "C" {
+    pub fn glSelectPerfMonitorCountersAMD(
+        monitor: GLuint,
+        enable: GLboolean,
+        group: GLuint,
+        numCounters: GLint,
+        counterList: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glBeginPerfMonitorAMD(monitor: GLuint);
+}
+extern "C" {
+    pub fn glEndPerfMonitorAMD(monitor: GLuint);
+}
+extern "C" {
+    pub fn glGetPerfMonitorCounterDataAMD(
+        monitor: GLuint,
+        pname: GLenum,
+        dataSize: GLsizei,
+        data: *mut GLuint,
+        bytesWritten: *mut GLint,
+    );
+}
 pub type PFNGLSETMULTISAMPLEFVAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *const GLfloat)>;
+extern "C" {
+    pub fn glSetMultisamplefvAMD(pname: GLenum, index: GLuint, val: *const GLfloat);
+}
 pub type PFNGLTEXSTORAGESPARSEAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -32985,11 +38591,43 @@ pub type PFNGLTEXTURESTORAGESPARSEAMDPROC = ::std::option::Option<
         flags: GLbitfield,
     ),
 >;
+extern "C" {
+    pub fn glTexStorageSparseAMD(
+        target: GLenum,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        layers: GLsizei,
+        flags: GLbitfield,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageSparseAMD(
+        texture: GLuint,
+        target: GLenum,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        layers: GLsizei,
+        flags: GLbitfield,
+    );
+}
 pub type PFNGLSTENCILOPVALUEAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(face: GLenum, value: GLuint)>;
+extern "C" {
+    pub fn glStencilOpValueAMD(face: GLenum, value: GLuint);
+}
 pub type PFNGLTESSELLATIONFACTORAMDPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLfloat)>;
 pub type PFNGLTESSELLATIONMODEAMDPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glTessellationFactorAMD(factor: GLfloat);
+}
+extern "C" {
+    pub fn glTessellationModeAMD(mode: GLenum);
+}
 pub type PFNGLELEMENTPOINTERAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(type_: GLenum, pointer: *const ::std::os::raw::c_void),
 >;
@@ -33016,6 +38654,39 @@ pub type PFNGLMULTIDRAWRANGEELEMENTARRAYAPPLEPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glElementPointerAPPLE(type_: GLenum, pointer: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glDrawElementArrayAPPLE(mode: GLenum, first: GLint, count: GLsizei);
+}
+extern "C" {
+    pub fn glDrawRangeElementArrayAPPLE(
+        mode: GLenum,
+        start: GLuint,
+        end: GLuint,
+        first: GLint,
+        count: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementArrayAPPLE(
+        mode: GLenum,
+        first: *const GLint,
+        count: *const GLsizei,
+        primcount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawRangeElementArrayAPPLE(
+        mode: GLenum,
+        start: GLuint,
+        end: GLuint,
+        first: *const GLint,
+        count: *const GLsizei,
+        primcount: GLsizei,
+    );
+}
 pub type PFNGLGENFENCESAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *mut GLuint)>;
 pub type PFNGLDELETEFENCESAPPLEPROC =
@@ -33030,10 +38701,40 @@ pub type PFNGLTESTOBJECTAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(object: GLenum, name: GLuint) -> GLboolean>;
 pub type PFNGLFINISHOBJECTAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(object: GLenum, name: GLint)>;
+extern "C" {
+    pub fn glGenFencesAPPLE(n: GLsizei, fences: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteFencesAPPLE(n: GLsizei, fences: *const GLuint);
+}
+extern "C" {
+    pub fn glSetFenceAPPLE(fence: GLuint);
+}
+extern "C" {
+    pub fn glIsFenceAPPLE(fence: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glTestFenceAPPLE(fence: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glFinishFenceAPPLE(fence: GLuint);
+}
+extern "C" {
+    pub fn glTestObjectAPPLE(object: GLenum, name: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glFinishObjectAPPLE(object: GLenum, name: GLint);
+}
 pub type PFNGLBUFFERPARAMETERIAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLFLUSHMAPPEDBUFFERRANGEAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, offset: GLintptr, size: GLsizeiptr)>;
+extern "C" {
+    pub fn glBufferParameteriAPPLE(target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glFlushMappedBufferRangeAPPLE(target: GLenum, offset: GLintptr, size: GLsizeiptr);
+}
 pub type PFNGLOBJECTPURGEABLEAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(objectType: GLenum, name: GLuint, option: GLenum) -> GLenum,
 >;
@@ -33043,12 +38744,40 @@ pub type PFNGLOBJECTUNPURGEABLEAPPLEPROC = ::std::option::Option<
 pub type PFNGLGETOBJECTPARAMETERIVAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(objectType: GLenum, name: GLuint, pname: GLenum, params: *mut GLint),
 >;
+extern "C" {
+    pub fn glObjectPurgeableAPPLE(objectType: GLenum, name: GLuint, option: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glObjectUnpurgeableAPPLE(objectType: GLenum, name: GLuint, option: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glGetObjectParameterivAPPLE(
+        objectType: GLenum,
+        name: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
 pub type PFNGLTEXTURERANGEAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const ::std::os::raw::c_void),
 >;
 pub type PFNGLGETTEXPARAMETERPOINTERVAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glTextureRangeAPPLE(
+        target: GLenum,
+        length: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetTexParameterPointervAPPLE(
+        target: GLenum,
+        pname: GLenum,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLBINDVERTEXARRAYAPPLEPROC = ::std::option::Option<unsafe extern "C" fn(array: GLuint)>;
 pub type PFNGLDELETEVERTEXARRAYSAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *const GLuint)>;
@@ -33056,6 +38785,18 @@ pub type PFNGLGENVERTEXARRAYSAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
 pub type PFNGLISVERTEXARRAYAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
+extern "C" {
+    pub fn glBindVertexArrayAPPLE(array: GLuint);
+}
+extern "C" {
+    pub fn glDeleteVertexArraysAPPLE(n: GLsizei, arrays: *const GLuint);
+}
+extern "C" {
+    pub fn glGenVertexArraysAPPLE(n: GLsizei, arrays: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsVertexArrayAPPLE(array: GLuint) -> GLboolean;
+}
 pub type PFNGLVERTEXARRAYRANGEAPPLEPROC = ::std::option::Option<
     unsafe extern "C" fn(length: GLsizei, pointer: *mut ::std::os::raw::c_void),
 >;
@@ -33064,6 +38805,15 @@ pub type PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC = ::std::option::Option<
 >;
 pub type PFNGLVERTEXARRAYPARAMETERIAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+extern "C" {
+    pub fn glVertexArrayRangeAPPLE(length: GLsizei, pointer: *mut ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glFlushVertexArrayRangeAPPLE(length: GLsizei, pointer: *mut ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glVertexArrayParameteriAPPLE(pname: GLenum, param: GLint);
+}
 pub type PFNGLENABLEVERTEXATTRIBAPPLEPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum)>;
 pub type PFNGLDISABLEVERTEXATTRIBAPPLEPROC =
@@ -33122,8 +38872,72 @@ pub type PFNGLMAPVERTEXATTRIB2FAPPLEPROC = ::std::option::Option<
         points: *const GLfloat,
     ),
 >;
+extern "C" {
+    pub fn glEnableVertexAttribAPPLE(index: GLuint, pname: GLenum);
+}
+extern "C" {
+    pub fn glDisableVertexAttribAPPLE(index: GLuint, pname: GLenum);
+}
+extern "C" {
+    pub fn glIsVertexAttribEnabledAPPLE(index: GLuint, pname: GLenum) -> GLboolean;
+}
+extern "C" {
+    pub fn glMapVertexAttrib1dAPPLE(
+        index: GLuint,
+        size: GLuint,
+        u1: GLdouble,
+        u2: GLdouble,
+        stride: GLint,
+        order: GLint,
+        points: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glMapVertexAttrib1fAPPLE(
+        index: GLuint,
+        size: GLuint,
+        u1: GLfloat,
+        u2: GLfloat,
+        stride: GLint,
+        order: GLint,
+        points: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMapVertexAttrib2dAPPLE(
+        index: GLuint,
+        size: GLuint,
+        u1: GLdouble,
+        u2: GLdouble,
+        ustride: GLint,
+        uorder: GLint,
+        v1: GLdouble,
+        v2: GLdouble,
+        vstride: GLint,
+        vorder: GLint,
+        points: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glMapVertexAttrib2fAPPLE(
+        index: GLuint,
+        size: GLuint,
+        u1: GLfloat,
+        u2: GLfloat,
+        ustride: GLint,
+        uorder: GLint,
+        v1: GLfloat,
+        v2: GLfloat,
+        vstride: GLint,
+        vorder: GLint,
+        points: *const GLfloat,
+    );
+}
 pub type PFNGLDRAWBUFFERSATIPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
+extern "C" {
+    pub fn glDrawBuffersATI(n: GLsizei, bufs: *const GLenum);
+}
 pub type PFNGLELEMENTPOINTERATIPROC = ::std::option::Option<
     unsafe extern "C" fn(type_: GLenum, pointer: *const ::std::os::raw::c_void),
 >;
@@ -33132,6 +38946,15 @@ pub type PFNGLDRAWELEMENTARRAYATIPROC =
 pub type PFNGLDRAWRANGEELEMENTARRAYATIPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, start: GLuint, end: GLuint, count: GLsizei),
 >;
+extern "C" {
+    pub fn glElementPointerATI(type_: GLenum, pointer: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glDrawElementArrayATI(mode: GLenum, count: GLsizei);
+}
+extern "C" {
+    pub fn glDrawRangeElementArrayATI(mode: GLenum, start: GLuint, end: GLuint, count: GLsizei);
+}
 pub type PFNGLTEXBUMPPARAMETERIVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLint)>;
 pub type PFNGLTEXBUMPPARAMETERFVATIPROC =
@@ -33140,6 +38963,18 @@ pub type PFNGLGETTEXBUMPPARAMETERIVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLint)>;
 pub type PFNGLGETTEXBUMPPARAMETERFVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLfloat)>;
+extern "C" {
+    pub fn glTexBumpParameterivATI(pname: GLenum, param: *const GLint);
+}
+extern "C" {
+    pub fn glTexBumpParameterfvATI(pname: GLenum, param: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetTexBumpParameterivATI(pname: GLenum, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTexBumpParameterfvATI(pname: GLenum, param: *mut GLfloat);
+}
 pub type PFNGLGENFRAGMENTSHADERSATIPROC =
     ::std::option::Option<unsafe extern "C" fn(range: GLuint) -> GLuint>;
 pub type PFNGLBINDFRAGMENTSHADERATIPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
@@ -33233,20 +39068,143 @@ pub type PFNGLALPHAFRAGMENTOP3ATIPROC = ::std::option::Option<
 >;
 pub type PFNGLSETFRAGMENTSHADERCONSTANTATIPROC =
     ::std::option::Option<unsafe extern "C" fn(dst: GLuint, value: *const GLfloat)>;
+extern "C" {
+    pub fn glGenFragmentShadersATI(range: GLuint) -> GLuint;
+}
+extern "C" {
+    pub fn glBindFragmentShaderATI(id: GLuint);
+}
+extern "C" {
+    pub fn glDeleteFragmentShaderATI(id: GLuint);
+}
+extern "C" {
+    pub fn glBeginFragmentShaderATI();
+}
+extern "C" {
+    pub fn glEndFragmentShaderATI();
+}
+extern "C" {
+    pub fn glPassTexCoordATI(dst: GLuint, coord: GLuint, swizzle: GLenum);
+}
+extern "C" {
+    pub fn glSampleMapATI(dst: GLuint, interp: GLuint, swizzle: GLenum);
+}
+extern "C" {
+    pub fn glColorFragmentOp1ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMask: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glColorFragmentOp2ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMask: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+        arg2: GLuint,
+        arg2Rep: GLuint,
+        arg2Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glColorFragmentOp3ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMask: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+        arg2: GLuint,
+        arg2Rep: GLuint,
+        arg2Mod: GLuint,
+        arg3: GLuint,
+        arg3Rep: GLuint,
+        arg3Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glAlphaFragmentOp1ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glAlphaFragmentOp2ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+        arg2: GLuint,
+        arg2Rep: GLuint,
+        arg2Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glAlphaFragmentOp3ATI(
+        op: GLenum,
+        dst: GLuint,
+        dstMod: GLuint,
+        arg1: GLuint,
+        arg1Rep: GLuint,
+        arg1Mod: GLuint,
+        arg2: GLuint,
+        arg2Rep: GLuint,
+        arg2Mod: GLuint,
+        arg3: GLuint,
+        arg3Rep: GLuint,
+        arg3Mod: GLuint,
+    );
+}
+extern "C" {
+    pub fn glSetFragmentShaderConstantATI(dst: GLuint, value: *const GLfloat);
+}
 pub type PFNGLMAPOBJECTBUFFERATIPROC =
     ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> *mut ::std::os::raw::c_void>;
 pub type PFNGLUNMAPOBJECTBUFFERATIPROC =
     ::std::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
+extern "C" {
+    pub fn glMapObjectBufferATI(buffer: GLuint) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glUnmapObjectBufferATI(buffer: GLuint);
+}
 pub type PFNGLPNTRIANGLESIATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPNTRIANGLESFATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+extern "C" {
+    pub fn glPNTrianglesiATI(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glPNTrianglesfATI(pname: GLenum, param: GLfloat);
+}
 pub type PFNGLSTENCILOPSEPARATEATIPROC = ::std::option::Option<
     unsafe extern "C" fn(face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum),
 >;
 pub type PFNGLSTENCILFUNCSEPARATEATIPROC = ::std::option::Option<
     unsafe extern "C" fn(frontfunc: GLenum, backfunc: GLenum, ref_: GLint, mask: GLuint),
 >;
+extern "C" {
+    pub fn glStencilOpSeparateATI(face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum);
+}
+extern "C" {
+    pub fn glStencilFuncSeparateATI(frontfunc: GLenum, backfunc: GLenum, ref_: GLint, mask: GLuint);
+}
 pub type PFNGLNEWOBJECTBUFFERATIPROC = ::std::option::Option<
     unsafe extern "C" fn(
         size: GLsizei,
@@ -33298,6 +39256,65 @@ pub type PFNGLGETVARIANTARRAYOBJECTFVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVARIANTARRAYOBJECTIVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+extern "C" {
+    pub fn glNewObjectBufferATI(
+        size: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+        usage: GLenum,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glIsObjectBufferATI(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glUpdateObjectBufferATI(
+        buffer: GLuint,
+        offset: GLuint,
+        size: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+        preserve: GLenum,
+    );
+}
+extern "C" {
+    pub fn glGetObjectBufferfvATI(buffer: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetObjectBufferivATI(buffer: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glFreeObjectBufferATI(buffer: GLuint);
+}
+extern "C" {
+    pub fn glArrayObjectATI(
+        array: GLenum,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        buffer: GLuint,
+        offset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetArrayObjectfvATI(array: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetArrayObjectivATI(array: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glVariantArrayObjectATI(
+        id: GLuint,
+        type_: GLenum,
+        stride: GLsizei,
+        buffer: GLuint,
+        offset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetVariantArrayObjectfvATI(id: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVariantArrayObjectivATI(id: GLuint, pname: GLenum, params: *mut GLint);
+}
 pub type PFNGLVERTEXATTRIBARRAYOBJECTATIPROC = ::std::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
@@ -33313,6 +39330,23 @@ pub type PFNGLGETVERTEXATTRIBARRAYOBJECTFVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVERTEXATTRIBARRAYOBJECTIVATIPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+extern "C" {
+    pub fn glVertexAttribArrayObjectATI(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        stride: GLsizei,
+        buffer: GLuint,
+        offset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetVertexAttribArrayObjectfvATI(index: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVertexAttribArrayObjectivATI(index: GLuint, pname: GLenum, params: *mut GLint);
+}
 pub type PFNGLVERTEXSTREAM1SATIPROC =
     ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort)>;
 pub type PFNGLVERTEXSTREAM1SVATIPROC =
@@ -33411,6 +39445,141 @@ pub type PFNGLVERTEXBLENDENVIATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLVERTEXBLENDENVFATIPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+extern "C" {
+    pub fn glVertexStream1sATI(stream: GLenum, x: GLshort);
+}
+extern "C" {
+    pub fn glVertexStream1svATI(stream: GLenum, coords: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexStream1iATI(stream: GLenum, x: GLint);
+}
+extern "C" {
+    pub fn glVertexStream1ivATI(stream: GLenum, coords: *const GLint);
+}
+extern "C" {
+    pub fn glVertexStream1fATI(stream: GLenum, x: GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream1fvATI(stream: GLenum, coords: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream1dATI(stream: GLenum, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream1dvATI(stream: GLenum, coords: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream2sATI(stream: GLenum, x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glVertexStream2svATI(stream: GLenum, coords: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexStream2iATI(stream: GLenum, x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glVertexStream2ivATI(stream: GLenum, coords: *const GLint);
+}
+extern "C" {
+    pub fn glVertexStream2fATI(stream: GLenum, x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream2fvATI(stream: GLenum, coords: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream2dATI(stream: GLenum, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream2dvATI(stream: GLenum, coords: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream3sATI(stream: GLenum, x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glVertexStream3svATI(stream: GLenum, coords: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexStream3iATI(stream: GLenum, x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glVertexStream3ivATI(stream: GLenum, coords: *const GLint);
+}
+extern "C" {
+    pub fn glVertexStream3fATI(stream: GLenum, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream3fvATI(stream: GLenum, coords: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream3dATI(stream: GLenum, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream3dvATI(stream: GLenum, coords: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream4sATI(stream: GLenum, x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+}
+extern "C" {
+    pub fn glVertexStream4svATI(stream: GLenum, coords: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexStream4iATI(stream: GLenum, x: GLint, y: GLint, z: GLint, w: GLint);
+}
+extern "C" {
+    pub fn glVertexStream4ivATI(stream: GLenum, coords: *const GLint);
+}
+extern "C" {
+    pub fn glVertexStream4fATI(stream: GLenum, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream4fvATI(stream: GLenum, coords: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexStream4dATI(stream: GLenum, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexStream4dvATI(stream: GLenum, coords: *const GLdouble);
+}
+extern "C" {
+    pub fn glNormalStream3bATI(stream: GLenum, nx: GLbyte, ny: GLbyte, nz: GLbyte);
+}
+extern "C" {
+    pub fn glNormalStream3bvATI(stream: GLenum, coords: *const GLbyte);
+}
+extern "C" {
+    pub fn glNormalStream3sATI(stream: GLenum, nx: GLshort, ny: GLshort, nz: GLshort);
+}
+extern "C" {
+    pub fn glNormalStream3svATI(stream: GLenum, coords: *const GLshort);
+}
+extern "C" {
+    pub fn glNormalStream3iATI(stream: GLenum, nx: GLint, ny: GLint, nz: GLint);
+}
+extern "C" {
+    pub fn glNormalStream3ivATI(stream: GLenum, coords: *const GLint);
+}
+extern "C" {
+    pub fn glNormalStream3fATI(stream: GLenum, nx: GLfloat, ny: GLfloat, nz: GLfloat);
+}
+extern "C" {
+    pub fn glNormalStream3fvATI(stream: GLenum, coords: *const GLfloat);
+}
+extern "C" {
+    pub fn glNormalStream3dATI(stream: GLenum, nx: GLdouble, ny: GLdouble, nz: GLdouble);
+}
+extern "C" {
+    pub fn glNormalStream3dvATI(stream: GLenum, coords: *const GLdouble);
+}
+extern "C" {
+    pub fn glClientActiveVertexStreamATI(stream: GLenum);
+}
+extern "C" {
+    pub fn glVertexBlendEnviATI(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glVertexBlendEnvfATI(pname: GLenum, param: GLfloat);
+}
 pub type GLeglImageOES = *mut ::std::os::raw::c_void;
 pub type PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, image: GLeglImageOES, attrib_list: *const GLint),
@@ -33418,17 +39587,46 @@ pub type PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC = ::std::option::Option<
 pub type PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(texture: GLuint, image: GLeglImageOES, attrib_list: *const GLint),
 >;
+extern "C" {
+    pub fn glEGLImageTargetTexStorageEXT(
+        target: GLenum,
+        image: GLeglImageOES,
+        attrib_list: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glEGLImageTargetTextureStorageEXT(
+        texture: GLuint,
+        image: GLeglImageOES,
+        attrib_list: *const GLint,
+    );
+}
 pub type PFNGLUNIFORMBUFFEREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, buffer: GLuint)>;
 pub type PFNGLGETUNIFORMBUFFERSIZEEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLint>;
 pub type PFNGLGETUNIFORMOFFSETEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLintptr>;
+extern "C" {
+    pub fn glUniformBufferEXT(program: GLuint, location: GLint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glGetUniformBufferSizeEXT(program: GLuint, location: GLint) -> GLint;
+}
+extern "C" {
+    pub fn glGetUniformOffsetEXT(program: GLuint, location: GLint) -> GLintptr;
+}
 pub type PFNGLBLENDCOLOREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat),
 >;
+extern "C" {
+    pub fn glBlendColorEXT(red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat);
+}
 pub type PFNGLBLENDEQUATIONSEPARATEEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
+extern "C" {
+    pub fn glBlendEquationSeparateEXT(modeRGB: GLenum, modeAlpha: GLenum);
+}
 pub type PFNGLBLENDFUNCSEPARATEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         sfactorRGB: GLenum,
@@ -33437,7 +39635,18 @@ pub type PFNGLBLENDFUNCSEPARATEEXTPROC = ::std::option::Option<
         dfactorAlpha: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glBlendFuncSeparateEXT(
+        sfactorRGB: GLenum,
+        dfactorRGB: GLenum,
+        sfactorAlpha: GLenum,
+        dfactorAlpha: GLenum,
+    );
+}
 pub type PFNGLBLENDEQUATIONEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glBlendEquationEXT(mode: GLenum);
+}
 pub type PFNGLCOLORSUBTABLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -33451,9 +39660,34 @@ pub type PFNGLCOLORSUBTABLEEXTPROC = ::std::option::Option<
 pub type PFNGLCOPYCOLORSUBTABLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLsizei, x: GLint, y: GLint, width: GLsizei),
 >;
+extern "C" {
+    pub fn glColorSubTableEXT(
+        target: GLenum,
+        start: GLsizei,
+        count: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyColorSubTableEXT(
+        target: GLenum,
+        start: GLsizei,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
 pub type PFNGLLOCKARRAYSEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(first: GLint, count: GLsizei)>;
 pub type PFNGLUNLOCKARRAYSEXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glLockArraysEXT(first: GLint, count: GLsizei);
+}
+extern "C" {
+    pub fn glUnlockArraysEXT();
+}
 pub type PFNGLCONVOLUTIONFILTER1DEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -33539,6 +39773,94 @@ pub type PFNGLSEPARABLEFILTER2DEXTPROC = ::std::option::Option<
         column: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glConvolutionFilter1DEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        image: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glConvolutionFilter2DEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        image: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glConvolutionParameterfEXT(target: GLenum, pname: GLenum, params: GLfloat);
+}
+extern "C" {
+    pub fn glConvolutionParameterfvEXT(target: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glConvolutionParameteriEXT(target: GLenum, pname: GLenum, params: GLint);
+}
+extern "C" {
+    pub fn glConvolutionParameterivEXT(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glCopyConvolutionFilter1DEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyConvolutionFilter2DEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetConvolutionFilterEXT(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        image: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetConvolutionParameterfvEXT(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetConvolutionParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetSeparableFilterEXT(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        row: *mut ::std::os::raw::c_void,
+        column: *mut ::std::os::raw::c_void,
+        span: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glSeparableFilter2DEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        row: *const ::std::os::raw::c_void,
+        column: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLTANGENT3BEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(tx: GLbyte, ty: GLbyte, tz: GLbyte)>;
 pub type PFNGLTANGENT3BVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
@@ -33575,6 +39897,80 @@ pub type PFNGLTANGENTPOINTEREXTPROC = ::std::option::Option<
 pub type PFNGLBINORMALPOINTEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glTangent3bEXT(tx: GLbyte, ty: GLbyte, tz: GLbyte);
+}
+extern "C" {
+    pub fn glTangent3bvEXT(v: *const GLbyte);
+}
+extern "C" {
+    pub fn glTangent3dEXT(tx: GLdouble, ty: GLdouble, tz: GLdouble);
+}
+extern "C" {
+    pub fn glTangent3dvEXT(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glTangent3fEXT(tx: GLfloat, ty: GLfloat, tz: GLfloat);
+}
+extern "C" {
+    pub fn glTangent3fvEXT(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glTangent3iEXT(tx: GLint, ty: GLint, tz: GLint);
+}
+extern "C" {
+    pub fn glTangent3ivEXT(v: *const GLint);
+}
+extern "C" {
+    pub fn glTangent3sEXT(tx: GLshort, ty: GLshort, tz: GLshort);
+}
+extern "C" {
+    pub fn glTangent3svEXT(v: *const GLshort);
+}
+extern "C" {
+    pub fn glBinormal3bEXT(bx: GLbyte, by: GLbyte, bz: GLbyte);
+}
+extern "C" {
+    pub fn glBinormal3bvEXT(v: *const GLbyte);
+}
+extern "C" {
+    pub fn glBinormal3dEXT(bx: GLdouble, by: GLdouble, bz: GLdouble);
+}
+extern "C" {
+    pub fn glBinormal3dvEXT(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glBinormal3fEXT(bx: GLfloat, by: GLfloat, bz: GLfloat);
+}
+extern "C" {
+    pub fn glBinormal3fvEXT(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glBinormal3iEXT(bx: GLint, by: GLint, bz: GLint);
+}
+extern "C" {
+    pub fn glBinormal3ivEXT(v: *const GLint);
+}
+extern "C" {
+    pub fn glBinormal3sEXT(bx: GLshort, by: GLshort, bz: GLshort);
+}
+extern "C" {
+    pub fn glBinormal3svEXT(v: *const GLshort);
+}
+extern "C" {
+    pub fn glTangentPointerEXT(
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glBinormalPointerEXT(
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLCOPYTEXIMAGE1DEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -33633,10 +40029,74 @@ pub type PFNGLCOPYTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glCopyTexImage1DEXT(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyTexImage2DEXT(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyTexSubImage1DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyTexSubImage2DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyTexSubImage3DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
 pub type PFNGLCULLPARAMETERDVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLdouble)>;
 pub type PFNGLCULLPARAMETERFVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
+extern "C" {
+    pub fn glCullParameterdvEXT(pname: GLenum, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glCullParameterfvEXT(pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLLABELOBJECTEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(type_: GLenum, object: GLuint, length: GLsizei, label: *const GLchar),
 >;
@@ -33649,13 +40109,37 @@ pub type PFNGLGETOBJECTLABELEXTPROC = ::std::option::Option<
         label: *mut GLchar,
     ),
 >;
+extern "C" {
+    pub fn glLabelObjectEXT(type_: GLenum, object: GLuint, length: GLsizei, label: *const GLchar);
+}
+extern "C" {
+    pub fn glGetObjectLabelEXT(
+        type_: GLenum,
+        object: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        label: *mut GLchar,
+    );
+}
 pub type PFNGLINSERTEVENTMARKEREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
 pub type PFNGLPUSHGROUPMARKEREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
 pub type PFNGLPOPGROUPMARKEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glInsertEventMarkerEXT(length: GLsizei, marker: *const GLchar);
+}
+extern "C" {
+    pub fn glPushGroupMarkerEXT(length: GLsizei, marker: *const GLchar);
+}
+extern "C" {
+    pub fn glPopGroupMarkerEXT();
+}
 pub type PFNGLDEPTHBOUNDSEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(zmin: GLclampd, zmax: GLclampd)>;
+extern "C" {
+    pub fn glDepthBoundsEXT(zmin: GLclampd, zmax: GLclampd);
+}
 pub type PFNGLMATRIXLOADFEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXLOADDEXTPROC =
@@ -35262,9 +41746,1987 @@ pub type PFNGLTEXTUREPAGECOMMITMENTEXTPROC = ::std::option::Option<
 >;
 pub type PFNGLVERTEXARRAYVERTEXATTRIBDIVISOREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint, divisor: GLuint)>;
+extern "C" {
+    pub fn glMatrixLoadfEXT(mode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixLoaddEXT(mode: GLenum, m: *const GLdouble);
+}
+extern "C" {
+    pub fn glMatrixMultfEXT(mode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixMultdEXT(mode: GLenum, m: *const GLdouble);
+}
+extern "C" {
+    pub fn glMatrixLoadIdentityEXT(mode: GLenum);
+}
+extern "C" {
+    pub fn glMatrixRotatefEXT(mode: GLenum, angle: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glMatrixRotatedEXT(mode: GLenum, angle: GLdouble, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glMatrixScalefEXT(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glMatrixScaledEXT(mode: GLenum, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glMatrixTranslatefEXT(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glMatrixTranslatedEXT(mode: GLenum, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glMatrixFrustumEXT(
+        mode: GLenum,
+        left: GLdouble,
+        right: GLdouble,
+        bottom: GLdouble,
+        top: GLdouble,
+        zNear: GLdouble,
+        zFar: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glMatrixOrthoEXT(
+        mode: GLenum,
+        left: GLdouble,
+        right: GLdouble,
+        bottom: GLdouble,
+        top: GLdouble,
+        zNear: GLdouble,
+        zFar: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glMatrixPopEXT(mode: GLenum);
+}
+extern "C" {
+    pub fn glMatrixPushEXT(mode: GLenum);
+}
+extern "C" {
+    pub fn glClientAttribDefaultEXT(mask: GLbitfield);
+}
+extern "C" {
+    pub fn glPushClientAttribDefaultEXT(mask: GLbitfield);
+}
+extern "C" {
+    pub fn glTextureParameterfEXT(texture: GLuint, target: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glTextureParameterfvEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTextureParameteriEXT(texture: GLuint, target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glTextureParameterivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glTextureImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetTextureImageEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetTextureParameterfvEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetTextureParameterivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetTextureLevelParameterfvEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetTextureLevelParameterivEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glTextureImage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTextureSubImage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyTextureSubImage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glBindMultiTextureEXT(texunit: GLenum, target: GLenum, texture: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexCoordPointerEXT(
+        texunit: GLenum,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMultiTexEnvfEXT(texunit: GLenum, target: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glMultiTexEnvfvEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMultiTexEnviEXT(texunit: GLenum, target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glMultiTexEnvivEXT(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glMultiTexGendEXT(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLdouble);
+}
+extern "C" {
+    pub fn glMultiTexGendvEXT(
+        texunit: GLenum,
+        coord: GLenum,
+        pname: GLenum,
+        params: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glMultiTexGenfEXT(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glMultiTexGenfvEXT(
+        texunit: GLenum,
+        coord: GLenum,
+        pname: GLenum,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMultiTexGeniEXT(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glMultiTexGenivEXT(texunit: GLenum, coord: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glGetMultiTexEnvfvEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexEnvivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexGendvEXT(
+        texunit: GLenum,
+        coord: GLenum,
+        pname: GLenum,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexGenfvEXT(
+        texunit: GLenum,
+        coord: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexGenivEXT(texunit: GLenum, coord: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glMultiTexParameteriEXT(texunit: GLenum, target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glMultiTexParameterivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiTexParameterfEXT(texunit: GLenum, target: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glMultiTexParameterfvEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMultiTexImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMultiTexImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMultiTexSubImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMultiTexSubImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyMultiTexImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyMultiTexImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+    );
+}
+extern "C" {
+    pub fn glCopyMultiTexSubImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCopyMultiTexSubImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexImageEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexParameterfvEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexParameterivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexLevelParameterfvEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexLevelParameterivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiTexImage3DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMultiTexSubImage3DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCopyMultiTexSubImage3DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glEnableClientStateIndexedEXT(array: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glDisableClientStateIndexedEXT(array: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glGetFloatIndexedvEXT(target: GLenum, index: GLuint, data: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetDoubleIndexedvEXT(target: GLenum, index: GLuint, data: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetPointerIndexedvEXT(
+        target: GLenum,
+        index: GLuint,
+        data: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glEnableIndexedEXT(target: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glDisableIndexedEXT(target: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glIsEnabledIndexedEXT(target: GLenum, index: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetIntegerIndexedvEXT(target: GLenum, index: GLuint, data: *mut GLint);
+}
+extern "C" {
+    pub fn glGetBooleanIndexedvEXT(target: GLenum, index: GLuint, data: *mut GLboolean);
+}
+extern "C" {
+    pub fn glCompressedTextureImage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedTextureSubImage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetCompressedTextureImageEXT(
+        texture: GLuint,
+        target: GLenum,
+        lod: GLint,
+        img: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexImage3DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        border: GLint,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexSubImage3DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexSubImage2DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glCompressedMultiTexSubImage1DEXT(
+        texunit: GLenum,
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        imageSize: GLsizei,
+        bits: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetCompressedMultiTexImageEXT(
+        texunit: GLenum,
+        target: GLenum,
+        lod: GLint,
+        img: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMatrixLoadTransposefEXT(mode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixLoadTransposedEXT(mode: GLenum, m: *const GLdouble);
+}
+extern "C" {
+    pub fn glMatrixMultTransposefEXT(mode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixMultTransposedEXT(mode: GLenum, m: *const GLdouble);
+}
+extern "C" {
+    pub fn glNamedBufferDataEXT(
+        buffer: GLuint,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        usage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferSubDataEXT(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapNamedBufferEXT(buffer: GLuint, access: GLenum) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glUnmapNamedBufferEXT(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetNamedBufferParameterivEXT(buffer: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetNamedBufferPointervEXT(
+        buffer: GLuint,
+        pname: GLenum,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetNamedBufferSubDataEXT(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1fEXT(program: GLuint, location: GLint, v0: GLfloat);
+}
+extern "C" {
+    pub fn glProgramUniform2fEXT(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat);
+}
+extern "C" {
+    pub fn glProgramUniform3fEXT(
+        program: GLuint,
+        location: GLint,
+        v0: GLfloat,
+        v1: GLfloat,
+        v2: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4fEXT(
+        program: GLuint,
+        location: GLint,
+        v0: GLfloat,
+        v1: GLfloat,
+        v2: GLfloat,
+        v3: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1iEXT(program: GLuint, location: GLint, v0: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform2iEXT(program: GLuint, location: GLint, v0: GLint, v1: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform3iEXT(program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint);
+}
+extern "C" {
+    pub fn glProgramUniform4iEXT(
+        program: GLuint,
+        location: GLint,
+        v0: GLint,
+        v1: GLint,
+        v2: GLint,
+        v3: GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1ivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2ivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3ivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4ivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x3fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x2fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x4fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x2fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x4fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x3fvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTextureBufferEXT(
+        texture: GLuint,
+        target: GLenum,
+        internalformat: GLenum,
+        buffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glMultiTexBufferEXT(
+        texunit: GLenum,
+        target: GLenum,
+        internalformat: GLenum,
+        buffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glTextureParameterIivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glTextureParameterIuivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetTextureParameterIivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetTextureParameterIuivEXT(
+        texture: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glMultiTexParameterIivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiTexParameterIuivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexParameterIivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetMultiTexParameterIuivEXT(
+        texunit: GLenum,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1uiEXT(program: GLuint, location: GLint, v0: GLuint);
+}
+extern "C" {
+    pub fn glProgramUniform2uiEXT(program: GLuint, location: GLint, v0: GLuint, v1: GLuint);
+}
+extern "C" {
+    pub fn glProgramUniform3uiEXT(
+        program: GLuint,
+        location: GLint,
+        v0: GLuint,
+        v1: GLuint,
+        v2: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4uiEXT(
+        program: GLuint,
+        location: GLint,
+        v0: GLuint,
+        v1: GLuint,
+        v2: GLuint,
+        v3: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1uivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2uivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3uivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4uivEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameters4fvEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameterI4iEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        x: GLint,
+        y: GLint,
+        z: GLint,
+        w: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameterI4ivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParametersI4ivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameterI4uiEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        x: GLuint,
+        y: GLuint,
+        z: GLuint,
+        w: GLuint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameterI4uivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParametersI4uivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramLocalParameterIivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramLocalParameterIuivEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glEnableClientStateiEXT(array: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glDisableClientStateiEXT(array: GLenum, index: GLuint);
+}
+extern "C" {
+    pub fn glGetFloati_vEXT(pname: GLenum, index: GLuint, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetDoublei_vEXT(pname: GLenum, index: GLuint, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetPointeri_vEXT(
+        pname: GLenum,
+        index: GLuint,
+        params: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramStringEXT(
+        program: GLuint,
+        target: GLenum,
+        format: GLenum,
+        len: GLsizei,
+        string: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameter4dEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameter4dvEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameter4fEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNamedProgramLocalParameter4fvEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramLocalParameterdvEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramLocalParameterfvEXT(
+        program: GLuint,
+        target: GLenum,
+        index: GLuint,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramivEXT(
+        program: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetNamedProgramStringEXT(
+        program: GLuint,
+        target: GLenum,
+        pname: GLenum,
+        string: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorageEXT(
+        renderbuffer: GLuint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetNamedRenderbufferParameterivEXT(
+        renderbuffer: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorageMultisampleEXT(
+        renderbuffer: GLuint,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glNamedRenderbufferStorageMultisampleCoverageEXT(
+        renderbuffer: GLuint,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glCheckNamedFramebufferStatusEXT(framebuffer: GLuint, target: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glNamedFramebufferTexture1DEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTexture2DEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTexture3DEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+        zoffset: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferRenderbufferEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        renderbuffertarget: GLenum,
+        renderbuffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetNamedFramebufferAttachmentParameterivEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGenerateTextureMipmapEXT(texture: GLuint, target: GLenum);
+}
+extern "C" {
+    pub fn glGenerateMultiTexMipmapEXT(texunit: GLenum, target: GLenum);
+}
+extern "C" {
+    pub fn glFramebufferDrawBufferEXT(framebuffer: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glFramebufferDrawBuffersEXT(framebuffer: GLuint, n: GLsizei, bufs: *const GLenum);
+}
+extern "C" {
+    pub fn glFramebufferReadBufferEXT(framebuffer: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glGetFramebufferParameterivEXT(framebuffer: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glNamedCopyBufferSubDataEXT(
+        readBuffer: GLuint,
+        writeBuffer: GLuint,
+        readOffset: GLintptr,
+        writeOffset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTextureEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTextureLayerEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        layer: GLint,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferTextureFaceEXT(
+        framebuffer: GLuint,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        face: GLenum,
+    );
+}
+extern "C" {
+    pub fn glTextureRenderbufferEXT(texture: GLuint, target: GLenum, renderbuffer: GLuint);
+}
+extern "C" {
+    pub fn glMultiTexRenderbufferEXT(texunit: GLenum, target: GLenum, renderbuffer: GLuint);
+}
+extern "C" {
+    pub fn glVertexArrayVertexOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayColorOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayEdgeFlagOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayIndexOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayNormalOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayTexCoordOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayMultiTexCoordOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        texunit: GLenum,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayFogCoordOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArraySecondaryColorOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribIOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glEnableVertexArrayEXT(vaobj: GLuint, array: GLenum);
+}
+extern "C" {
+    pub fn glDisableVertexArrayEXT(vaobj: GLuint, array: GLenum);
+}
+extern "C" {
+    pub fn glEnableVertexArrayAttribEXT(vaobj: GLuint, index: GLuint);
+}
+extern "C" {
+    pub fn glDisableVertexArrayAttribEXT(vaobj: GLuint, index: GLuint);
+}
+extern "C" {
+    pub fn glGetVertexArrayIntegervEXT(vaobj: GLuint, pname: GLenum, param: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexArrayPointervEXT(
+        vaobj: GLuint,
+        pname: GLenum,
+        param: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetVertexArrayIntegeri_vEXT(
+        vaobj: GLuint,
+        index: GLuint,
+        pname: GLenum,
+        param: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetVertexArrayPointeri_vEXT(
+        vaobj: GLuint,
+        index: GLuint,
+        pname: GLenum,
+        param: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapNamedBufferRangeEXT(
+        buffer: GLuint,
+        offset: GLintptr,
+        length: GLsizeiptr,
+        access: GLbitfield,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn glFlushMappedNamedBufferRangeEXT(buffer: GLuint, offset: GLintptr, length: GLsizeiptr);
+}
+extern "C" {
+    pub fn glNamedBufferStorageEXT(
+        buffer: GLuint,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+        flags: GLbitfield,
+    );
+}
+extern "C" {
+    pub fn glClearNamedBufferDataEXT(
+        buffer: GLuint,
+        internalformat: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glClearNamedBufferSubDataEXT(
+        buffer: GLuint,
+        internalformat: GLenum,
+        offset: GLsizeiptr,
+        size: GLsizeiptr,
+        format: GLenum,
+        type_: GLenum,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferParameteriEXT(framebuffer: GLuint, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glGetNamedFramebufferParameterivEXT(
+        framebuffer: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1dEXT(program: GLuint, location: GLint, x: GLdouble);
+}
+extern "C" {
+    pub fn glProgramUniform2dEXT(program: GLuint, location: GLint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glProgramUniform3dEXT(
+        program: GLuint,
+        location: GLint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4dEXT(
+        program: GLuint,
+        location: GLint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform1dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform2dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform3dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniform4dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x3dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix2x4dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x2dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix3x4dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x2dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramUniformMatrix4x3dvEXT(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        transpose: GLboolean,
+        value: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glTextureBufferRangeEXT(
+        texture: GLuint,
+        target: GLenum,
+        internalformat: GLenum,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage1DEXT(
+        texture: GLuint,
+        target: GLenum,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage2DEXT(
+        texture: GLuint,
+        target: GLenum,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage3DEXT(
+        texture: GLuint,
+        target: GLenum,
+        levels: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage2DMultisampleEXT(
+        texture: GLuint,
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureStorage3DMultisampleEXT(
+        texture: GLuint,
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedsamplelocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayBindVertexBufferEXT(
+        vaobj: GLuint,
+        bindingindex: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribFormatEXT(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribIFormatEXT(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribLFormatEXT(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        size: GLint,
+        type_: GLenum,
+        relativeoffset: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribBindingEXT(
+        vaobj: GLuint,
+        attribindex: GLuint,
+        bindingindex: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexBindingDivisorEXT(
+        vaobj: GLuint,
+        bindingindex: GLuint,
+        divisor: GLuint,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribLOffsetEXT(
+        vaobj: GLuint,
+        buffer: GLuint,
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        offset: GLintptr,
+    );
+}
+extern "C" {
+    pub fn glTexturePageCommitmentEXT(
+        texture: GLuint,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        commit: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glVertexArrayVertexAttribDivisorEXT(vaobj: GLuint, index: GLuint, divisor: GLuint);
+}
 pub type PFNGLCOLORMASKINDEXEDEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean),
 >;
+extern "C" {
+    pub fn glColorMaskIndexedEXT(
+        index: GLuint,
+        r: GLboolean,
+        g: GLboolean,
+        b: GLboolean,
+        a: GLboolean,
+    );
+}
 pub type PFNGLDRAWARRAYSINSTANCEDEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, start: GLint, count: GLsizei, primcount: GLsizei),
 >;
@@ -35277,6 +43739,18 @@ pub type PFNGLDRAWELEMENTSINSTANCEDEXTPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glDrawArraysInstancedEXT(mode: GLenum, start: GLint, count: GLsizei, primcount: GLsizei);
+}
+extern "C" {
+    pub fn glDrawElementsInstancedEXT(
+        mode: GLenum,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+    );
+}
 pub type PFNGLDRAWRANGEELEMENTSEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -35287,6 +43761,16 @@ pub type PFNGLDRAWRANGEELEMENTSEXTPROC = ::std::option::Option<
         indices: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glDrawRangeElementsEXT(
+        mode: GLenum,
+        start: GLuint,
+        end: GLuint,
+        count: GLsizei,
+        type_: GLenum,
+        indices: *const ::std::os::raw::c_void,
+    );
+}
 pub type GLeglClientBufferEXT = *mut ::std::os::raw::c_void;
 pub type PFNGLBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -35306,6 +43790,24 @@ pub type PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
         flags: GLbitfield,
     ),
 >;
+extern "C" {
+    pub fn glBufferStorageExternalEXT(
+        target: GLenum,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        clientBuffer: GLeglClientBufferEXT,
+        flags: GLbitfield,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferStorageExternalEXT(
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        clientBuffer: GLeglClientBufferEXT,
+        flags: GLbitfield,
+    );
+}
 pub type PFNGLFOGCOORDFEXTPROC = ::std::option::Option<unsafe extern "C" fn(coord: GLfloat)>;
 pub type PFNGLFOGCOORDFVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(coord: *const GLfloat)>;
@@ -35315,6 +43817,25 @@ pub type PFNGLFOGCOORDDVEXTPROC =
 pub type PFNGLFOGCOORDPOINTEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glFogCoordfEXT(coord: GLfloat);
+}
+extern "C" {
+    pub fn glFogCoordfvEXT(coord: *const GLfloat);
+}
+extern "C" {
+    pub fn glFogCoorddEXT(coord: GLdouble);
+}
+extern "C" {
+    pub fn glFogCoorddvEXT(coord: *const GLdouble);
+}
+extern "C" {
+    pub fn glFogCoordPointerEXT(
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLBLITFRAMEBUFFEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         srcX0: GLint,
@@ -35329,6 +43850,20 @@ pub type PFNGLBLITFRAMEBUFFEREXTPROC = ::std::option::Option<
         filter: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glBlitFramebufferEXT(
+        srcX0: GLint,
+        srcY0: GLint,
+        srcX1: GLint,
+        srcY1: GLint,
+        dstX0: GLint,
+        dstY0: GLint,
+        dstX1: GLint,
+        dstY1: GLint,
+        mask: GLbitfield,
+        filter: GLenum,
+    );
+}
 pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35338,6 +43873,15 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glRenderbufferStorageMultisampleEXT(
+        target: GLenum,
+        samples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
 pub type PFNGLISRENDERBUFFEREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(renderbuffer: GLuint) -> GLboolean>;
 pub type PFNGLBINDRENDERBUFFEREXTPROC =
@@ -35401,14 +43945,118 @@ pub type PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::std::option::Option
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint),
 >;
 pub type PFNGLGENERATEMIPMAPEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+extern "C" {
+    pub fn glIsRenderbufferEXT(renderbuffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindRenderbufferEXT(target: GLenum, renderbuffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteRenderbuffersEXT(n: GLsizei, renderbuffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenRenderbuffersEXT(n: GLsizei, renderbuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glRenderbufferStorageEXT(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetRenderbufferParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glIsFramebufferEXT(framebuffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindFramebufferEXT(target: GLenum, framebuffer: GLuint);
+}
+extern "C" {
+    pub fn glDeleteFramebuffersEXT(n: GLsizei, framebuffers: *const GLuint);
+}
+extern "C" {
+    pub fn glGenFramebuffersEXT(n: GLsizei, framebuffers: *mut GLuint);
+}
+extern "C" {
+    pub fn glCheckFramebufferStatusEXT(target: GLenum) -> GLenum;
+}
+extern "C" {
+    pub fn glFramebufferTexture1DEXT(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTexture2DEXT(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTexture3DEXT(
+        target: GLenum,
+        attachment: GLenum,
+        textarget: GLenum,
+        texture: GLuint,
+        level: GLint,
+        zoffset: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferRenderbufferEXT(
+        target: GLenum,
+        attachment: GLenum,
+        renderbuffertarget: GLenum,
+        renderbuffer: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetFramebufferAttachmentParameterivEXT(
+        target: GLenum,
+        attachment: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGenerateMipmapEXT(target: GLenum);
+}
 pub type PFNGLPROGRAMPARAMETERIEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
+extern "C" {
+    pub fn glProgramParameteriEXT(program: GLuint, pname: GLenum, value: GLint);
+}
 pub type PFNGLPROGRAMENVPARAMETERS4FVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLfloat),
 >;
 pub type PFNGLPROGRAMLOCALPARAMETERS4FVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLfloat),
 >;
+extern "C" {
+    pub fn glProgramEnvParameters4fvEXT(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameters4fvEXT(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLfloat,
+    );
+}
 pub type PFNGLGETUNIFORMUIVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLuint),
 >;
@@ -35439,6 +44087,39 @@ pub type PFNGLUNIFORM3UIVEXTPROC = ::std::option::Option<
 pub type PFNGLUNIFORM4UIVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
+extern "C" {
+    pub fn glGetUniformuivEXT(program: GLuint, location: GLint, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glBindFragDataLocationEXT(program: GLuint, color: GLuint, name: *const GLchar);
+}
+extern "C" {
+    pub fn glGetFragDataLocationEXT(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glUniform1uiEXT(location: GLint, v0: GLuint);
+}
+extern "C" {
+    pub fn glUniform2uiEXT(location: GLint, v0: GLuint, v1: GLuint);
+}
+extern "C" {
+    pub fn glUniform3uiEXT(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint);
+}
+extern "C" {
+    pub fn glUniform4uiEXT(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint);
+}
+extern "C" {
+    pub fn glUniform1uivEXT(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform2uivEXT(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform3uivEXT(location: GLint, count: GLsizei, value: *const GLuint);
+}
+extern "C" {
+    pub fn glUniform4uivEXT(location: GLint, count: GLsizei, value: *const GLuint);
+}
 pub type PFNGLGETHISTOGRAMEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35475,14 +44156,71 @@ pub type PFNGLMINMAXEXTPROC = ::std::option::Option<
 >;
 pub type PFNGLRESETHISTOGRAMEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLRESETMINMAXEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+extern "C" {
+    pub fn glGetHistogramEXT(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetHistogramParameterfvEXT(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetHistogramParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetMinmaxEXT(
+        target: GLenum,
+        reset: GLboolean,
+        format: GLenum,
+        type_: GLenum,
+        values: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetMinmaxParameterfvEXT(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetMinmaxParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glHistogramEXT(target: GLenum, width: GLsizei, internalformat: GLenum, sink: GLboolean);
+}
+extern "C" {
+    pub fn glMinmaxEXT(target: GLenum, internalformat: GLenum, sink: GLboolean);
+}
+extern "C" {
+    pub fn glResetHistogramEXT(target: GLenum);
+}
+extern "C" {
+    pub fn glResetMinmaxEXT(target: GLenum);
+}
 pub type PFNGLINDEXFUNCEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLclampf)>;
+extern "C" {
+    pub fn glIndexFuncEXT(func: GLenum, ref_: GLclampf);
+}
 pub type PFNGLINDEXMATERIALEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
+extern "C" {
+    pub fn glIndexMaterialEXT(face: GLenum, mode: GLenum);
+}
 pub type PFNGLAPPLYTEXTUREEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type PFNGLTEXTURELIGHTEXTPROC = ::std::option::Option<unsafe extern "C" fn(pname: GLenum)>;
 pub type PFNGLTEXTUREMATERIALEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
+extern "C" {
+    pub fn glApplyTextureEXT(mode: GLenum);
+}
+extern "C" {
+    pub fn glTextureLightEXT(pname: GLenum);
+}
+extern "C" {
+    pub fn glTextureMaterialEXT(face: GLenum, mode: GLenum);
+}
 pub type PFNGLGETUNSIGNEDBYTEVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, data: *mut GLubyte)>;
 pub type PFNGLGETUNSIGNEDBYTEI_VEXTPROC =
@@ -35621,9 +44359,165 @@ pub type PFNGLTEXTURESTORAGEMEM1DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
+extern "C" {
+    pub fn glGetUnsignedBytevEXT(pname: GLenum, data: *mut GLubyte);
+}
+extern "C" {
+    pub fn glGetUnsignedBytei_vEXT(target: GLenum, index: GLuint, data: *mut GLubyte);
+}
+extern "C" {
+    pub fn glDeleteMemoryObjectsEXT(n: GLsizei, memoryObjects: *const GLuint);
+}
+extern "C" {
+    pub fn glIsMemoryObjectEXT(memoryObject: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glCreateMemoryObjectsEXT(n: GLsizei, memoryObjects: *mut GLuint);
+}
+extern "C" {
+    pub fn glMemoryObjectParameterivEXT(memoryObject: GLuint, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glGetMemoryObjectParameterivEXT(memoryObject: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glTexStorageMem2DEXT(
+        target: GLenum,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTexStorageMem2DMultisampleEXT(
+        target: GLenum,
+        samples: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedSampleLocations: GLboolean,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTexStorageMem3DEXT(
+        target: GLenum,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTexStorageMem3DMultisampleEXT(
+        target: GLenum,
+        samples: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedSampleLocations: GLboolean,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glBufferStorageMemEXT(
+        target: GLenum,
+        size: GLsizeiptr,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageMem2DEXT(
+        texture: GLuint,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageMem2DMultisampleEXT(
+        texture: GLuint,
+        samples: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        fixedSampleLocations: GLboolean,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageMem3DEXT(
+        texture: GLuint,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageMem3DMultisampleEXT(
+        texture: GLuint,
+        samples: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedSampleLocations: GLboolean,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glNamedBufferStorageMemEXT(
+        buffer: GLuint,
+        size: GLsizeiptr,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTexStorageMem1DEXT(
+        target: GLenum,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
+extern "C" {
+    pub fn glTextureStorageMem1DEXT(
+        texture: GLuint,
+        levels: GLsizei,
+        internalFormat: GLenum,
+        width: GLsizei,
+        memory: GLuint,
+        offset: GLuint64,
+    );
+}
 pub type PFNGLIMPORTMEMORYFDEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(memory: GLuint, size: GLuint64, handleType: GLenum, fd: GLint),
 >;
+extern "C" {
+    pub fn glImportMemoryFdEXT(memory: GLuint, size: GLuint64, handleType: GLenum, fd: GLint);
+}
 pub type PFNGLIMPORTMEMORYWIN32HANDLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         memory: GLuint,
@@ -35640,6 +44534,22 @@ pub type PFNGLIMPORTMEMORYWIN32NAMEEXTPROC = ::std::option::Option<
         name: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glImportMemoryWin32HandleEXT(
+        memory: GLuint,
+        size: GLuint64,
+        handleType: GLenum,
+        handle: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glImportMemoryWin32NameEXT(
+        memory: GLuint,
+        size: GLuint64,
+        handleType: GLenum,
+        name: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLMULTIDRAWARRAYSEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -35657,9 +44567,32 @@ pub type PFNGLMULTIDRAWELEMENTSEXTPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glMultiDrawArraysEXT(
+        mode: GLenum,
+        first: *const GLint,
+        count: *const GLsizei,
+        primcount: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsEXT(
+        mode: GLenum,
+        count: *const GLsizei,
+        type_: GLenum,
+        indices: *const *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+    );
+}
 pub type PFNGLSAMPLEMASKEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
 pub type PFNGLSAMPLEPATTERNEXTPROC = ::std::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
+extern "C" {
+    pub fn glSampleMaskEXT(value: GLclampf, invert: GLboolean);
+}
+extern "C" {
+    pub fn glSamplePatternEXT(pattern: GLenum);
+}
 pub type PFNGLCOLORTABLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35683,6 +44616,30 @@ pub type PFNGLGETCOLORTABLEPARAMETERIVEXTPROC =
 pub type PFNGLGETCOLORTABLEPARAMETERFVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
+extern "C" {
+    pub fn glColorTableEXT(
+        target: GLenum,
+        internalFormat: GLenum,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        table: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetColorTableEXT(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        data: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetColorTableParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetColorTableParameterfvEXT(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLPIXELTRANSFORMPARAMETERIEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLPIXELTRANSFORMPARAMETERFEXTPROC =
@@ -35698,17 +44655,53 @@ pub type PFNGLGETPIXELTRANSFORMPARAMETERIVEXTPROC =
 pub type PFNGLGETPIXELTRANSFORMPARAMETERFVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
+extern "C" {
+    pub fn glPixelTransformParameteriEXT(target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glPixelTransformParameterfEXT(target: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPixelTransformParameterivEXT(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glPixelTransformParameterfvEXT(target: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetPixelTransformParameterivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetPixelTransformParameterfvEXT(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLPOINTPARAMETERFEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+extern "C" {
+    pub fn glPointParameterfEXT(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPointParameterfvEXT(pname: GLenum, params: *const GLfloat);
+}
 pub type PFNGLPOLYGONOFFSETEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, bias: GLfloat)>;
+extern "C" {
+    pub fn glPolygonOffsetEXT(factor: GLfloat, bias: GLfloat);
+}
 pub type PFNGLPOLYGONOFFSETCLAMPEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
+extern "C" {
+    pub fn glPolygonOffsetClampEXT(factor: GLfloat, units: GLfloat, clamp: GLfloat);
+}
 pub type PFNGLPROVOKINGVERTEXEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glProvokingVertexEXT(mode: GLenum);
+}
 pub type PFNGLRASTERSAMPLESEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(samples: GLuint, fixedsamplelocations: GLboolean)>;
+extern "C" {
+    pub fn glRasterSamplesEXT(samples: GLuint, fixedsamplelocations: GLboolean);
+}
 pub type PFNGLSECONDARYCOLOR3BEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(red: GLbyte, green: GLbyte, blue: GLbyte)>;
 pub type PFNGLSECONDARYCOLOR3BVEXTPROC =
@@ -35749,6 +44742,62 @@ pub type PFNGLSECONDARYCOLORPOINTEREXTPROC = ::std::option::Option<
         pointer: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glSecondaryColor3bEXT(red: GLbyte, green: GLbyte, blue: GLbyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3bvEXT(v: *const GLbyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3dEXT(red: GLdouble, green: GLdouble, blue: GLdouble);
+}
+extern "C" {
+    pub fn glSecondaryColor3dvEXT(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glSecondaryColor3fEXT(red: GLfloat, green: GLfloat, blue: GLfloat);
+}
+extern "C" {
+    pub fn glSecondaryColor3fvEXT(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glSecondaryColor3iEXT(red: GLint, green: GLint, blue: GLint);
+}
+extern "C" {
+    pub fn glSecondaryColor3ivEXT(v: *const GLint);
+}
+extern "C" {
+    pub fn glSecondaryColor3sEXT(red: GLshort, green: GLshort, blue: GLshort);
+}
+extern "C" {
+    pub fn glSecondaryColor3svEXT(v: *const GLshort);
+}
+extern "C" {
+    pub fn glSecondaryColor3ubEXT(red: GLubyte, green: GLubyte, blue: GLubyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3ubvEXT(v: *const GLubyte);
+}
+extern "C" {
+    pub fn glSecondaryColor3uiEXT(red: GLuint, green: GLuint, blue: GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColor3uivEXT(v: *const GLuint);
+}
+extern "C" {
+    pub fn glSecondaryColor3usEXT(red: GLushort, green: GLushort, blue: GLushort);
+}
+extern "C" {
+    pub fn glSecondaryColor3usvEXT(v: *const GLushort);
+}
+extern "C" {
+    pub fn glSecondaryColorPointerEXT(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLGENSEMAPHORESEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, semaphores: *mut GLuint)>;
 pub type PFNGLDELETESEMAPHORESEXTPROC =
@@ -35781,8 +44830,46 @@ pub type PFNGLSIGNALSEMAPHOREEXTPROC = ::std::option::Option<
         dstLayouts: *const GLenum,
     ),
 >;
+extern "C" {
+    pub fn glGenSemaphoresEXT(n: GLsizei, semaphores: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteSemaphoresEXT(n: GLsizei, semaphores: *const GLuint);
+}
+extern "C" {
+    pub fn glIsSemaphoreEXT(semaphore: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glSemaphoreParameterui64vEXT(semaphore: GLuint, pname: GLenum, params: *const GLuint64);
+}
+extern "C" {
+    pub fn glGetSemaphoreParameterui64vEXT(semaphore: GLuint, pname: GLenum, params: *mut GLuint64);
+}
+extern "C" {
+    pub fn glWaitSemaphoreEXT(
+        semaphore: GLuint,
+        numBufferBarriers: GLuint,
+        buffers: *const GLuint,
+        numTextureBarriers: GLuint,
+        textures: *const GLuint,
+        srcLayouts: *const GLenum,
+    );
+}
+extern "C" {
+    pub fn glSignalSemaphoreEXT(
+        semaphore: GLuint,
+        numBufferBarriers: GLuint,
+        buffers: *const GLuint,
+        numTextureBarriers: GLuint,
+        textures: *const GLuint,
+        dstLayouts: *const GLenum,
+    );
+}
 pub type PFNGLIMPORTSEMAPHOREFDEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(semaphore: GLuint, handleType: GLenum, fd: GLint)>;
+extern "C" {
+    pub fn glImportSemaphoreFdEXT(semaphore: GLuint, handleType: GLenum, fd: GLint);
+}
 pub type PFNGLIMPORTSEMAPHOREWIN32HANDLEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         semaphore: GLuint,
@@ -35797,12 +44884,38 @@ pub type PFNGLIMPORTSEMAPHOREWIN32NAMEEXTPROC = ::std::option::Option<
         name: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glImportSemaphoreWin32HandleEXT(
+        semaphore: GLuint,
+        handleType: GLenum,
+        handle: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glImportSemaphoreWin32NameEXT(
+        semaphore: GLuint,
+        handleType: GLenum,
+        name: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLUSESHADERPROGRAMEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(type_: GLenum, program: GLuint)>;
 pub type PFNGLACTIVEPROGRAMEXTPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
 pub type PFNGLCREATESHADERPROGRAMEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(type_: GLenum, string: *const GLchar) -> GLuint>;
+extern "C" {
+    pub fn glUseShaderProgramEXT(type_: GLenum, program: GLuint);
+}
+extern "C" {
+    pub fn glActiveProgramEXT(program: GLuint);
+}
+extern "C" {
+    pub fn glCreateShaderProgramEXT(type_: GLenum, string: *const GLchar) -> GLuint;
+}
 pub type PFNGLFRAMEBUFFERFETCHBARRIEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFramebufferFetchBarrierEXT();
+}
 pub type PFNGLBINDIMAGETEXTUREEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
@@ -35816,9 +44929,29 @@ pub type PFNGLBINDIMAGETEXTUREEXTPROC = ::std::option::Option<
 >;
 pub type PFNGLMEMORYBARRIEREXTPROC =
     ::std::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
+extern "C" {
+    pub fn glBindImageTextureEXT(
+        index: GLuint,
+        texture: GLuint,
+        level: GLint,
+        layered: GLboolean,
+        layer: GLint,
+        access: GLenum,
+        format: GLint,
+    );
+}
+extern "C" {
+    pub fn glMemoryBarrierEXT(barriers: GLbitfield);
+}
 pub type PFNGLSTENCILCLEARTAGEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(stencilTagBits: GLsizei, stencilClearTag: GLuint)>;
+extern "C" {
+    pub fn glStencilClearTagEXT(stencilTagBits: GLsizei, stencilClearTag: GLuint);
+}
 pub type PFNGLACTIVESTENCILFACEEXTPROC = ::std::option::Option<unsafe extern "C" fn(face: GLenum)>;
+extern "C" {
+    pub fn glActiveStencilFaceEXT(face: GLenum);
+}
 pub type PFNGLTEXSUBIMAGE1DEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35843,6 +44976,30 @@ pub type PFNGLTEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         pixels: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glTexSubImage1DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTexSubImage2DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLTEXIMAGE3DEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35872,6 +45029,35 @@ pub type PFNGLTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
         pixels: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glTexImage3DEXT(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTexSubImage3DEXT(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -35881,9 +45067,21 @@ pub type PFNGLFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
         layer: GLint,
     ),
 >;
+extern "C" {
+    pub fn glFramebufferTextureLayerEXT(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        layer: GLint,
+    );
+}
 pub type PFNGLTEXBUFFEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
+extern "C" {
+    pub fn glTexBufferEXT(target: GLenum, internalformat: GLenum, buffer: GLuint);
+}
 pub type PFNGLTEXPARAMETERIIVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
@@ -35900,6 +45098,24 @@ pub type PFNGLCLEARCOLORIIEXTPROC = ::std::option::Option<
 pub type PFNGLCLEARCOLORIUIEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint, alpha: GLuint),
 >;
+extern "C" {
+    pub fn glTexParameterIivEXT(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glTexParameterIuivEXT(target: GLenum, pname: GLenum, params: *const GLuint);
+}
+extern "C" {
+    pub fn glGetTexParameterIivEXT(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetTexParameterIuivEXT(target: GLenum, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glClearColorIiEXT(red: GLint, green: GLint, blue: GLint, alpha: GLint);
+}
+extern "C" {
+    pub fn glClearColorIuiEXT(red: GLuint, green: GLuint, blue: GLuint, alpha: GLuint);
+}
 pub type PFNGLARETEXTURESRESIDENTEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         n: GLsizei,
@@ -35918,11 +45134,46 @@ pub type PFNGLISTEXTUREEXTPROC =
 pub type PFNGLPRIORITIZETEXTURESEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(n: GLsizei, textures: *const GLuint, priorities: *const GLclampf),
 >;
+extern "C" {
+    pub fn glAreTexturesResidentEXT(
+        n: GLsizei,
+        textures: *const GLuint,
+        residences: *mut GLboolean,
+    ) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindTextureEXT(target: GLenum, texture: GLuint);
+}
+extern "C" {
+    pub fn glDeleteTexturesEXT(n: GLsizei, textures: *const GLuint);
+}
+extern "C" {
+    pub fn glGenTexturesEXT(n: GLsizei, textures: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsTextureEXT(texture: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glPrioritizeTexturesEXT(
+        n: GLsizei,
+        textures: *const GLuint,
+        priorities: *const GLclampf,
+    );
+}
 pub type PFNGLTEXTURENORMALEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glTextureNormalEXT(mode: GLenum);
+}
 pub type PFNGLGETQUERYOBJECTI64VEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint64)>;
 pub type PFNGLGETQUERYOBJECTUI64VEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint64)>;
+extern "C" {
+    pub fn glGetQueryObjecti64vEXT(id: GLuint, pname: GLenum, params: *mut GLint64);
+}
+extern "C" {
+    pub fn glGetQueryObjectui64vEXT(id: GLuint, pname: GLenum, params: *mut GLuint64);
+}
 pub type PFNGLBEGINTRANSFORMFEEDBACKEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
 pub type PFNGLENDTRANSFORMFEEDBACKEXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
@@ -35959,6 +45210,46 @@ pub type PFNGLGETTRANSFORMFEEDBACKVARYINGEXTPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
+extern "C" {
+    pub fn glBeginTransformFeedbackEXT(primitiveMode: GLenum);
+}
+extern "C" {
+    pub fn glEndTransformFeedbackEXT();
+}
+extern "C" {
+    pub fn glBindBufferRangeEXT(
+        target: GLenum,
+        index: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glBindBufferOffsetEXT(target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr);
+}
+extern "C" {
+    pub fn glBindBufferBaseEXT(target: GLenum, index: GLuint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glTransformFeedbackVaryingsEXT(
+        program: GLuint,
+        count: GLsizei,
+        varyings: *const *const GLchar,
+        bufferMode: GLenum,
+    );
+}
+extern "C" {
+    pub fn glGetTransformFeedbackVaryingEXT(
+        program: GLuint,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLsizei,
+        type_: *mut GLenum,
+        name: *mut GLchar,
+    );
+}
 pub type PFNGLARRAYELEMENTEXTPROC = ::std::option::Option<unsafe extern "C" fn(i: GLint)>;
 pub type PFNGLCOLORPOINTEREXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -36011,6 +45302,61 @@ pub type PFNGLVERTEXPOINTEREXTPROC = ::std::option::Option<
         pointer: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glArrayElementEXT(i: GLint);
+}
+extern "C" {
+    pub fn glColorPointerEXT(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        count: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glDrawArraysEXT(mode: GLenum, first: GLint, count: GLsizei);
+}
+extern "C" {
+    pub fn glEdgeFlagPointerEXT(stride: GLsizei, count: GLsizei, pointer: *const GLboolean);
+}
+extern "C" {
+    pub fn glGetPointervEXT(pname: GLenum, params: *mut *mut ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glIndexPointerEXT(
+        type_: GLenum,
+        stride: GLsizei,
+        count: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNormalPointerEXT(
+        type_: GLenum,
+        stride: GLsizei,
+        count: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTexCoordPointerEXT(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        count: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glVertexPointerEXT(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        count: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLVERTEXATTRIBL1DEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIBL2DEXTPROC =
@@ -36041,6 +45387,42 @@ pub type PFNGLVERTEXATTRIBLPOINTEREXTPROC = ::std::option::Option<
 pub type PFNGLGETVERTEXATTRIBLDVEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
+extern "C" {
+    pub fn glVertexAttribL1dEXT(index: GLuint, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL2dEXT(index: GLuint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL3dEXT(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL4dEXT(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL1dvEXT(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL2dvEXT(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL3dvEXT(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribL4dvEXT(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribLPointerEXT(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetVertexAttribLdvEXT(index: GLuint, pname: GLenum, params: *mut GLdouble);
+}
 pub type PFNGLBEGINVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLENDVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLBINDVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
@@ -36155,6 +45537,160 @@ pub type PFNGLGETLOCALCONSTANTINTEGERVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
 pub type PFNGLGETLOCALCONSTANTFLOATVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
+extern "C" {
+    pub fn glBeginVertexShaderEXT();
+}
+extern "C" {
+    pub fn glEndVertexShaderEXT();
+}
+extern "C" {
+    pub fn glBindVertexShaderEXT(id: GLuint);
+}
+extern "C" {
+    pub fn glGenVertexShadersEXT(range: GLuint) -> GLuint;
+}
+extern "C" {
+    pub fn glDeleteVertexShaderEXT(id: GLuint);
+}
+extern "C" {
+    pub fn glShaderOp1EXT(op: GLenum, res: GLuint, arg1: GLuint);
+}
+extern "C" {
+    pub fn glShaderOp2EXT(op: GLenum, res: GLuint, arg1: GLuint, arg2: GLuint);
+}
+extern "C" {
+    pub fn glShaderOp3EXT(op: GLenum, res: GLuint, arg1: GLuint, arg2: GLuint, arg3: GLuint);
+}
+extern "C" {
+    pub fn glSwizzleEXT(
+        res: GLuint,
+        in_: GLuint,
+        outX: GLenum,
+        outY: GLenum,
+        outZ: GLenum,
+        outW: GLenum,
+    );
+}
+extern "C" {
+    pub fn glWriteMaskEXT(
+        res: GLuint,
+        in_: GLuint,
+        outX: GLenum,
+        outY: GLenum,
+        outZ: GLenum,
+        outW: GLenum,
+    );
+}
+extern "C" {
+    pub fn glInsertComponentEXT(res: GLuint, src: GLuint, num: GLuint);
+}
+extern "C" {
+    pub fn glExtractComponentEXT(res: GLuint, src: GLuint, num: GLuint);
+}
+extern "C" {
+    pub fn glGenSymbolsEXT(
+        datatype: GLenum,
+        storagetype: GLenum,
+        range: GLenum,
+        components: GLuint,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glSetInvariantEXT(id: GLuint, type_: GLenum, addr: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glSetLocalConstantEXT(id: GLuint, type_: GLenum, addr: *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glVariantbvEXT(id: GLuint, addr: *const GLbyte);
+}
+extern "C" {
+    pub fn glVariantsvEXT(id: GLuint, addr: *const GLshort);
+}
+extern "C" {
+    pub fn glVariantivEXT(id: GLuint, addr: *const GLint);
+}
+extern "C" {
+    pub fn glVariantfvEXT(id: GLuint, addr: *const GLfloat);
+}
+extern "C" {
+    pub fn glVariantdvEXT(id: GLuint, addr: *const GLdouble);
+}
+extern "C" {
+    pub fn glVariantubvEXT(id: GLuint, addr: *const GLubyte);
+}
+extern "C" {
+    pub fn glVariantusvEXT(id: GLuint, addr: *const GLushort);
+}
+extern "C" {
+    pub fn glVariantuivEXT(id: GLuint, addr: *const GLuint);
+}
+extern "C" {
+    pub fn glVariantPointerEXT(
+        id: GLuint,
+        type_: GLenum,
+        stride: GLuint,
+        addr: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glEnableVariantClientStateEXT(id: GLuint);
+}
+extern "C" {
+    pub fn glDisableVariantClientStateEXT(id: GLuint);
+}
+extern "C" {
+    pub fn glBindLightParameterEXT(light: GLenum, value: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glBindMaterialParameterEXT(face: GLenum, value: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glBindTexGenParameterEXT(unit: GLenum, coord: GLenum, value: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glBindTextureUnitParameterEXT(unit: GLenum, value: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glBindParameterEXT(value: GLenum) -> GLuint;
+}
+extern "C" {
+    pub fn glIsVariantEnabledEXT(id: GLuint, cap: GLenum) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetVariantBooleanvEXT(id: GLuint, value: GLenum, data: *mut GLboolean);
+}
+extern "C" {
+    pub fn glGetVariantIntegervEXT(id: GLuint, value: GLenum, data: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVariantFloatvEXT(id: GLuint, value: GLenum, data: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVariantPointervEXT(
+        id: GLuint,
+        value: GLenum,
+        data: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetInvariantBooleanvEXT(id: GLuint, value: GLenum, data: *mut GLboolean);
+}
+extern "C" {
+    pub fn glGetInvariantIntegervEXT(id: GLuint, value: GLenum, data: *mut GLint);
+}
+extern "C" {
+    pub fn glGetInvariantFloatvEXT(id: GLuint, value: GLenum, data: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetLocalConstantBooleanvEXT(id: GLuint, value: GLenum, data: *mut GLboolean);
+}
+extern "C" {
+    pub fn glGetLocalConstantIntegervEXT(id: GLuint, value: GLenum, data: *mut GLint);
+}
+extern "C" {
+    pub fn glGetLocalConstantFloatvEXT(id: GLuint, value: GLenum, data: *mut GLfloat);
+}
 pub type PFNGLVERTEXWEIGHTFEXTPROC = ::std::option::Option<unsafe extern "C" fn(weight: GLfloat)>;
 pub type PFNGLVERTEXWEIGHTFVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(weight: *const GLfloat)>;
@@ -36166,13 +45702,37 @@ pub type PFNGLVERTEXWEIGHTPOINTEREXTPROC = ::std::option::Option<
         pointer: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glVertexWeightfEXT(weight: GLfloat);
+}
+extern "C" {
+    pub fn glVertexWeightfvEXT(weight: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexWeightPointerEXT(
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLACQUIREKEYEDMUTEXWIN32EXTPROC = ::std::option::Option<
     unsafe extern "C" fn(memory: GLuint, key: GLuint64, timeout: GLuint) -> GLboolean,
 >;
 pub type PFNGLRELEASEKEYEDMUTEXWIN32EXTPROC =
     ::std::option::Option<unsafe extern "C" fn(memory: GLuint, key: GLuint64) -> GLboolean>;
+extern "C" {
+    pub fn glAcquireKeyedMutexWin32EXT(memory: GLuint, key: GLuint64, timeout: GLuint)
+        -> GLboolean;
+}
+extern "C" {
+    pub fn glReleaseKeyedMutexWin32EXT(memory: GLuint, key: GLuint64) -> GLboolean;
+}
 pub type PFNGLWINDOWRECTANGLESEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(mode: GLenum, count: GLsizei, box_: *const GLint)>;
+extern "C" {
+    pub fn glWindowRectanglesEXT(mode: GLenum, count: GLsizei, box_: *const GLint);
+}
 pub type PFNGLIMPORTSYNCEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         external_sync_type: GLenum,
@@ -36180,10 +45740,23 @@ pub type PFNGLIMPORTSYNCEXTPROC = ::std::option::Option<
         flags: GLbitfield,
     ) -> GLsync,
 >;
+extern "C" {
+    pub fn glImportSyncEXT(
+        external_sync_type: GLenum,
+        external_sync: GLintptr,
+        flags: GLbitfield,
+    ) -> GLsync;
+}
 pub type PFNGLFRAMETERMINATORGREMEDYPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFrameTerminatorGREMEDY();
+}
 pub type PFNGLSTRINGMARKERGREMEDYPROC = ::std::option::Option<
     unsafe extern "C" fn(len: GLsizei, string: *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glStringMarkerGREMEDY(len: GLsizei, string: *const ::std::os::raw::c_void);
+}
 pub type PFNGLIMAGETRANSFORMPARAMETERIHPPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLIMAGETRANSFORMPARAMETERFHPPROC =
@@ -36199,6 +45772,24 @@ pub type PFNGLGETIMAGETRANSFORMPARAMETERIVHPPROC =
 pub type PFNGLGETIMAGETRANSFORMPARAMETERFVHPPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
+extern "C" {
+    pub fn glImageTransformParameteriHP(target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glImageTransformParameterfHP(target: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glImageTransformParameterivHP(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glImageTransformParameterfvHP(target: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetImageTransformParameterivHP(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetImageTransformParameterfvHP(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLMULTIMODEDRAWARRAYSIBMPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: *const GLenum,
@@ -36218,7 +45809,29 @@ pub type PFNGLMULTIMODEDRAWELEMENTSIBMPROC = ::std::option::Option<
         modestride: GLint,
     ),
 >;
+extern "C" {
+    pub fn glMultiModeDrawArraysIBM(
+        mode: *const GLenum,
+        first: *const GLint,
+        count: *const GLsizei,
+        primcount: GLsizei,
+        modestride: GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiModeDrawElementsIBM(
+        mode: *const GLenum,
+        count: *const GLsizei,
+        type_: GLenum,
+        indices: *const *const ::std::os::raw::c_void,
+        primcount: GLsizei,
+        modestride: GLint,
+    );
+}
 pub type PFNGLFLUSHSTATICDATAIBMPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+extern "C" {
+    pub fn glFlushStaticDataIBM(target: GLenum);
+}
 pub type PFNGLCOLORPOINTERLISTIBMPROC = ::std::option::Option<
     unsafe extern "C" fn(
         size: GLint,
@@ -36282,6 +45895,73 @@ pub type PFNGLVERTEXPOINTERLISTIBMPROC = ::std::option::Option<
         ptrstride: GLint,
     ),
 >;
+extern "C" {
+    pub fn glColorPointerListIBM(
+        size: GLint,
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glSecondaryColorPointerListIBM(
+        size: GLint,
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glEdgeFlagPointerListIBM(
+        stride: GLint,
+        pointer: *mut *const GLboolean,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glFogCoordPointerListIBM(
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glIndexPointerListIBM(
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glNormalPointerListIBM(
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glTexCoordPointerListIBM(
+        size: GLint,
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
+extern "C" {
+    pub fn glVertexPointerListIBM(
+        size: GLint,
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const ::std::os::raw::c_void,
+        ptrstride: GLint,
+    );
+}
 pub type PFNGLBLENDFUNCSEPARATEINGRPROC = ::std::option::Option<
     unsafe extern "C" fn(
         sfactorRGB: GLenum,
@@ -36290,8 +45970,19 @@ pub type PFNGLBLENDFUNCSEPARATEINGRPROC = ::std::option::Option<
         dfactorAlpha: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glBlendFuncSeparateINGR(
+        sfactorRGB: GLenum,
+        dfactorRGB: GLenum,
+        sfactorAlpha: GLenum,
+        dfactorAlpha: GLenum,
+    );
+}
 pub type PFNGLAPPLYFRAMEBUFFERATTACHMENTCMAAINTELPROC =
     ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glApplyFramebufferAttachmentCMAAINTEL();
+}
 pub type PFNGLSYNCTEXTUREINTELPROC = ::std::option::Option<unsafe extern "C" fn(texture: GLuint)>;
 pub type PFNGLUNMAPTEXTURE2DINTELPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLuint, level: GLint)>;
@@ -36304,6 +45995,21 @@ pub type PFNGLMAPTEXTURE2DINTELPROC = ::std::option::Option<
         layout: *mut GLenum,
     ) -> *mut ::std::os::raw::c_void,
 >;
+extern "C" {
+    pub fn glSyncTextureINTEL(texture: GLuint);
+}
+extern "C" {
+    pub fn glUnmapTexture2DINTEL(texture: GLuint, level: GLint);
+}
+extern "C" {
+    pub fn glMapTexture2DINTEL(
+        texture: GLuint,
+        level: GLint,
+        access: GLbitfield,
+        stride: *mut GLint,
+        layout: *mut GLenum,
+    ) -> *mut ::std::os::raw::c_void;
+}
 pub type PFNGLVERTEXPOINTERVINTELPROC = ::std::option::Option<
     unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
 >;
@@ -36316,6 +46022,30 @@ pub type PFNGLCOLORPOINTERVINTELPROC = ::std::option::Option<
 pub type PFNGLTEXCOORDPOINTERVINTELPROC = ::std::option::Option<
     unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glVertexPointervINTEL(
+        size: GLint,
+        type_: GLenum,
+        pointer: *mut *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glNormalPointervINTEL(type_: GLenum, pointer: *mut *const ::std::os::raw::c_void);
+}
+extern "C" {
+    pub fn glColorPointervINTEL(
+        size: GLint,
+        type_: GLenum,
+        pointer: *mut *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTexCoordPointervINTEL(
+        size: GLint,
+        type_: GLenum,
+        pointer: *mut *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLBEGINPERFQUERYINTELPROC =
     ::std::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
 pub type PFNGLCREATEPERFQUERYINTELPROC =
@@ -36365,11 +46095,76 @@ pub type PFNGLGETPERFQUERYINFOINTELPROC = ::std::option::Option<
         capsMask: *mut GLuint,
     ),
 >;
+extern "C" {
+    pub fn glBeginPerfQueryINTEL(queryHandle: GLuint);
+}
+extern "C" {
+    pub fn glCreatePerfQueryINTEL(queryId: GLuint, queryHandle: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeletePerfQueryINTEL(queryHandle: GLuint);
+}
+extern "C" {
+    pub fn glEndPerfQueryINTEL(queryHandle: GLuint);
+}
+extern "C" {
+    pub fn glGetFirstPerfQueryIdINTEL(queryId: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetNextPerfQueryIdINTEL(queryId: GLuint, nextQueryId: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetPerfCounterInfoINTEL(
+        queryId: GLuint,
+        counterId: GLuint,
+        counterNameLength: GLuint,
+        counterName: *mut GLchar,
+        counterDescLength: GLuint,
+        counterDesc: *mut GLchar,
+        counterOffset: *mut GLuint,
+        counterDataSize: *mut GLuint,
+        counterTypeEnum: *mut GLuint,
+        counterDataTypeEnum: *mut GLuint,
+        rawCounterMaxValue: *mut GLuint64,
+    );
+}
+extern "C" {
+    pub fn glGetPerfQueryDataINTEL(
+        queryHandle: GLuint,
+        flags: GLuint,
+        dataSize: GLsizei,
+        data: *mut ::std::os::raw::c_void,
+        bytesWritten: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetPerfQueryIdByNameINTEL(queryName: *mut GLchar, queryId: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetPerfQueryInfoINTEL(
+        queryId: GLuint,
+        queryNameLength: GLuint,
+        queryName: *mut GLchar,
+        dataSize: *mut GLuint,
+        noCounters: *mut GLuint,
+        noInstances: *mut GLuint,
+        capsMask: *mut GLuint,
+    );
+}
 pub type PFNGLFRAMEBUFFERPARAMETERIMESAPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLGETFRAMEBUFFERPARAMETERIVMESAPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+extern "C" {
+    pub fn glFramebufferParameteriMESA(target: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glGetFramebufferParameterivMESA(target: GLenum, pname: GLenum, params: *mut GLint);
+}
 pub type PFNGLRESIZEBUFFERSMESAPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glResizeBuffersMESA();
+}
 pub type PFNGLWINDOWPOS2DMESAPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
 pub type PFNGLWINDOWPOS2DVMESAPROC =
@@ -36408,9 +46203,87 @@ pub type PFNGLWINDOWPOS4IVMESAPROC = ::std::option::Option<unsafe extern "C" fn(
 pub type PFNGLWINDOWPOS4SMESAPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort, w: GLshort)>;
 pub type PFNGLWINDOWPOS4SVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+extern "C" {
+    pub fn glWindowPos2dMESA(x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2dvMESA(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos2fMESA(x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2fvMESA(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos2iMESA(x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glWindowPos2ivMESA(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos2sMESA(x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos2svMESA(v: *const GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3dMESA(x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3dvMESA(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos3fMESA(x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3fvMESA(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos3iMESA(x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glWindowPos3ivMESA(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos3sMESA(x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos3svMESA(v: *const GLshort);
+}
+extern "C" {
+    pub fn glWindowPos4dMESA(x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos4dvMESA(v: *const GLdouble);
+}
+extern "C" {
+    pub fn glWindowPos4fMESA(x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos4fvMESA(v: *const GLfloat);
+}
+extern "C" {
+    pub fn glWindowPos4iMESA(x: GLint, y: GLint, z: GLint, w: GLint);
+}
+extern "C" {
+    pub fn glWindowPos4ivMESA(v: *const GLint);
+}
+extern "C" {
+    pub fn glWindowPos4sMESA(x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+}
+extern "C" {
+    pub fn glWindowPos4svMESA(v: *const GLshort);
+}
 pub type PFNGLBEGINCONDITIONALRENDERNVXPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
 pub type PFNGLENDCONDITIONALRENDERNVXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glBeginConditionalRenderNVX(id: GLuint);
+}
+extern "C" {
+    pub fn glEndConditionalRenderNVX();
+}
 pub type PFNGLUPLOADGPUMASKNVXPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLMULTICASTVIEWPORTARRAYVNVXPROC = ::std::option::Option<
     unsafe extern "C" fn(gpu: GLuint, first: GLuint, count: GLsizei, v: *const GLfloat),
@@ -36465,6 +46338,72 @@ pub type PFNGLASYNCCOPYIMAGESUBDATANVXPROC = ::std::option::Option<
         signalValueArray: *const GLuint64,
     ) -> GLuint,
 >;
+extern "C" {
+    pub fn glUploadGpuMaskNVX(mask: GLbitfield);
+}
+extern "C" {
+    pub fn glMulticastViewportArrayvNVX(
+        gpu: GLuint,
+        first: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMulticastViewportPositionWScaleNVX(
+        gpu: GLuint,
+        index: GLuint,
+        xcoeff: GLfloat,
+        ycoeff: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMulticastScissorArrayvNVX(gpu: GLuint, first: GLuint, count: GLsizei, v: *const GLint);
+}
+extern "C" {
+    pub fn glAsyncCopyBufferSubDataNVX(
+        waitSemaphoreCount: GLsizei,
+        waitSemaphoreArray: *const GLuint,
+        fenceValueArray: *const GLuint64,
+        readGpu: GLuint,
+        writeGpuMask: GLbitfield,
+        readBuffer: GLuint,
+        writeBuffer: GLuint,
+        readOffset: GLintptr,
+        writeOffset: GLintptr,
+        size: GLsizeiptr,
+        signalSemaphoreCount: GLsizei,
+        signalSemaphoreArray: *const GLuint,
+        signalValueArray: *const GLuint64,
+    ) -> GLuint;
+}
+extern "C" {
+    pub fn glAsyncCopyImageSubDataNVX(
+        waitSemaphoreCount: GLsizei,
+        waitSemaphoreArray: *const GLuint,
+        waitValueArray: *const GLuint64,
+        srcGpu: GLuint,
+        dstGpuMask: GLbitfield,
+        srcName: GLuint,
+        srcTarget: GLenum,
+        srcLevel: GLint,
+        srcX: GLint,
+        srcY: GLint,
+        srcZ: GLint,
+        dstName: GLuint,
+        dstTarget: GLenum,
+        dstLevel: GLint,
+        dstX: GLint,
+        dstY: GLint,
+        dstZ: GLint,
+        srcWidth: GLsizei,
+        srcHeight: GLsizei,
+        srcDepth: GLsizei,
+        signalSemaphoreCount: GLsizei,
+        signalSemaphoreArray: *const GLuint,
+        signalValueArray: *const GLuint64,
+    ) -> GLuint;
+}
 pub type PFNGLLGPUNAMEDBUFFERSUBDATANVXPROC = ::std::option::Option<
     unsafe extern "C" fn(
         gpuMask: GLbitfield,
@@ -36496,6 +46435,39 @@ pub type PFNGLLGPUCOPYIMAGESUBDATANVXPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLLGPUINTERLOCKNVXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glLGPUNamedBufferSubDataNVX(
+        gpuMask: GLbitfield,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glLGPUCopyImageSubDataNVX(
+        sourceGpu: GLuint,
+        destinationGpuMask: GLbitfield,
+        srcName: GLuint,
+        srcTarget: GLenum,
+        srcLevel: GLint,
+        srcX: GLint,
+        srxY: GLint,
+        srcZ: GLint,
+        dstName: GLuint,
+        dstTarget: GLenum,
+        dstLevel: GLint,
+        dstX: GLint,
+        dstY: GLint,
+        dstZ: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glLGPUInterlockNVX();
+}
 pub type PFNGLCREATEPROGRESSFENCENVXPROC = ::std::option::Option<unsafe extern "C" fn() -> GLuint>;
 pub type PFNGLSIGNALSEMAPHOREUI64NVXPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -36520,8 +46492,37 @@ pub type PFNGLCLIENTWAITSEMAPHOREUI64NVXPROC = ::std::option::Option<
         fenceValueArray: *const GLuint64,
     ),
 >;
+extern "C" {
+    pub fn glCreateProgressFenceNVX() -> GLuint;
+}
+extern "C" {
+    pub fn glSignalSemaphoreui64NVX(
+        signalGpu: GLuint,
+        fenceObjectCount: GLsizei,
+        semaphoreArray: *const GLuint,
+        fenceValueArray: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glWaitSemaphoreui64NVX(
+        waitGpu: GLuint,
+        fenceObjectCount: GLsizei,
+        semaphoreArray: *const GLuint,
+        fenceValueArray: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glClientWaitSemaphoreui64NVX(
+        fenceObjectCount: GLsizei,
+        semaphoreArray: *const GLuint,
+        fenceValueArray: *const GLuint64,
+    );
+}
 pub type PFNGLALPHATOCOVERAGEDITHERCONTROLNVPROC =
     ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glAlphaToCoverageDitherControlNV(mode: GLenum);
+}
 pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -36541,6 +46542,25 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSNVPROC = ::std::option::Option<
         vertexBufferCount: GLint,
     ),
 >;
+extern "C" {
+    pub fn glMultiDrawArraysIndirectBindlessNV(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawCount: GLsizei,
+        stride: GLsizei,
+        vertexBufferCount: GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirectBindlessNV(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawCount: GLsizei,
+        stride: GLsizei,
+        vertexBufferCount: GLint,
+    );
+}
 pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSCOUNTNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
@@ -36562,6 +46582,27 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSCOUNTNVPROC = ::std::option::Opti
         vertexBufferCount: GLint,
     ),
 >;
+extern "C" {
+    pub fn glMultiDrawArraysIndirectBindlessCountNV(
+        mode: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawCount: GLsizei,
+        maxDrawCount: GLsizei,
+        stride: GLsizei,
+        vertexBufferCount: GLint,
+    );
+}
+extern "C" {
+    pub fn glMultiDrawElementsIndirectBindlessCountNV(
+        mode: GLenum,
+        type_: GLenum,
+        indirect: *const ::std::os::raw::c_void,
+        drawCount: GLsizei,
+        maxDrawCount: GLsizei,
+        stride: GLsizei,
+        vertexBufferCount: GLint,
+    );
+}
 pub type PFNGLGETTEXTUREHANDLENVPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
 pub type PFNGLGETTEXTURESAMPLERHANDLENVPROC =
@@ -36597,11 +46638,70 @@ pub type PFNGLISTEXTUREHANDLERESIDENTNVPROC =
     ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
 pub type PFNGLISIMAGEHANDLERESIDENTNVPROC =
     ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
+extern "C" {
+    pub fn glGetTextureHandleNV(texture: GLuint) -> GLuint64;
+}
+extern "C" {
+    pub fn glGetTextureSamplerHandleNV(texture: GLuint, sampler: GLuint) -> GLuint64;
+}
+extern "C" {
+    pub fn glMakeTextureHandleResidentNV(handle: GLuint64);
+}
+extern "C" {
+    pub fn glMakeTextureHandleNonResidentNV(handle: GLuint64);
+}
+extern "C" {
+    pub fn glGetImageHandleNV(
+        texture: GLuint,
+        level: GLint,
+        layered: GLboolean,
+        layer: GLint,
+        format: GLenum,
+    ) -> GLuint64;
+}
+extern "C" {
+    pub fn glMakeImageHandleResidentNV(handle: GLuint64, access: GLenum);
+}
+extern "C" {
+    pub fn glMakeImageHandleNonResidentNV(handle: GLuint64);
+}
+extern "C" {
+    pub fn glUniformHandleui64NV(location: GLint, value: GLuint64);
+}
+extern "C" {
+    pub fn glUniformHandleui64vNV(location: GLint, count: GLsizei, value: *const GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniformHandleui64NV(program: GLuint, location: GLint, value: GLuint64);
+}
+extern "C" {
+    pub fn glProgramUniformHandleui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        values: *const GLuint64,
+    );
+}
+extern "C" {
+    pub fn glIsTextureHandleResidentNV(handle: GLuint64) -> GLboolean;
+}
+extern "C" {
+    pub fn glIsImageHandleResidentNV(handle: GLuint64) -> GLboolean;
+}
 pub type PFNGLBLENDPARAMETERINVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLint)>;
 pub type PFNGLBLENDBARRIERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glBlendParameteriNV(pname: GLenum, value: GLint);
+}
+extern "C" {
+    pub fn glBlendBarrierNV();
+}
 pub type PFNGLVIEWPORTPOSITIONWSCALENVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, xcoeff: GLfloat, ycoeff: GLfloat)>;
+extern "C" {
+    pub fn glViewportPositionWScaleNV(index: GLuint, xcoeff: GLfloat, ycoeff: GLfloat);
+}
 pub type PFNGLCREATESTATESNVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, states: *mut GLuint)>;
 pub type PFNGLDELETESTATESNVPROC =
@@ -36671,15 +46771,113 @@ pub type PFNGLCOMMANDLISTSEGMENTSNVPROC =
     ::std::option::Option<unsafe extern "C" fn(list: GLuint, segments: GLuint)>;
 pub type PFNGLCOMPILECOMMANDLISTNVPROC = ::std::option::Option<unsafe extern "C" fn(list: GLuint)>;
 pub type PFNGLCALLCOMMANDLISTNVPROC = ::std::option::Option<unsafe extern "C" fn(list: GLuint)>;
+extern "C" {
+    pub fn glCreateStatesNV(n: GLsizei, states: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteStatesNV(n: GLsizei, states: *const GLuint);
+}
+extern "C" {
+    pub fn glIsStateNV(state: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glStateCaptureNV(state: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glGetCommandHeaderNV(tokenID: GLenum, size: GLuint) -> GLuint;
+}
+extern "C" {
+    pub fn glGetStageIndexNV(shadertype: GLenum) -> GLushort;
+}
+extern "C" {
+    pub fn glDrawCommandsNV(
+        primitiveMode: GLenum,
+        buffer: GLuint,
+        indirects: *const GLintptr,
+        sizes: *const GLsizei,
+        count: GLuint,
+    );
+}
+extern "C" {
+    pub fn glDrawCommandsAddressNV(
+        primitiveMode: GLenum,
+        indirects: *const GLuint64,
+        sizes: *const GLsizei,
+        count: GLuint,
+    );
+}
+extern "C" {
+    pub fn glDrawCommandsStatesNV(
+        buffer: GLuint,
+        indirects: *const GLintptr,
+        sizes: *const GLsizei,
+        states: *const GLuint,
+        fbos: *const GLuint,
+        count: GLuint,
+    );
+}
+extern "C" {
+    pub fn glDrawCommandsStatesAddressNV(
+        indirects: *const GLuint64,
+        sizes: *const GLsizei,
+        states: *const GLuint,
+        fbos: *const GLuint,
+        count: GLuint,
+    );
+}
+extern "C" {
+    pub fn glCreateCommandListsNV(n: GLsizei, lists: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteCommandListsNV(n: GLsizei, lists: *const GLuint);
+}
+extern "C" {
+    pub fn glIsCommandListNV(list: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glListDrawCommandsStatesClientNV(
+        list: GLuint,
+        segment: GLuint,
+        indirects: *mut *const ::std::os::raw::c_void,
+        sizes: *const GLsizei,
+        states: *const GLuint,
+        fbos: *const GLuint,
+        count: GLuint,
+    );
+}
+extern "C" {
+    pub fn glCommandListSegmentsNV(list: GLuint, segments: GLuint);
+}
+extern "C" {
+    pub fn glCompileCommandListNV(list: GLuint);
+}
+extern "C" {
+    pub fn glCallCommandListNV(list: GLuint);
+}
 pub type PFNGLBEGINCONDITIONALRENDERNVPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, mode: GLenum)>;
 pub type PFNGLENDCONDITIONALRENDERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glBeginConditionalRenderNV(id: GLuint, mode: GLenum);
+}
+extern "C" {
+    pub fn glEndConditionalRenderNV();
+}
 pub type PFNGLSUBPIXELPRECISIONBIASNVPROC =
     ::std::option::Option<unsafe extern "C" fn(xbits: GLuint, ybits: GLuint)>;
+extern "C" {
+    pub fn glSubpixelPrecisionBiasNV(xbits: GLuint, ybits: GLuint);
+}
 pub type PFNGLCONSERVATIVERASTERPARAMETERFNVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLfloat)>;
+extern "C" {
+    pub fn glConservativeRasterParameterfNV(pname: GLenum, value: GLfloat);
+}
 pub type PFNGLCONSERVATIVERASTERPARAMETERINVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+extern "C" {
+    pub fn glConservativeRasterParameteriNV(pname: GLenum, param: GLint);
+}
 pub type PFNGLCOPYIMAGESUBDATANVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         srcName: GLuint,
@@ -36699,11 +46897,39 @@ pub type PFNGLCOPYIMAGESUBDATANVPROC = ::std::option::Option<
         depth: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glCopyImageSubDataNV(
+        srcName: GLuint,
+        srcTarget: GLenum,
+        srcLevel: GLint,
+        srcX: GLint,
+        srcY: GLint,
+        srcZ: GLint,
+        dstName: GLuint,
+        dstTarget: GLenum,
+        dstLevel: GLint,
+        dstX: GLint,
+        dstY: GLint,
+        dstZ: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+    );
+}
 pub type PFNGLDEPTHRANGEDNVPROC =
     ::std::option::Option<unsafe extern "C" fn(zNear: GLdouble, zFar: GLdouble)>;
 pub type PFNGLCLEARDEPTHDNVPROC = ::std::option::Option<unsafe extern "C" fn(depth: GLdouble)>;
 pub type PFNGLDEPTHBOUNDSDNVPROC =
     ::std::option::Option<unsafe extern "C" fn(zmin: GLdouble, zmax: GLdouble)>;
+extern "C" {
+    pub fn glDepthRangedNV(zNear: GLdouble, zFar: GLdouble);
+}
+extern "C" {
+    pub fn glClearDepthdNV(depth: GLdouble);
+}
+extern "C" {
+    pub fn glDepthBoundsdNV(zmin: GLdouble, zmax: GLdouble);
+}
 pub type PFNGLDRAWTEXTURENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
@@ -36719,6 +46945,21 @@ pub type PFNGLDRAWTEXTURENVPROC = ::std::option::Option<
         t1: GLfloat,
     ),
 >;
+extern "C" {
+    pub fn glDrawTextureNV(
+        texture: GLuint,
+        sampler: GLuint,
+        x0: GLfloat,
+        y0: GLfloat,
+        x1: GLfloat,
+        y1: GLfloat,
+        z: GLfloat,
+        s0: GLfloat,
+        t0: GLfloat,
+        s1: GLfloat,
+        t1: GLfloat,
+    );
+}
 pub type GLVULKANPROCNV = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLDRAWVKIMAGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -36742,6 +46983,33 @@ pub type PFNGLWAITVKSEMAPHORENVPROC =
 pub type PFNGLSIGNALVKSEMAPHORENVPROC =
     ::std::option::Option<unsafe extern "C" fn(vkSemaphore: GLuint64)>;
 pub type PFNGLSIGNALVKFENCENVPROC = ::std::option::Option<unsafe extern "C" fn(vkFence: GLuint64)>;
+extern "C" {
+    pub fn glDrawVkImageNV(
+        vkImage: GLuint64,
+        sampler: GLuint,
+        x0: GLfloat,
+        y0: GLfloat,
+        x1: GLfloat,
+        y1: GLfloat,
+        z: GLfloat,
+        s0: GLfloat,
+        t0: GLfloat,
+        s1: GLfloat,
+        t1: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetVkProcAddrNV(name: *const GLchar) -> GLVULKANPROCNV;
+}
+extern "C" {
+    pub fn glWaitVkSemaphoreNV(vkSemaphore: GLuint64);
+}
+extern "C" {
+    pub fn glSignalVkSemaphoreNV(vkSemaphore: GLuint64);
+}
+extern "C" {
+    pub fn glSignalVkFenceNV(vkFence: GLuint64);
+}
 pub type PFNGLMAPCONTROLPOINTSNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -36785,12 +47053,76 @@ pub type PFNGLGETMAPATTRIBPARAMETERFVNVPROC = ::std::option::Option<
 >;
 pub type PFNGLEVALMAPSNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLenum)>;
+extern "C" {
+    pub fn glMapControlPointsNV(
+        target: GLenum,
+        index: GLuint,
+        type_: GLenum,
+        ustride: GLsizei,
+        vstride: GLsizei,
+        uorder: GLint,
+        vorder: GLint,
+        packed: GLboolean,
+        points: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMapParameterivNV(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glMapParameterfvNV(target: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetMapControlPointsNV(
+        target: GLenum,
+        index: GLuint,
+        type_: GLenum,
+        ustride: GLsizei,
+        vstride: GLsizei,
+        packed: GLboolean,
+        points: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetMapParameterivNV(target: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetMapParameterfvNV(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetMapAttribParameterivNV(
+        target: GLenum,
+        index: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetMapAttribParameterfvNV(
+        target: GLenum,
+        index: GLuint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glEvalMapsNV(target: GLenum, mode: GLenum);
+}
 pub type PFNGLGETMULTISAMPLEFVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
 pub type PFNGLSAMPLEMASKINDEXEDNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, mask: GLbitfield)>;
 pub type PFNGLTEXRENDERBUFFERNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
+extern "C" {
+    pub fn glGetMultisamplefvNV(pname: GLenum, index: GLuint, val: *mut GLfloat);
+}
+extern "C" {
+    pub fn glSampleMaskIndexedNV(index: GLuint, mask: GLbitfield);
+}
+extern "C" {
+    pub fn glTexRenderbufferNV(target: GLenum, renderbuffer: GLuint);
+}
 pub type PFNGLDELETEFENCESNVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *const GLuint)>;
 pub type PFNGLGENFENCESNVPROC =
@@ -36804,8 +47136,32 @@ pub type PFNGLGETFENCEIVNVPROC =
 pub type PFNGLFINISHFENCENVPROC = ::std::option::Option<unsafe extern "C" fn(fence: GLuint)>;
 pub type PFNGLSETFENCENVPROC =
     ::std::option::Option<unsafe extern "C" fn(fence: GLuint, condition: GLenum)>;
+extern "C" {
+    pub fn glDeleteFencesNV(n: GLsizei, fences: *const GLuint);
+}
+extern "C" {
+    pub fn glGenFencesNV(n: GLsizei, fences: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsFenceNV(fence: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glTestFenceNV(fence: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetFenceivNV(fence: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glFinishFenceNV(fence: GLuint);
+}
+extern "C" {
+    pub fn glSetFenceNV(fence: GLuint, condition: GLenum);
+}
 pub type PFNGLFRAGMENTCOVERAGECOLORNVPROC =
     ::std::option::Option<unsafe extern "C" fn(color: GLuint)>;
+extern "C" {
+    pub fn glFragmentCoverageColorNV(color: GLuint);
+}
 pub type PFNGLPROGRAMNAMEDPARAMETER4FNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
@@ -36840,12 +47196,75 @@ pub type PFNGLGETPROGRAMNAMEDPARAMETERFVNVPROC = ::std::option::Option<
 pub type PFNGLGETPROGRAMNAMEDPARAMETERDVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(id: GLuint, len: GLsizei, name: *const GLubyte, params: *mut GLdouble),
 >;
+extern "C" {
+    pub fn glProgramNamedParameter4fNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramNamedParameter4fvNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramNamedParameter4dNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramNamedParameter4dvNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        v: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetProgramNamedParameterfvNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetProgramNamedParameterdvNV(
+        id: GLuint,
+        len: GLsizei,
+        name: *const GLubyte,
+        params: *mut GLdouble,
+    );
+}
 pub type PFNGLCOVERAGEMODULATIONTABLENVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, v: *const GLfloat)>;
 pub type PFNGLGETCOVERAGEMODULATIONTABLENVPROC =
     ::std::option::Option<unsafe extern "C" fn(bufsize: GLsizei, v: *mut GLfloat)>;
 pub type PFNGLCOVERAGEMODULATIONNVPROC =
     ::std::option::Option<unsafe extern "C" fn(components: GLenum)>;
+extern "C" {
+    pub fn glCoverageModulationTableNV(n: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetCoverageModulationTableNV(bufsize: GLsizei, v: *mut GLfloat);
+}
+extern "C" {
+    pub fn glCoverageModulationNV(components: GLenum);
+}
 pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -36856,6 +47275,16 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLECOVERAGENVPROC = ::std::option::Opti
         height: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glRenderbufferStorageMultisampleCoverageNV(
+        target: GLenum,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+    );
+}
 pub type PFNGLPROGRAMVERTEXLIMITNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, limit: GLint)>;
 pub type PFNGLFRAMEBUFFERTEXTUREEXTPROC = ::std::option::Option<
@@ -36870,6 +47299,26 @@ pub type PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC = ::std::option::Option<
         face: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glProgramVertexLimitNV(target: GLenum, limit: GLint);
+}
+extern "C" {
+    pub fn glFramebufferTextureEXT(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+    );
+}
+extern "C" {
+    pub fn glFramebufferTextureFaceEXT(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        face: GLenum,
+    );
+}
 pub type PFNGLRENDERGPUMASKNVPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLMULTICASTBUFFERSUBDATANVPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -36952,6 +47401,113 @@ pub type PFNGLMULTICASTGETQUERYOBJECTI64VNVPROC = ::std::option::Option<
 pub type PFNGLMULTICASTGETQUERYOBJECTUI64VNVPROC = ::std::option::Option<
     unsafe extern "C" fn(gpu: GLuint, id: GLuint, pname: GLenum, params: *mut GLuint64),
 >;
+extern "C" {
+    pub fn glRenderGpuMaskNV(mask: GLbitfield);
+}
+extern "C" {
+    pub fn glMulticastBufferSubDataNV(
+        gpuMask: GLbitfield,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+        data: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glMulticastCopyBufferSubDataNV(
+        readGpu: GLuint,
+        writeGpuMask: GLbitfield,
+        readBuffer: GLuint,
+        writeBuffer: GLuint,
+        readOffset: GLintptr,
+        writeOffset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glMulticastCopyImageSubDataNV(
+        srcGpu: GLuint,
+        dstGpuMask: GLbitfield,
+        srcName: GLuint,
+        srcTarget: GLenum,
+        srcLevel: GLint,
+        srcX: GLint,
+        srcY: GLint,
+        srcZ: GLint,
+        dstName: GLuint,
+        dstTarget: GLenum,
+        dstLevel: GLint,
+        dstX: GLint,
+        dstY: GLint,
+        dstZ: GLint,
+        srcWidth: GLsizei,
+        srcHeight: GLsizei,
+        srcDepth: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glMulticastBlitFramebufferNV(
+        srcGpu: GLuint,
+        dstGpu: GLuint,
+        srcX0: GLint,
+        srcY0: GLint,
+        srcX1: GLint,
+        srcY1: GLint,
+        dstX0: GLint,
+        dstY0: GLint,
+        dstX1: GLint,
+        dstY1: GLint,
+        mask: GLbitfield,
+        filter: GLenum,
+    );
+}
+extern "C" {
+    pub fn glMulticastFramebufferSampleLocationsfvNV(
+        gpu: GLuint,
+        framebuffer: GLuint,
+        start: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glMulticastBarrierNV();
+}
+extern "C" {
+    pub fn glMulticastWaitSyncNV(signalGpu: GLuint, waitGpuMask: GLbitfield);
+}
+extern "C" {
+    pub fn glMulticastGetQueryObjectivNV(
+        gpu: GLuint,
+        id: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glMulticastGetQueryObjectuivNV(
+        gpu: GLuint,
+        id: GLuint,
+        pname: GLenum,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glMulticastGetQueryObjecti64vNV(
+        gpu: GLuint,
+        id: GLuint,
+        pname: GLenum,
+        params: *mut GLint64,
+    );
+}
+extern "C" {
+    pub fn glMulticastGetQueryObjectui64vNV(
+        gpu: GLuint,
+        id: GLuint,
+        pname: GLenum,
+        params: *mut GLuint64,
+    );
+}
 pub type PFNGLPROGRAMLOCALPARAMETERI4INVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
@@ -36996,11 +47552,117 @@ pub type PFNGLGETPROGRAMENVPARAMETERIIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLint)>;
 pub type PFNGLGETPROGRAMENVPARAMETERIUIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLuint)>;
+extern "C" {
+    pub fn glProgramLocalParameterI4iNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLint,
+        y: GLint,
+        z: GLint,
+        w: GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameterI4ivNV(target: GLenum, index: GLuint, params: *const GLint);
+}
+extern "C" {
+    pub fn glProgramLocalParametersI4ivNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameterI4uiNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLuint,
+        y: GLuint,
+        z: GLuint,
+        w: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramLocalParameterI4uivNV(target: GLenum, index: GLuint, params: *const GLuint);
+}
+extern "C" {
+    pub fn glProgramLocalParametersI4uivNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameterI4iNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLint,
+        y: GLint,
+        z: GLint,
+        w: GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameterI4ivNV(target: GLenum, index: GLuint, params: *const GLint);
+}
+extern "C" {
+    pub fn glProgramEnvParametersI4ivNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameterI4uiNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLuint,
+        y: GLuint,
+        z: GLuint,
+        w: GLuint,
+    );
+}
+extern "C" {
+    pub fn glProgramEnvParameterI4uivNV(target: GLenum, index: GLuint, params: *const GLuint);
+}
+extern "C" {
+    pub fn glProgramEnvParametersI4uivNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetProgramLocalParameterIivNV(target: GLenum, index: GLuint, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetProgramLocalParameterIuivNV(target: GLenum, index: GLuint, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetProgramEnvParameterIivNV(target: GLenum, index: GLuint, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetProgramEnvParameterIuivNV(target: GLenum, index: GLuint, params: *mut GLuint);
+}
 pub type PFNGLPROGRAMSUBROUTINEPARAMETERSUIVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, count: GLsizei, params: *const GLuint),
 >;
 pub type PFNGLGETPROGRAMSUBROUTINEPARAMETERUIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, param: *mut GLuint)>;
+extern "C" {
+    pub fn glProgramSubroutineParametersuivNV(
+        target: GLenum,
+        count: GLsizei,
+        params: *const GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetProgramSubroutineParameteruivNV(target: GLenum, index: GLuint, param: *mut GLuint);
+}
 pub type GLhalfNV = ::std::os::raw::c_ushort;
 pub type PFNGLVERTEX2HNVPROC =
     ::std::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV)>;
@@ -37085,6 +47747,144 @@ pub type PFNGLVERTEXATTRIBS3HVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIBS4HVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
+extern "C" {
+    pub fn glVertex2hNV(x: GLhalfNV, y: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertex2hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertex3hNV(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertex3hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertex4hNV(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV, w: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertex4hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glNormal3hNV(nx: GLhalfNV, ny: GLhalfNV, nz: GLhalfNV);
+}
+extern "C" {
+    pub fn glNormal3hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glColor3hNV(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV);
+}
+extern "C" {
+    pub fn glColor3hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glColor4hNV(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV, alpha: GLhalfNV);
+}
+extern "C" {
+    pub fn glColor4hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord1hNV(s: GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord1hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord2hNV(s: GLhalfNV, t: GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord2hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord3hNV(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord3hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord4hNV(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV, q: GLhalfNV);
+}
+extern "C" {
+    pub fn glTexCoord4hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord1hNV(target: GLenum, s: GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord1hvNV(target: GLenum, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord2hNV(target: GLenum, s: GLhalfNV, t: GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord2hvNV(target: GLenum, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord3hNV(target: GLenum, s: GLhalfNV, t: GLhalfNV, r: GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord3hvNV(target: GLenum, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord4hNV(target: GLenum, s: GLhalfNV, t: GLhalfNV, r: GLhalfNV, q: GLhalfNV);
+}
+extern "C" {
+    pub fn glMultiTexCoord4hvNV(target: GLenum, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glFogCoordhNV(fog: GLhalfNV);
+}
+extern "C" {
+    pub fn glFogCoordhvNV(fog: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glSecondaryColor3hNV(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV);
+}
+extern "C" {
+    pub fn glSecondaryColor3hvNV(v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexWeighthNV(weight: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexWeighthvNV(weight: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib1hNV(index: GLuint, x: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib1hvNV(index: GLuint, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib2hNV(index: GLuint, x: GLhalfNV, y: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib2hvNV(index: GLuint, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib3hNV(index: GLuint, x: GLhalfNV, y: GLhalfNV, z: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib3hvNV(index: GLuint, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib4hNV(index: GLuint, x: GLhalfNV, y: GLhalfNV, z: GLhalfNV, w: GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttrib4hvNV(index: GLuint, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttribs1hvNV(index: GLuint, n: GLsizei, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttribs2hvNV(index: GLuint, n: GLsizei, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttribs3hvNV(index: GLuint, n: GLsizei, v: *const GLhalfNV);
+}
+extern "C" {
+    pub fn glVertexAttribs4hvNV(index: GLuint, n: GLsizei, v: *const GLhalfNV);
+}
 pub type PFNGLGETINTERNALFORMATSAMPLEIVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -37095,6 +47895,16 @@ pub type PFNGLGETINTERNALFORMATSAMPLEIVNVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
+extern "C" {
+    pub fn glGetInternalformatSampleivNV(
+        target: GLenum,
+        internalformat: GLenum,
+        samples: GLsizei,
+        pname: GLenum,
+        bufSize: GLsizei,
+        params: *mut GLint,
+    );
+}
 pub type PFNGLGETMEMORYOBJECTDETACHEDRESOURCESUIVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         memory: GLuint,
@@ -37114,6 +47924,30 @@ pub type PFNGLTEXTUREATTACHMEMORYNVPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLuint, memory: GLuint, offset: GLuint64)>;
 pub type PFNGLNAMEDBUFFERATTACHMEMORYNVPROC =
     ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, memory: GLuint, offset: GLuint64)>;
+extern "C" {
+    pub fn glGetMemoryObjectDetachedResourcesuivNV(
+        memory: GLuint,
+        pname: GLenum,
+        first: GLint,
+        count: GLsizei,
+        params: *mut GLuint,
+    );
+}
+extern "C" {
+    pub fn glResetMemoryObjectParameterNV(memory: GLuint, pname: GLenum);
+}
+extern "C" {
+    pub fn glTexAttachMemoryNV(target: GLenum, memory: GLuint, offset: GLuint64);
+}
+extern "C" {
+    pub fn glBufferAttachMemoryNV(target: GLenum, memory: GLuint, offset: GLuint64);
+}
+extern "C" {
+    pub fn glTextureAttachMemoryNV(texture: GLuint, memory: GLuint, offset: GLuint64);
+}
+extern "C" {
+    pub fn glNamedBufferAttachMemoryNV(buffer: GLuint, memory: GLuint, offset: GLuint64);
+}
 pub type PFNGLDRAWMESHTASKSNVPROC =
     ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLuint)>;
 pub type PFNGLDRAWMESHTASKSINDIRECTNVPROC =
@@ -37129,6 +47963,23 @@ pub type PFNGLMULTIDRAWMESHTASKSINDIRECTCOUNTNVPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glDrawMeshTasksNV(first: GLuint, count: GLuint);
+}
+extern "C" {
+    pub fn glDrawMeshTasksIndirectNV(indirect: GLintptr);
+}
+extern "C" {
+    pub fn glMultiDrawMeshTasksIndirectNV(indirect: GLintptr, drawcount: GLsizei, stride: GLsizei);
+}
+extern "C" {
+    pub fn glMultiDrawMeshTasksIndirectCountNV(
+        indirect: GLintptr,
+        drawcount: GLintptr,
+        maxdrawcount: GLsizei,
+        stride: GLsizei,
+    );
+}
 pub type PFNGLGENOCCLUSIONQUERIESNVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLDELETEOCCLUSIONQUERIESNVPROC =
@@ -37141,6 +47992,27 @@ pub type PFNGLGETOCCLUSIONQUERYIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETOCCLUSIONQUERYUIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
+extern "C" {
+    pub fn glGenOcclusionQueriesNV(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glDeleteOcclusionQueriesNV(n: GLsizei, ids: *const GLuint);
+}
+extern "C" {
+    pub fn glIsOcclusionQueryNV(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glBeginOcclusionQueryNV(id: GLuint);
+}
+extern "C" {
+    pub fn glEndOcclusionQueryNV();
+}
+extern "C" {
+    pub fn glGetOcclusionQueryivNV(id: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetOcclusionQueryuivNV(id: GLuint, pname: GLenum, params: *mut GLuint);
+}
 pub type PFNGLPROGRAMBUFFERPARAMETERSFVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -37168,6 +48040,33 @@ pub type PFNGLPROGRAMBUFFERPARAMETERSIUIVNVPROC = ::std::option::Option<
         params: *const GLuint,
     ),
 >;
+extern "C" {
+    pub fn glProgramBufferParametersfvNV(
+        target: GLenum,
+        bindingIndex: GLuint,
+        wordIndex: GLuint,
+        count: GLsizei,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramBufferParametersIivNV(
+        target: GLenum,
+        bindingIndex: GLuint,
+        wordIndex: GLuint,
+        count: GLsizei,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glProgramBufferParametersIuivNV(
+        target: GLenum,
+        bindingIndex: GLuint,
+        wordIndex: GLuint,
+        count: GLsizei,
+        params: *const GLuint,
+    );
+}
 pub type PFNGLGENPATHSNVPROC =
     ::std::option::Option<unsafe extern "C" fn(range: GLsizei) -> GLuint>;
 pub type PFNGLDELETEPATHSNVPROC =
@@ -37528,15 +48427,434 @@ pub type PFNGLGETPATHTEXGENIVNVPROC = ::std::option::Option<
 pub type PFNGLGETPATHTEXGENFVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(texCoordSet: GLenum, pname: GLenum, value: *mut GLfloat),
 >;
+extern "C" {
+    pub fn glGenPathsNV(range: GLsizei) -> GLuint;
+}
+extern "C" {
+    pub fn glDeletePathsNV(path: GLuint, range: GLsizei);
+}
+extern "C" {
+    pub fn glIsPathNV(path: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glPathCommandsNV(
+        path: GLuint,
+        numCommands: GLsizei,
+        commands: *const GLubyte,
+        numCoords: GLsizei,
+        coordType: GLenum,
+        coords: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glPathCoordsNV(
+        path: GLuint,
+        numCoords: GLsizei,
+        coordType: GLenum,
+        coords: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glPathSubCommandsNV(
+        path: GLuint,
+        commandStart: GLsizei,
+        commandsToDelete: GLsizei,
+        numCommands: GLsizei,
+        commands: *const GLubyte,
+        numCoords: GLsizei,
+        coordType: GLenum,
+        coords: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glPathSubCoordsNV(
+        path: GLuint,
+        coordStart: GLsizei,
+        numCoords: GLsizei,
+        coordType: GLenum,
+        coords: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glPathStringNV(
+        path: GLuint,
+        format: GLenum,
+        length: GLsizei,
+        pathString: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glPathGlyphsNV(
+        firstPathName: GLuint,
+        fontTarget: GLenum,
+        fontName: *const ::std::os::raw::c_void,
+        fontStyle: GLbitfield,
+        numGlyphs: GLsizei,
+        type_: GLenum,
+        charcodes: *const ::std::os::raw::c_void,
+        handleMissingGlyphs: GLenum,
+        pathParameterTemplate: GLuint,
+        emScale: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathGlyphRangeNV(
+        firstPathName: GLuint,
+        fontTarget: GLenum,
+        fontName: *const ::std::os::raw::c_void,
+        fontStyle: GLbitfield,
+        firstGlyph: GLuint,
+        numGlyphs: GLsizei,
+        handleMissingGlyphs: GLenum,
+        pathParameterTemplate: GLuint,
+        emScale: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glWeightPathsNV(
+        resultPath: GLuint,
+        numPaths: GLsizei,
+        paths: *const GLuint,
+        weights: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glCopyPathNV(resultPath: GLuint, srcPath: GLuint);
+}
+extern "C" {
+    pub fn glInterpolatePathsNV(resultPath: GLuint, pathA: GLuint, pathB: GLuint, weight: GLfloat);
+}
+extern "C" {
+    pub fn glTransformPathNV(
+        resultPath: GLuint,
+        srcPath: GLuint,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathParameterivNV(path: GLuint, pname: GLenum, value: *const GLint);
+}
+extern "C" {
+    pub fn glPathParameteriNV(path: GLuint, pname: GLenum, value: GLint);
+}
+extern "C" {
+    pub fn glPathParameterfvNV(path: GLuint, pname: GLenum, value: *const GLfloat);
+}
+extern "C" {
+    pub fn glPathParameterfNV(path: GLuint, pname: GLenum, value: GLfloat);
+}
+extern "C" {
+    pub fn glPathDashArrayNV(path: GLuint, dashCount: GLsizei, dashArray: *const GLfloat);
+}
+extern "C" {
+    pub fn glPathStencilFuncNV(func: GLenum, ref_: GLint, mask: GLuint);
+}
+extern "C" {
+    pub fn glPathStencilDepthOffsetNV(factor: GLfloat, units: GLfloat);
+}
+extern "C" {
+    pub fn glStencilFillPathNV(path: GLuint, fillMode: GLenum, mask: GLuint);
+}
+extern "C" {
+    pub fn glStencilStrokePathNV(path: GLuint, reference: GLint, mask: GLuint);
+}
+extern "C" {
+    pub fn glStencilFillPathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        fillMode: GLenum,
+        mask: GLuint,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glStencilStrokePathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        reference: GLint,
+        mask: GLuint,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathCoverDepthFuncNV(func: GLenum);
+}
+extern "C" {
+    pub fn glCoverFillPathNV(path: GLuint, coverMode: GLenum);
+}
+extern "C" {
+    pub fn glCoverStrokePathNV(path: GLuint, coverMode: GLenum);
+}
+extern "C" {
+    pub fn glCoverFillPathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        coverMode: GLenum,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glCoverStrokePathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        coverMode: GLenum,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetPathParameterivNV(path: GLuint, pname: GLenum, value: *mut GLint);
+}
+extern "C" {
+    pub fn glGetPathParameterfvNV(path: GLuint, pname: GLenum, value: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetPathCommandsNV(path: GLuint, commands: *mut GLubyte);
+}
+extern "C" {
+    pub fn glGetPathCoordsNV(path: GLuint, coords: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetPathDashArrayNV(path: GLuint, dashArray: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetPathMetricsNV(
+        metricQueryMask: GLbitfield,
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        stride: GLsizei,
+        metrics: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetPathMetricRangeNV(
+        metricQueryMask: GLbitfield,
+        firstPathName: GLuint,
+        numPaths: GLsizei,
+        stride: GLsizei,
+        metrics: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetPathSpacingNV(
+        pathListMode: GLenum,
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        advanceScale: GLfloat,
+        kerningScale: GLfloat,
+        transformType: GLenum,
+        returnedSpacing: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glIsPointInFillPathNV(path: GLuint, mask: GLuint, x: GLfloat, y: GLfloat) -> GLboolean;
+}
+extern "C" {
+    pub fn glIsPointInStrokePathNV(path: GLuint, x: GLfloat, y: GLfloat) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetPathLengthNV(path: GLuint, startSegment: GLsizei, numSegments: GLsizei) -> GLfloat;
+}
+extern "C" {
+    pub fn glPointAlongPathNV(
+        path: GLuint,
+        startSegment: GLsizei,
+        numSegments: GLsizei,
+        distance: GLfloat,
+        x: *mut GLfloat,
+        y: *mut GLfloat,
+        tangentX: *mut GLfloat,
+        tangentY: *mut GLfloat,
+    ) -> GLboolean;
+}
+extern "C" {
+    pub fn glMatrixLoad3x2fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixLoad3x3fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixLoadTranspose3x3fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixMult3x2fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixMult3x3fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glMatrixMultTranspose3x3fNV(matrixMode: GLenum, m: *const GLfloat);
+}
+extern "C" {
+    pub fn glStencilThenCoverFillPathNV(
+        path: GLuint,
+        fillMode: GLenum,
+        mask: GLuint,
+        coverMode: GLenum,
+    );
+}
+extern "C" {
+    pub fn glStencilThenCoverStrokePathNV(
+        path: GLuint,
+        reference: GLint,
+        mask: GLuint,
+        coverMode: GLenum,
+    );
+}
+extern "C" {
+    pub fn glStencilThenCoverFillPathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        fillMode: GLenum,
+        mask: GLuint,
+        coverMode: GLenum,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glStencilThenCoverStrokePathInstancedNV(
+        numPaths: GLsizei,
+        pathNameType: GLenum,
+        paths: *const ::std::os::raw::c_void,
+        pathBase: GLuint,
+        reference: GLint,
+        mask: GLuint,
+        coverMode: GLenum,
+        transformType: GLenum,
+        transformValues: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathGlyphIndexRangeNV(
+        fontTarget: GLenum,
+        fontName: *const ::std::os::raw::c_void,
+        fontStyle: GLbitfield,
+        pathParameterTemplate: GLuint,
+        emScale: GLfloat,
+        baseAndCount: *mut GLuint,
+    ) -> GLenum;
+}
+extern "C" {
+    pub fn glPathGlyphIndexArrayNV(
+        firstPathName: GLuint,
+        fontTarget: GLenum,
+        fontName: *const ::std::os::raw::c_void,
+        fontStyle: GLbitfield,
+        firstGlyphIndex: GLuint,
+        numGlyphs: GLsizei,
+        pathParameterTemplate: GLuint,
+        emScale: GLfloat,
+    ) -> GLenum;
+}
+extern "C" {
+    pub fn glPathMemoryGlyphIndexArrayNV(
+        firstPathName: GLuint,
+        fontTarget: GLenum,
+        fontSize: GLsizeiptr,
+        fontData: *const ::std::os::raw::c_void,
+        faceIndex: GLsizei,
+        firstGlyphIndex: GLuint,
+        numGlyphs: GLsizei,
+        pathParameterTemplate: GLuint,
+        emScale: GLfloat,
+    ) -> GLenum;
+}
+extern "C" {
+    pub fn glProgramPathFragmentInputGenNV(
+        program: GLuint,
+        location: GLint,
+        genMode: GLenum,
+        components: GLint,
+        coeffs: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetProgramResourcefvNV(
+        program: GLuint,
+        programInterface: GLenum,
+        index: GLuint,
+        propCount: GLsizei,
+        props: *const GLenum,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathColorGenNV(
+        color: GLenum,
+        genMode: GLenum,
+        colorFormat: GLenum,
+        coeffs: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathTexGenNV(
+        texCoordSet: GLenum,
+        genMode: GLenum,
+        components: GLint,
+        coeffs: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glPathFogGenNV(genMode: GLenum);
+}
+extern "C" {
+    pub fn glGetPathColorGenivNV(color: GLenum, pname: GLenum, value: *mut GLint);
+}
+extern "C" {
+    pub fn glGetPathColorGenfvNV(color: GLenum, pname: GLenum, value: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetPathTexGenivNV(texCoordSet: GLenum, pname: GLenum, value: *mut GLint);
+}
+extern "C" {
+    pub fn glGetPathTexGenfvNV(texCoordSet: GLenum, pname: GLenum, value: *mut GLfloat);
+}
 pub type PFNGLPIXELDATARANGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const ::std::os::raw::c_void),
 >;
 pub type PFNGLFLUSHPIXELDATARANGENVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+extern "C" {
+    pub fn glPixelDataRangeNV(
+        target: GLenum,
+        length: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glFlushPixelDataRangeNV(target: GLenum);
+}
 pub type PFNGLPOINTPARAMETERINVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPOINTPARAMETERIVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+extern "C" {
+    pub fn glPointParameteriNV(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glPointParameterivNV(pname: GLenum, params: *const GLint);
+}
 pub type PFNGLPRESENTFRAMEKEYEDNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         video_slot: GLuint,
@@ -37581,9 +48899,59 @@ pub type PFNGLGETVIDEOI64VNVPROC = ::std::option::Option<
 pub type PFNGLGETVIDEOUI64VNVPROC = ::std::option::Option<
     unsafe extern "C" fn(video_slot: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
+extern "C" {
+    pub fn glPresentFrameKeyedNV(
+        video_slot: GLuint,
+        minPresentTime: GLuint64EXT,
+        beginPresentTimeId: GLuint,
+        presentDurationId: GLuint,
+        type_: GLenum,
+        target0: GLenum,
+        fill0: GLuint,
+        key0: GLuint,
+        target1: GLenum,
+        fill1: GLuint,
+        key1: GLuint,
+    );
+}
+extern "C" {
+    pub fn glPresentFrameDualFillNV(
+        video_slot: GLuint,
+        minPresentTime: GLuint64EXT,
+        beginPresentTimeId: GLuint,
+        presentDurationId: GLuint,
+        type_: GLenum,
+        target0: GLenum,
+        fill0: GLuint,
+        target1: GLenum,
+        fill1: GLuint,
+        target2: GLenum,
+        fill2: GLuint,
+        target3: GLenum,
+        fill3: GLuint,
+    );
+}
+extern "C" {
+    pub fn glGetVideoivNV(video_slot: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVideouivNV(video_slot: GLuint, pname: GLenum, params: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetVideoi64vNV(video_slot: GLuint, pname: GLenum, params: *mut GLint64EXT);
+}
+extern "C" {
+    pub fn glGetVideoui64vNV(video_slot: GLuint, pname: GLenum, params: *mut GLuint64EXT);
+}
 pub type PFNGLPRIMITIVERESTARTNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLPRIMITIVERESTARTINDEXNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
+extern "C" {
+    pub fn glPrimitiveRestartNV();
+}
+extern "C" {
+    pub fn glPrimitiveRestartIndexNV(index: GLuint);
+}
 pub type PFNGLQUERYRESOURCENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         queryType: GLenum,
@@ -37592,12 +48960,29 @@ pub type PFNGLQUERYRESOURCENVPROC = ::std::option::Option<
         buffer: *mut GLint,
     ) -> GLint,
 >;
+extern "C" {
+    pub fn glQueryResourceNV(
+        queryType: GLenum,
+        tagId: GLint,
+        bufSize: GLuint,
+        buffer: *mut GLint,
+    ) -> GLint;
+}
 pub type PFNGLGENQUERYRESOURCETAGNVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *mut GLint)>;
 pub type PFNGLDELETEQUERYRESOURCETAGNVPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *const GLint)>;
 pub type PFNGLQUERYRESOURCETAGNVPROC =
     ::std::option::Option<unsafe extern "C" fn(tagId: GLint, tagString: *const GLchar)>;
+extern "C" {
+    pub fn glGenQueryResourceTagNV(n: GLsizei, tagIds: *mut GLint);
+}
+extern "C" {
+    pub fn glDeleteQueryResourceTagNV(n: GLsizei, tagIds: *const GLint);
+}
+extern "C" {
+    pub fn glQueryResourceTagNV(tagId: GLint, tagString: *const GLchar);
+}
 pub type PFNGLCOMBINERPARAMETERFVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLCOMBINERPARAMETERFNVPROC =
@@ -37663,11 +49048,109 @@ pub type PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC = ::std::option::Option<
 pub type PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(variable: GLenum, pname: GLenum, params: *mut GLint),
 >;
+extern "C" {
+    pub fn glCombinerParameterfvNV(pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glCombinerParameterfNV(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glCombinerParameterivNV(pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glCombinerParameteriNV(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glCombinerInputNV(
+        stage: GLenum,
+        portion: GLenum,
+        variable: GLenum,
+        input: GLenum,
+        mapping: GLenum,
+        componentUsage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glCombinerOutputNV(
+        stage: GLenum,
+        portion: GLenum,
+        abOutput: GLenum,
+        cdOutput: GLenum,
+        sumOutput: GLenum,
+        scale: GLenum,
+        bias: GLenum,
+        abDotProduct: GLboolean,
+        cdDotProduct: GLboolean,
+        muxSum: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glFinalCombinerInputNV(
+        variable: GLenum,
+        input: GLenum,
+        mapping: GLenum,
+        componentUsage: GLenum,
+    );
+}
+extern "C" {
+    pub fn glGetCombinerInputParameterfvNV(
+        stage: GLenum,
+        portion: GLenum,
+        variable: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetCombinerInputParameterivNV(
+        stage: GLenum,
+        portion: GLenum,
+        variable: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetCombinerOutputParameterfvNV(
+        stage: GLenum,
+        portion: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetCombinerOutputParameterivNV(
+        stage: GLenum,
+        portion: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetFinalCombinerInputParameterfvNV(
+        variable: GLenum,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetFinalCombinerInputParameterivNV(
+        variable: GLenum,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
 pub type PFNGLCOMBINERSTAGEPARAMETERFVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(stage: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLGETCOMBINERSTAGEPARAMETERFVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(stage: GLenum, pname: GLenum, params: *mut GLfloat)>;
+extern "C" {
+    pub fn glCombinerStageParameterfvNV(stage: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetCombinerStageParameterfvNV(stage: GLenum, pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
@@ -37675,11 +49158,36 @@ pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
 pub type PFNGLRESOLVEDEPTHVALUESNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFramebufferSampleLocationsfvNV(
+        target: GLenum,
+        start: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNamedFramebufferSampleLocationsfvNV(
+        framebuffer: GLuint,
+        start: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glResolveDepthValuesNV();
+}
 pub type PFNGLSCISSOREXCLUSIVENVPROC = ::std::option::Option<
     unsafe extern "C" fn(x: GLint, y: GLint, width: GLsizei, height: GLsizei),
 >;
 pub type PFNGLSCISSOREXCLUSIVEARRAYVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLint)>;
+extern "C" {
+    pub fn glScissorExclusiveNV(x: GLint, y: GLint, width: GLsizei, height: GLsizei);
+}
+extern "C" {
+    pub fn glScissorExclusiveArrayvNV(first: GLuint, count: GLsizei, v: *const GLint);
+}
 pub type PFNGLMAKEBUFFERRESIDENTNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, access: GLenum)>;
 pub type PFNGLMAKEBUFFERNONRESIDENTNVPROC =
@@ -37716,6 +49224,54 @@ pub type PFNGLPROGRAMUNIFORMUI64VNVPROC = ::std::option::Option<
         value: *const GLuint64EXT,
     ),
 >;
+extern "C" {
+    pub fn glMakeBufferResidentNV(target: GLenum, access: GLenum);
+}
+extern "C" {
+    pub fn glMakeBufferNonResidentNV(target: GLenum);
+}
+extern "C" {
+    pub fn glIsBufferResidentNV(target: GLenum) -> GLboolean;
+}
+extern "C" {
+    pub fn glMakeNamedBufferResidentNV(buffer: GLuint, access: GLenum);
+}
+extern "C" {
+    pub fn glMakeNamedBufferNonResidentNV(buffer: GLuint);
+}
+extern "C" {
+    pub fn glIsNamedBufferResidentNV(buffer: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glGetBufferParameterui64vNV(target: GLenum, pname: GLenum, params: *mut GLuint64EXT);
+}
+extern "C" {
+    pub fn glGetNamedBufferParameterui64vNV(
+        buffer: GLuint,
+        pname: GLenum,
+        params: *mut GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glGetIntegerui64vNV(value: GLenum, result: *mut GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniformui64NV(location: GLint, value: GLuint64EXT);
+}
+extern "C" {
+    pub fn glUniformui64vNV(location: GLint, count: GLsizei, value: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniformui64NV(program: GLuint, location: GLint, value: GLuint64EXT);
+}
+extern "C" {
+    pub fn glProgramUniformui64vNV(
+        program: GLuint,
+        location: GLint,
+        count: GLsizei,
+        value: *const GLuint64EXT,
+    );
+}
 pub type PFNGLBINDSHADINGRATEIMAGENVPROC =
     ::std::option::Option<unsafe extern "C" fn(texture: GLuint)>;
 pub type PFNGLGETSHADINGRATEIMAGEPALETTENVPROC =
@@ -37733,7 +49289,41 @@ pub type PFNGLSHADINGRATESAMPLEORDERNVPROC =
 pub type PFNGLSHADINGRATESAMPLEORDERCUSTOMNVPROC = ::std::option::Option<
     unsafe extern "C" fn(rate: GLenum, samples: GLuint, locations: *const GLint),
 >;
+extern "C" {
+    pub fn glBindShadingRateImageNV(texture: GLuint);
+}
+extern "C" {
+    pub fn glGetShadingRateImagePaletteNV(viewport: GLuint, entry: GLuint, rate: *mut GLenum);
+}
+extern "C" {
+    pub fn glGetShadingRateSampleLocationivNV(
+        rate: GLenum,
+        samples: GLuint,
+        index: GLuint,
+        location: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glShadingRateImageBarrierNV(synchronize: GLboolean);
+}
+extern "C" {
+    pub fn glShadingRateImagePaletteNV(
+        viewport: GLuint,
+        first: GLuint,
+        count: GLsizei,
+        rates: *const GLenum,
+    );
+}
+extern "C" {
+    pub fn glShadingRateSampleOrderNV(order: GLenum);
+}
+extern "C" {
+    pub fn glShadingRateSampleOrderCustomNV(rate: GLenum, samples: GLuint, locations: *const GLint);
+}
 pub type PFNGLTEXTUREBARRIERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glTextureBarrierNV();
+}
 pub type PFNGLTEXIMAGE2DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -37805,6 +49395,77 @@ pub type PFNGLTEXTUREIMAGE3DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
+extern "C" {
+    pub fn glTexImage2DMultisampleCoverageNV(
+        target: GLenum,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTexImage3DMultisampleCoverageNV(
+        target: GLenum,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureImage2DMultisampleNV(
+        texture: GLuint,
+        target: GLenum,
+        samples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureImage3DMultisampleNV(
+        texture: GLuint,
+        target: GLenum,
+        samples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureImage2DMultisampleCoverageNV(
+        texture: GLuint,
+        target: GLenum,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
+extern "C" {
+    pub fn glTextureImage3DMultisampleCoverageNV(
+        texture: GLuint,
+        target: GLenum,
+        coverageSamples: GLsizei,
+        colorSamples: GLsizei,
+        internalFormat: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        fixedSampleLocations: GLboolean,
+    );
+}
 pub type PFNGLBEGINTRANSFORMFEEDBACKNVPROC =
     ::std::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
 pub type PFNGLENDTRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
@@ -37860,6 +49521,67 @@ pub type PFNGLTRANSFORMFEEDBACKSTREAMATTRIBSNVPROC = ::std::option::Option<
         bufferMode: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glBeginTransformFeedbackNV(primitiveMode: GLenum);
+}
+extern "C" {
+    pub fn glEndTransformFeedbackNV();
+}
+extern "C" {
+    pub fn glTransformFeedbackAttribsNV(count: GLsizei, attribs: *const GLint, bufferMode: GLenum);
+}
+extern "C" {
+    pub fn glBindBufferRangeNV(
+        target: GLenum,
+        index: GLuint,
+        buffer: GLuint,
+        offset: GLintptr,
+        size: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glBindBufferOffsetNV(target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr);
+}
+extern "C" {
+    pub fn glBindBufferBaseNV(target: GLenum, index: GLuint, buffer: GLuint);
+}
+extern "C" {
+    pub fn glTransformFeedbackVaryingsNV(
+        program: GLuint,
+        count: GLsizei,
+        locations: *const GLint,
+        bufferMode: GLenum,
+    );
+}
+extern "C" {
+    pub fn glActiveVaryingNV(program: GLuint, name: *const GLchar);
+}
+extern "C" {
+    pub fn glGetVaryingLocationNV(program: GLuint, name: *const GLchar) -> GLint;
+}
+extern "C" {
+    pub fn glGetActiveVaryingNV(
+        program: GLuint,
+        index: GLuint,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        size: *mut GLsizei,
+        type_: *mut GLenum,
+        name: *mut GLchar,
+    );
+}
+extern "C" {
+    pub fn glGetTransformFeedbackVaryingNV(program: GLuint, index: GLuint, location: *mut GLint);
+}
+extern "C" {
+    pub fn glTransformFeedbackStreamAttribsNV(
+        count: GLsizei,
+        attribs: *const GLint,
+        nbuffers: GLsizei,
+        bufstreams: *const GLint,
+        bufferMode: GLenum,
+    );
+}
 pub type PFNGLBINDTRANSFORMFEEDBACKNVPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
 pub type PFNGLDELETETRANSFORMFEEDBACKSNVPROC =
@@ -37872,6 +49594,27 @@ pub type PFNGLPAUSETRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern
 pub type PFNGLRESUMETRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLDRAWTRANSFORMFEEDBACKNVPROC =
     ::std::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint)>;
+extern "C" {
+    pub fn glBindTransformFeedbackNV(target: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glDeleteTransformFeedbacksNV(n: GLsizei, ids: *const GLuint);
+}
+extern "C" {
+    pub fn glGenTransformFeedbacksNV(n: GLsizei, ids: *mut GLuint);
+}
+extern "C" {
+    pub fn glIsTransformFeedbackNV(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glPauseTransformFeedbackNV();
+}
+extern "C" {
+    pub fn glResumeTransformFeedbackNV();
+}
+extern "C" {
+    pub fn glDrawTransformFeedbackNV(mode: GLenum, id: GLuint);
+}
 pub type GLvdpauSurfaceNV = GLintptr;
 pub type PFNGLVDPAUINITNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -37917,6 +49660,55 @@ pub type PFNGLVDPAUMAPSURFACESNVPROC = ::std::option::Option<
 pub type PFNGLVDPAUUNMAPSURFACESNVPROC = ::std::option::Option<
     unsafe extern "C" fn(numSurface: GLsizei, surfaces: *const GLvdpauSurfaceNV),
 >;
+extern "C" {
+    pub fn glVDPAUInitNV(
+        vdpDevice: *const ::std::os::raw::c_void,
+        getProcAddress: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glVDPAUFiniNV();
+}
+extern "C" {
+    pub fn glVDPAURegisterVideoSurfaceNV(
+        vdpSurface: *const ::std::os::raw::c_void,
+        target: GLenum,
+        numTextureNames: GLsizei,
+        textureNames: *const GLuint,
+    ) -> GLvdpauSurfaceNV;
+}
+extern "C" {
+    pub fn glVDPAURegisterOutputSurfaceNV(
+        vdpSurface: *const ::std::os::raw::c_void,
+        target: GLenum,
+        numTextureNames: GLsizei,
+        textureNames: *const GLuint,
+    ) -> GLvdpauSurfaceNV;
+}
+extern "C" {
+    pub fn glVDPAUIsSurfaceNV(surface: GLvdpauSurfaceNV) -> GLboolean;
+}
+extern "C" {
+    pub fn glVDPAUUnregisterSurfaceNV(surface: GLvdpauSurfaceNV);
+}
+extern "C" {
+    pub fn glVDPAUGetSurfaceivNV(
+        surface: GLvdpauSurfaceNV,
+        pname: GLenum,
+        bufSize: GLsizei,
+        length: *mut GLsizei,
+        values: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glVDPAUSurfaceAccessNV(surface: GLvdpauSurfaceNV, access: GLenum);
+}
+extern "C" {
+    pub fn glVDPAUMapSurfacesNV(numSurfaces: GLsizei, surfaces: *const GLvdpauSurfaceNV);
+}
+extern "C" {
+    pub fn glVDPAUUnmapSurfacesNV(numSurface: GLsizei, surfaces: *const GLvdpauSurfaceNV);
+}
 pub type PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         vdpSurface: *const ::std::os::raw::c_void,
@@ -37926,10 +49718,25 @@ pub type PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC = ::std::optio
         isFrameStructure: GLboolean,
     ) -> GLvdpauSurfaceNV,
 >;
+extern "C" {
+    pub fn glVDPAURegisterVideoSurfaceWithPictureStructureNV(
+        vdpSurface: *const ::std::os::raw::c_void,
+        target: GLenum,
+        numTextureNames: GLsizei,
+        textureNames: *const GLuint,
+        isFrameStructure: GLboolean,
+    ) -> GLvdpauSurfaceNV;
+}
 pub type PFNGLFLUSHVERTEXARRAYRANGENVPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLVERTEXARRAYRANGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(length: GLsizei, pointer: *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glFlushVertexArrayRangeNV();
+}
+extern "C" {
+    pub fn glVertexArrayRangeNV(length: GLsizei, pointer: *const ::std::os::raw::c_void);
+}
 pub type PFNGLVERTEXATTRIBL1I64NVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL2I64NVPROC =
@@ -37981,6 +49788,75 @@ pub type PFNGLGETVERTEXATTRIBLUI64VNVPROC = ::std::option::Option<
 pub type PFNGLVERTEXATTRIBLFORMATNVPROC = ::std::option::Option<
     unsafe extern "C" fn(index: GLuint, size: GLint, type_: GLenum, stride: GLsizei),
 >;
+extern "C" {
+    pub fn glVertexAttribL1i64NV(index: GLuint, x: GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL2i64NV(index: GLuint, x: GLint64EXT, y: GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL3i64NV(index: GLuint, x: GLint64EXT, y: GLint64EXT, z: GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL4i64NV(
+        index: GLuint,
+        x: GLint64EXT,
+        y: GLint64EXT,
+        z: GLint64EXT,
+        w: GLint64EXT,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribL1i64vNV(index: GLuint, v: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL2i64vNV(index: GLuint, v: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL3i64vNV(index: GLuint, v: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL4i64vNV(index: GLuint, v: *const GLint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL1ui64NV(index: GLuint, x: GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL2ui64NV(index: GLuint, x: GLuint64EXT, y: GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL3ui64NV(index: GLuint, x: GLuint64EXT, y: GLuint64EXT, z: GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL4ui64NV(
+        index: GLuint,
+        x: GLuint64EXT,
+        y: GLuint64EXT,
+        z: GLuint64EXT,
+        w: GLuint64EXT,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribL1ui64vNV(index: GLuint, v: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL2ui64vNV(index: GLuint, v: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL3ui64vNV(index: GLuint, v: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribL4ui64vNV(index: GLuint, v: *const GLuint64EXT);
+}
+extern "C" {
+    pub fn glGetVertexAttribLi64vNV(index: GLuint, pname: GLenum, params: *mut GLint64EXT);
+}
+extern "C" {
+    pub fn glGetVertexAttribLui64vNV(index: GLuint, pname: GLenum, params: *mut GLuint64EXT);
+}
+extern "C" {
+    pub fn glVertexAttribLFormatNV(index: GLuint, size: GLint, type_: GLenum, stride: GLsizei);
+}
 pub type PFNGLBUFFERADDRESSRANGENVPROC = ::std::option::Option<
     unsafe extern "C" fn(pname: GLenum, index: GLuint, address: GLuint64EXT, length: GLsizeiptr),
 >;
@@ -38014,6 +49890,53 @@ pub type PFNGLVERTEXATTRIBIFORMATNVPROC = ::std::option::Option<
 pub type PFNGLGETINTEGERUI64I_VNVPROC = ::std::option::Option<
     unsafe extern "C" fn(value: GLenum, index: GLuint, result: *mut GLuint64EXT),
 >;
+extern "C" {
+    pub fn glBufferAddressRangeNV(
+        pname: GLenum,
+        index: GLuint,
+        address: GLuint64EXT,
+        length: GLsizeiptr,
+    );
+}
+extern "C" {
+    pub fn glVertexFormatNV(size: GLint, type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glNormalFormatNV(type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glColorFormatNV(size: GLint, type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glIndexFormatNV(type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glTexCoordFormatNV(size: GLint, type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glEdgeFlagFormatNV(stride: GLsizei);
+}
+extern "C" {
+    pub fn glSecondaryColorFormatNV(size: GLint, type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glFogCoordFormatNV(type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glVertexAttribFormatNV(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        normalized: GLboolean,
+        stride: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glVertexAttribIFormatNV(index: GLuint, size: GLint, type_: GLenum, stride: GLsizei);
+}
+extern "C" {
+    pub fn glGetIntegerui64i_vNV(value: GLenum, index: GLuint, result: *mut GLuint64EXT);
+}
 pub type PFNGLAREPROGRAMSRESIDENTNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         n: GLsizei,
@@ -38184,6 +50107,246 @@ pub type PFNGLVERTEXATTRIBS4SVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBS4UBVNVPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLubyte)>;
+extern "C" {
+    pub fn glAreProgramsResidentNV(
+        n: GLsizei,
+        programs: *const GLuint,
+        residences: *mut GLboolean,
+    ) -> GLboolean;
+}
+extern "C" {
+    pub fn glBindProgramNV(target: GLenum, id: GLuint);
+}
+extern "C" {
+    pub fn glDeleteProgramsNV(n: GLsizei, programs: *const GLuint);
+}
+extern "C" {
+    pub fn glExecuteProgramNV(target: GLenum, id: GLuint, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGenProgramsNV(n: GLsizei, programs: *mut GLuint);
+}
+extern "C" {
+    pub fn glGetProgramParameterdvNV(
+        target: GLenum,
+        index: GLuint,
+        pname: GLenum,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glGetProgramParameterfvNV(
+        target: GLenum,
+        index: GLuint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetProgramivNV(id: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetProgramStringNV(id: GLuint, pname: GLenum, program: *mut GLubyte);
+}
+extern "C" {
+    pub fn glGetTrackMatrixivNV(target: GLenum, address: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribdvNV(index: GLuint, pname: GLenum, params: *mut GLdouble);
+}
+extern "C" {
+    pub fn glGetVertexAttribfvNV(index: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetVertexAttribivNV(index: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribPointervNV(
+        index: GLuint,
+        pname: GLenum,
+        pointer: *mut *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glIsProgramNV(id: GLuint) -> GLboolean;
+}
+extern "C" {
+    pub fn glLoadProgramNV(target: GLenum, id: GLuint, len: GLsizei, program: *const GLubyte);
+}
+extern "C" {
+    pub fn glProgramParameter4dNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLdouble,
+        y: GLdouble,
+        z: GLdouble,
+        w: GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramParameter4dvNV(target: GLenum, index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glProgramParameter4fNV(
+        target: GLenum,
+        index: GLuint,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glProgramParameter4fvNV(target: GLenum, index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glProgramParameters4dvNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        v: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glProgramParameters4fvNV(
+        target: GLenum,
+        index: GLuint,
+        count: GLsizei,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glRequestResidentProgramsNV(n: GLsizei, programs: *const GLuint);
+}
+extern "C" {
+    pub fn glTrackMatrixNV(target: GLenum, address: GLuint, matrix: GLenum, transform: GLenum);
+}
+extern "C" {
+    pub fn glVertexAttribPointerNV(
+        index: GLuint,
+        fsize: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glVertexAttrib1dNV(index: GLuint, x: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1dvNV(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib1fNV(index: GLuint, x: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1fvNV(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib1sNV(index: GLuint, x: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib1svNV(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2dNV(index: GLuint, x: GLdouble, y: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2dvNV(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib2fNV(index: GLuint, x: GLfloat, y: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2fvNV(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib2sNV(index: GLuint, x: GLshort, y: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib2svNV(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3dNV(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3dvNV(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib3fNV(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3fvNV(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib3sNV(index: GLuint, x: GLshort, y: GLshort, z: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib3svNV(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4dNV(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4dvNV(index: GLuint, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttrib4fNV(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4fvNV(index: GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttrib4sNV(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4svNV(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttrib4ubNV(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttrib4ubvNV(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttribs1dvNV(index: GLuint, count: GLsizei, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribs1fvNV(index: GLuint, count: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttribs1svNV(index: GLuint, count: GLsizei, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribs2dvNV(index: GLuint, count: GLsizei, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribs2fvNV(index: GLuint, count: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttribs2svNV(index: GLuint, count: GLsizei, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribs3dvNV(index: GLuint, count: GLsizei, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribs3fvNV(index: GLuint, count: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttribs3svNV(index: GLuint, count: GLsizei, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribs4dvNV(index: GLuint, count: GLsizei, v: *const GLdouble);
+}
+extern "C" {
+    pub fn glVertexAttribs4fvNV(index: GLuint, count: GLsizei, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glVertexAttribs4svNV(index: GLuint, count: GLsizei, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribs4ubvNV(index: GLuint, count: GLsizei, v: *const GLubyte);
+}
 pub type PFNGLVERTEXATTRIBI1IEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint)>;
 pub type PFNGLVERTEXATTRIBI2IEXTPROC =
@@ -38239,6 +50402,81 @@ pub type PFNGLGETVERTEXATTRIBIIVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETVERTEXATTRIBIUIVEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint)>;
+extern "C" {
+    pub fn glVertexAttribI1iEXT(index: GLuint, x: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI2iEXT(index: GLuint, x: GLint, y: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI3iEXT(index: GLuint, x: GLint, y: GLint, z: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI4iEXT(index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI1uiEXT(index: GLuint, x: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI2uiEXT(index: GLuint, x: GLuint, y: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI3uiEXT(index: GLuint, x: GLuint, y: GLuint, z: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4uiEXT(index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI1ivEXT(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI2ivEXT(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI3ivEXT(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI4ivEXT(index: GLuint, v: *const GLint);
+}
+extern "C" {
+    pub fn glVertexAttribI1uivEXT(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI2uivEXT(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI3uivEXT(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4uivEXT(index: GLuint, v: *const GLuint);
+}
+extern "C" {
+    pub fn glVertexAttribI4bvEXT(index: GLuint, v: *const GLbyte);
+}
+extern "C" {
+    pub fn glVertexAttribI4svEXT(index: GLuint, v: *const GLshort);
+}
+extern "C" {
+    pub fn glVertexAttribI4ubvEXT(index: GLuint, v: *const GLubyte);
+}
+extern "C" {
+    pub fn glVertexAttribI4usvEXT(index: GLuint, v: *const GLushort);
+}
+extern "C" {
+    pub fn glVertexAttribIPointerEXT(
+        index: GLuint,
+        size: GLint,
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetVertexAttribIivEXT(index: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVertexAttribIuivEXT(index: GLuint, pname: GLenum, params: *mut GLuint);
+}
 pub type PFNGLBEGINVIDEOCAPTURENVPROC =
     ::std::option::Option<unsafe extern "C" fn(video_capture_slot: GLuint)>;
 pub type PFNGLBINDVIDEOCAPTURESTREAMBUFFERNVPROC = ::std::option::Option<
@@ -38318,6 +50556,87 @@ pub type PFNGLVIDEOCAPTURESTREAMPARAMETERDVNVPROC = ::std::option::Option<
         params: *const GLdouble,
     ),
 >;
+extern "C" {
+    pub fn glBeginVideoCaptureNV(video_capture_slot: GLuint);
+}
+extern "C" {
+    pub fn glBindVideoCaptureStreamBufferNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        frame_region: GLenum,
+        offset: GLintptrARB,
+    );
+}
+extern "C" {
+    pub fn glBindVideoCaptureStreamTextureNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        frame_region: GLenum,
+        target: GLenum,
+        texture: GLuint,
+    );
+}
+extern "C" {
+    pub fn glEndVideoCaptureNV(video_capture_slot: GLuint);
+}
+extern "C" {
+    pub fn glGetVideoCaptureivNV(video_capture_slot: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetVideoCaptureStreamivNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *mut GLint,
+    );
+}
+extern "C" {
+    pub fn glGetVideoCaptureStreamfvNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *mut GLfloat,
+    );
+}
+extern "C" {
+    pub fn glGetVideoCaptureStreamdvNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *mut GLdouble,
+    );
+}
+extern "C" {
+    pub fn glVideoCaptureNV(
+        video_capture_slot: GLuint,
+        sequence_num: *mut GLuint,
+        capture_time: *mut GLuint64EXT,
+    ) -> GLenum;
+}
+extern "C" {
+    pub fn glVideoCaptureStreamParameterivNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *const GLint,
+    );
+}
+extern "C" {
+    pub fn glVideoCaptureStreamParameterfvNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glVideoCaptureStreamParameterdvNV(
+        video_capture_slot: GLuint,
+        stream: GLuint,
+        pname: GLenum,
+        params: *const GLdouble,
+    );
+}
 pub type PFNGLVIEWPORTSWIZZLENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
@@ -38327,6 +50646,15 @@ pub type PFNGLVIEWPORTSWIZZLENVPROC = ::std::option::Option<
         swizzlew: GLenum,
     ),
 >;
+extern "C" {
+    pub fn glViewportSwizzleNV(
+        index: GLuint,
+        swizzlex: GLenum,
+        swizzley: GLenum,
+        swizzlez: GLenum,
+        swizzlew: GLenum,
+    );
+}
 pub type PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -38337,19 +50665,50 @@ pub type PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC = ::std::option::Option<
         numViews: GLsizei,
     ),
 >;
+extern "C" {
+    pub fn glFramebufferTextureMultiviewOVR(
+        target: GLenum,
+        attachment: GLenum,
+        texture: GLuint,
+        level: GLint,
+        baseViewIndex: GLint,
+        numViews: GLsizei,
+    );
+}
 pub type PFNGLHINTPGIPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLint)>;
+extern "C" {
+    pub fn glHintPGI(target: GLenum, mode: GLint);
+}
 pub type PFNGLDETAILTEXFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETDETAILTEXFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
+extern "C" {
+    pub fn glDetailTexFuncSGIS(target: GLenum, n: GLsizei, points: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetDetailTexFuncSGIS(target: GLenum, points: *mut GLfloat);
+}
 pub type PFNGLFOGFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETFOGFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(points: *mut GLfloat)>;
+extern "C" {
+    pub fn glFogFuncSGIS(n: GLsizei, points: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetFogFuncSGIS(points: *mut GLfloat);
+}
 pub type PFNGLSAMPLEMASKSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
 pub type PFNGLSAMPLEPATTERNSGISPROC = ::std::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
+extern "C" {
+    pub fn glSampleMaskSGIS(value: GLclampf, invert: GLboolean);
+}
+extern "C" {
+    pub fn glSamplePatternSGIS(pattern: GLenum);
+}
 pub type PFNGLPIXELTEXGENPARAMETERISGISPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPIXELTEXGENPARAMETERIVSGISPROC =
@@ -38362,14 +50721,44 @@ pub type PFNGLGETPIXELTEXGENPARAMETERIVSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETPIXELTEXGENPARAMETERFVSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
+extern "C" {
+    pub fn glPixelTexGenParameteriSGIS(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glPixelTexGenParameterivSGIS(pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glPixelTexGenParameterfSGIS(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPixelTexGenParameterfvSGIS(pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetPixelTexGenParameterivSGIS(pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetPixelTexGenParameterfvSGIS(pname: GLenum, params: *mut GLfloat);
+}
 pub type PFNGLPOINTPARAMETERFSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+extern "C" {
+    pub fn glPointParameterfSGIS(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glPointParameterfvSGIS(pname: GLenum, params: *const GLfloat);
+}
 pub type PFNGLSHARPENTEXFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETSHARPENTEXFUNCSGISPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
+extern "C" {
+    pub fn glSharpenTexFuncSGIS(target: GLenum, n: GLsizei, points: *const GLfloat);
+}
+extern "C" {
+    pub fn glGetSharpenTexFuncSGIS(target: GLenum, points: *mut GLfloat);
+}
 pub type PFNGLTEXIMAGE4DSGISPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -38402,15 +50791,61 @@ pub type PFNGLTEXSUBIMAGE4DSGISPROC = ::std::option::Option<
         pixels: *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glTexImage4DSGIS(
+        target: GLenum,
+        level: GLint,
+        internalformat: GLenum,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        size4d: GLsizei,
+        border: GLint,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glTexSubImage4DSGIS(
+        target: GLenum,
+        level: GLint,
+        xoffset: GLint,
+        yoffset: GLint,
+        zoffset: GLint,
+        woffset: GLint,
+        width: GLsizei,
+        height: GLsizei,
+        depth: GLsizei,
+        size4d: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        pixels: *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLTEXTURECOLORMASKSGISPROC = ::std::option::Option<
     unsafe extern "C" fn(red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean),
 >;
+extern "C" {
+    pub fn glTextureColorMaskSGIS(
+        red: GLboolean,
+        green: GLboolean,
+        blue: GLboolean,
+        alpha: GLboolean,
+    );
+}
 pub type PFNGLGETTEXFILTERFUNCSGISPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, filter: GLenum, weights: *mut GLfloat),
 >;
 pub type PFNGLTEXFILTERFUNCSGISPROC = ::std::option::Option<
     unsafe extern "C" fn(target: GLenum, filter: GLenum, n: GLsizei, weights: *const GLfloat),
 >;
+extern "C" {
+    pub fn glGetTexFilterFuncSGIS(target: GLenum, filter: GLenum, weights: *mut GLfloat);
+}
+extern "C" {
+    pub fn glTexFilterFuncSGIS(target: GLenum, filter: GLenum, n: GLsizei, weights: *const GLfloat);
+}
 pub type PFNGLASYNCMARKERSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLuint)>;
 pub type PFNGLFINISHASYNCSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(markerp: *mut GLuint) -> GLint>;
@@ -38422,7 +50857,28 @@ pub type PFNGLDELETEASYNCMARKERSSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(marker: GLuint, range: GLsizei)>;
 pub type PFNGLISASYNCMARKERSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(marker: GLuint) -> GLboolean>;
+extern "C" {
+    pub fn glAsyncMarkerSGIX(marker: GLuint);
+}
+extern "C" {
+    pub fn glFinishAsyncSGIX(markerp: *mut GLuint) -> GLint;
+}
+extern "C" {
+    pub fn glPollAsyncSGIX(markerp: *mut GLuint) -> GLint;
+}
+extern "C" {
+    pub fn glGenAsyncMarkersSGIX(range: GLsizei) -> GLuint;
+}
+extern "C" {
+    pub fn glDeleteAsyncMarkersSGIX(marker: GLuint, range: GLsizei);
+}
+extern "C" {
+    pub fn glIsAsyncMarkerSGIX(marker: GLuint) -> GLboolean;
+}
 pub type PFNGLFLUSHRASTERSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFlushRasterSGIX();
+}
 pub type PFNGLFRAGMENTCOLORMATERIALSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
 pub type PFNGLFRAGMENTLIGHTFSGIXPROC =
@@ -38461,10 +50917,70 @@ pub type PFNGLGETFRAGMENTMATERIALIVSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLLIGHTENVISGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+extern "C" {
+    pub fn glFragmentColorMaterialSGIX(face: GLenum, mode: GLenum);
+}
+extern "C" {
+    pub fn glFragmentLightfSGIX(light: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glFragmentLightfvSGIX(light: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glFragmentLightiSGIX(light: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glFragmentLightivSGIX(light: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glFragmentLightModelfSGIX(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glFragmentLightModelfvSGIX(pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glFragmentLightModeliSGIX(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glFragmentLightModelivSGIX(pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glFragmentMaterialfSGIX(face: GLenum, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glFragmentMaterialfvSGIX(face: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glFragmentMaterialiSGIX(face: GLenum, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glFragmentMaterialivSGIX(face: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glGetFragmentLightfvSGIX(light: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetFragmentLightivSGIX(light: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glGetFragmentMaterialfvSGIX(face: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetFragmentMaterialivSGIX(face: GLenum, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glLightEnviSGIX(pname: GLenum, param: GLint);
+}
 pub type PFNGLFRAMEZOOMSGIXPROC = ::std::option::Option<unsafe extern "C" fn(factor: GLint)>;
+extern "C" {
+    pub fn glFrameZoomSGIX(factor: GLint);
+}
 pub type PFNGLIGLOOINTERFACESGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(pname: GLenum, params: *const ::std::os::raw::c_void),
 >;
+extern "C" {
+    pub fn glIglooInterfaceSGIX(pname: GLenum, params: *const ::std::os::raw::c_void);
+}
 pub type PFNGLGETINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn() -> GLint>;
 pub type PFNGLINSTRUMENTSBUFFERSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(size: GLsizei, buffer: *mut GLint)>;
@@ -38473,6 +50989,24 @@ pub type PFNGLPOLLINSTRUMENTSSGIXPROC =
 pub type PFNGLREADINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLint)>;
 pub type PFNGLSTARTINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLSTOPINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLint)>;
+extern "C" {
+    pub fn glGetInstrumentsSGIX() -> GLint;
+}
+extern "C" {
+    pub fn glInstrumentsBufferSGIX(size: GLsizei, buffer: *mut GLint);
+}
+extern "C" {
+    pub fn glPollInstrumentsSGIX(marker_p: *mut GLint) -> GLint;
+}
+extern "C" {
+    pub fn glReadInstrumentsSGIX(marker: GLint);
+}
+extern "C" {
+    pub fn glStartInstrumentsSGIX();
+}
+extern "C" {
+    pub fn glStopInstrumentsSGIX(marker: GLint);
+}
 pub type PFNGLGETLISTPARAMETERFVSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETLISTPARAMETERIVSGIXPROC =
@@ -38486,7 +51020,28 @@ pub type PFNGLLISTPARAMETERISGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, param: GLint)>;
 pub type PFNGLLISTPARAMETERIVSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *const GLint)>;
+extern "C" {
+    pub fn glGetListParameterfvSGIX(list: GLuint, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetListParameterivSGIX(list: GLuint, pname: GLenum, params: *mut GLint);
+}
+extern "C" {
+    pub fn glListParameterfSGIX(list: GLuint, pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glListParameterfvSGIX(list: GLuint, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glListParameteriSGIX(list: GLuint, pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glListParameterivSGIX(list: GLuint, pname: GLenum, params: *const GLint);
+}
 pub type PFNGLPIXELTEXGENSGIXPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+extern "C" {
+    pub fn glPixelTexGenSGIX(mode: GLenum);
+}
 pub type PFNGLDEFORMATIONMAP3DSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -38526,8 +51081,53 @@ pub type PFNGLDEFORMATIONMAP3FSGIXPROC = ::std::option::Option<
 pub type PFNGLDEFORMSGIXPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLLOADIDENTITYDEFORMATIONMAPSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+extern "C" {
+    pub fn glDeformationMap3dSGIX(
+        target: GLenum,
+        u1: GLdouble,
+        u2: GLdouble,
+        ustride: GLint,
+        uorder: GLint,
+        v1: GLdouble,
+        v2: GLdouble,
+        vstride: GLint,
+        vorder: GLint,
+        w1: GLdouble,
+        w2: GLdouble,
+        wstride: GLint,
+        worder: GLint,
+        points: *const GLdouble,
+    );
+}
+extern "C" {
+    pub fn glDeformationMap3fSGIX(
+        target: GLenum,
+        u1: GLfloat,
+        u2: GLfloat,
+        ustride: GLint,
+        uorder: GLint,
+        v1: GLfloat,
+        v2: GLfloat,
+        vstride: GLint,
+        vorder: GLint,
+        w1: GLfloat,
+        w2: GLfloat,
+        wstride: GLint,
+        worder: GLint,
+        points: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glDeformSGIX(mask: GLbitfield);
+}
+extern "C" {
+    pub fn glLoadIdentityDeformationMapSGIX(mask: GLbitfield);
+}
 pub type PFNGLREFERENCEPLANESGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(equation: *const GLdouble)>;
+extern "C" {
+    pub fn glReferencePlaneSGIX(equation: *const GLdouble);
+}
 pub type PFNGLSPRITEPARAMETERFSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLSPRITEPARAMETERFVSGIXPROC =
@@ -38536,7 +51136,22 @@ pub type PFNGLSPRITEPARAMETERISGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLSPRITEPARAMETERIVSGIXPROC =
     ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+extern "C" {
+    pub fn glSpriteParameterfSGIX(pname: GLenum, param: GLfloat);
+}
+extern "C" {
+    pub fn glSpriteParameterfvSGIX(pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glSpriteParameteriSGIX(pname: GLenum, param: GLint);
+}
+extern "C" {
+    pub fn glSpriteParameterivSGIX(pname: GLenum, params: *const GLint);
+}
 pub type PFNGLTAGSAMPLEBUFFERSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glTagSampleBufferSGIX();
+}
 pub type PFNGLCOLORTABLESGIPROC = ::std::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
@@ -38575,7 +51190,49 @@ pub type PFNGLGETCOLORTABLEPARAMETERFVSGIPROC = ::std::option::Option<
 >;
 pub type PFNGLGETCOLORTABLEPARAMETERIVSGIPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+extern "C" {
+    pub fn glColorTableSGI(
+        target: GLenum,
+        internalformat: GLenum,
+        width: GLsizei,
+        format: GLenum,
+        type_: GLenum,
+        table: *const ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glColorTableParameterfvSGI(target: GLenum, pname: GLenum, params: *const GLfloat);
+}
+extern "C" {
+    pub fn glColorTableParameterivSGI(target: GLenum, pname: GLenum, params: *const GLint);
+}
+extern "C" {
+    pub fn glCopyColorTableSGI(
+        target: GLenum,
+        internalformat: GLenum,
+        x: GLint,
+        y: GLint,
+        width: GLsizei,
+    );
+}
+extern "C" {
+    pub fn glGetColorTableSGI(
+        target: GLenum,
+        format: GLenum,
+        type_: GLenum,
+        table: *mut ::std::os::raw::c_void,
+    );
+}
+extern "C" {
+    pub fn glGetColorTableParameterfvSGI(target: GLenum, pname: GLenum, params: *mut GLfloat);
+}
+extern "C" {
+    pub fn glGetColorTableParameterivSGI(target: GLenum, pname: GLenum, params: *mut GLint);
+}
 pub type PFNGLFINISHTEXTURESUNXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+extern "C" {
+    pub fn glFinishTextureSUNX();
+}
 pub type PFNGLGLOBALALPHAFACTORBSUNPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLbyte)>;
 pub type PFNGLGLOBALALPHAFACTORSSUNPROC =
@@ -38592,9 +51249,36 @@ pub type PFNGLGLOBALALPHAFACTORUSSUNPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLushort)>;
 pub type PFNGLGLOBALALPHAFACTORUISUNPROC =
     ::std::option::Option<unsafe extern "C" fn(factor: GLuint)>;
+extern "C" {
+    pub fn glGlobalAlphaFactorbSUN(factor: GLbyte);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactorsSUN(factor: GLshort);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactoriSUN(factor: GLint);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactorfSUN(factor: GLfloat);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactordSUN(factor: GLdouble);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactorubSUN(factor: GLubyte);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactorusSUN(factor: GLushort);
+}
+extern "C" {
+    pub fn glGlobalAlphaFactoruiSUN(factor: GLuint);
+}
 pub type PFNGLDRAWMESHARRAYSSUNPROC = ::std::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, width: GLsizei),
 >;
+extern "C" {
+    pub fn glDrawMeshArraysSUN(mode: GLenum, first: GLint, count: GLsizei, width: GLsizei);
+}
 pub type PFNGLREPLACEMENTCODEUISUNPROC = ::std::option::Option<unsafe extern "C" fn(code: GLuint)>;
 pub type PFNGLREPLACEMENTCODEUSSUNPROC =
     ::std::option::Option<unsafe extern "C" fn(code: GLushort)>;
@@ -38612,6 +51296,31 @@ pub type PFNGLREPLACEMENTCODEPOINTERSUNPROC = ::std::option::Option<
         pointer: *mut *const ::std::os::raw::c_void,
     ),
 >;
+extern "C" {
+    pub fn glReplacementCodeuiSUN(code: GLuint);
+}
+extern "C" {
+    pub fn glReplacementCodeusSUN(code: GLushort);
+}
+extern "C" {
+    pub fn glReplacementCodeubSUN(code: GLubyte);
+}
+extern "C" {
+    pub fn glReplacementCodeuivSUN(code: *const GLuint);
+}
+extern "C" {
+    pub fn glReplacementCodeusvSUN(code: *const GLushort);
+}
+extern "C" {
+    pub fn glReplacementCodeubvSUN(code: *const GLubyte);
+}
+extern "C" {
+    pub fn glReplacementCodePointerSUN(
+        type_: GLenum,
+        stride: GLsizei,
+        pointer: *mut *const ::std::os::raw::c_void,
+    );
+}
 pub type PFNGLCOLOR4UBVERTEX2FSUNPROC = ::std::option::Option<
     unsafe extern "C" fn(r: GLubyte, g: GLubyte, b: GLubyte, a: GLubyte, x: GLfloat, y: GLfloat),
 >;
@@ -38897,10 +51606,364 @@ pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std
     ),
 >;
 extern "C" {
+    pub fn glColor4ubVertex2fSUN(
+        r: GLubyte,
+        g: GLubyte,
+        b: GLubyte,
+        a: GLubyte,
+        x: GLfloat,
+        y: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glColor4ubVertex2fvSUN(c: *const GLubyte, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glColor4ubVertex3fSUN(
+        r: GLubyte,
+        g: GLubyte,
+        b: GLubyte,
+        a: GLubyte,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glColor4ubVertex3fvSUN(c: *const GLubyte, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glColor3fVertex3fSUN(
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glColor3fVertex3fvSUN(c: *const GLfloat, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glNormal3fVertex3fSUN(
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glNormal3fVertex3fvSUN(n: *const GLfloat, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glColor4fNormal3fVertex3fSUN(
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        a: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glColor4fNormal3fVertex3fvSUN(c: *const GLfloat, n: *const GLfloat, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glTexCoord2fVertex3fSUN(s: GLfloat, t: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glTexCoord2fVertex3fvSUN(tc: *const GLfloat, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glTexCoord4fVertex4fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        p: GLfloat,
+        q: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord4fVertex4fvSUN(tc: *const GLfloat, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glTexCoord2fColor4ubVertex3fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        r: GLubyte,
+        g: GLubyte,
+        b: GLubyte,
+        a: GLubyte,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fColor4ubVertex3fvSUN(
+        tc: *const GLfloat,
+        c: *const GLubyte,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fColor3fVertex3fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fColor3fVertex3fvSUN(
+        tc: *const GLfloat,
+        c: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fNormal3fVertex3fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fNormal3fVertex3fvSUN(
+        tc: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fColor4fNormal3fVertex3fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        a: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord2fColor4fNormal3fVertex3fvSUN(
+        tc: *const GLfloat,
+        c: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord4fColor4fNormal3fVertex4fSUN(
+        s: GLfloat,
+        t: GLfloat,
+        p: GLfloat,
+        q: GLfloat,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        a: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+        w: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glTexCoord4fColor4fNormal3fVertex4fvSUN(
+        tc: *const GLfloat,
+        c: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiVertex3fSUN(rc: GLuint, x: GLfloat, y: GLfloat, z: GLfloat);
+}
+extern "C" {
+    pub fn glReplacementCodeuiVertex3fvSUN(rc: *const GLuint, v: *const GLfloat);
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor4ubVertex3fSUN(
+        rc: GLuint,
+        r: GLubyte,
+        g: GLubyte,
+        b: GLubyte,
+        a: GLubyte,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor4ubVertex3fvSUN(
+        rc: *const GLuint,
+        c: *const GLubyte,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor3fVertex3fSUN(
+        rc: GLuint,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor3fVertex3fvSUN(
+        rc: *const GLuint,
+        c: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiNormal3fVertex3fSUN(
+        rc: GLuint,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiNormal3fVertex3fvSUN(
+        rc: *const GLuint,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor4fNormal3fVertex3fSUN(
+        rc: GLuint,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        a: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiColor4fNormal3fVertex3fvSUN(
+        rc: *const GLuint,
+        c: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fVertex3fSUN(
+        rc: GLuint,
+        s: GLfloat,
+        t: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fVertex3fvSUN(
+        rc: *const GLuint,
+        tc: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN(
+        rc: GLuint,
+        s: GLfloat,
+        t: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN(
+        rc: *const GLuint,
+        tc: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN(
+        rc: GLuint,
+        s: GLfloat,
+        t: GLfloat,
+        r: GLfloat,
+        g: GLfloat,
+        b: GLfloat,
+        a: GLfloat,
+        nx: GLfloat,
+        ny: GLfloat,
+        nz: GLfloat,
+        x: GLfloat,
+        y: GLfloat,
+        z: GLfloat,
+    );
+}
+extern "C" {
+    pub fn glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN(
+        rc: *const GLuint,
+        tc: *const GLfloat,
+        c: *const GLfloat,
+        n: *const GLfloat,
+        v: *const GLfloat,
+    );
+}
+extern "C" {
     pub fn glBlendEquationSeparateATI(modeRGB: GLenum, modeA: GLenum);
 }
 pub type PFNGLBLENDEQUATIONSEPARATEATIPROC =
     ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeA: GLenum)>;
+extern "C" {
+    pub fn glEGLImageTargetTexture2DOES(target: GLenum, image: GLeglImageOES);
+}
+extern "C" {
+    pub fn glEGLImageTargetRenderbufferStorageOES(target: GLenum, image: GLeglImageOES);
+}
 pub type PFNGLEGLIMAGETARGETTEXTURE2DOESPROC =
     ::std::option::Option<unsafe extern "C" fn(target: GLenum, image: GLeglImageOES)>;
 pub type PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC =
@@ -39384,15 +52447,6 @@ pub type PFNGLXCREATECONTEXTATTRIBSARBPROC = ::std::option::Option<
         attrib_list: *const ::std::os::raw::c_int,
     ) -> GLXContext,
 >;
-extern "C" {
-    pub fn glXCreateContextAttribsARB(
-        dpy: *mut Display,
-        config: GLXFBConfig,
-        share_context: GLXContext,
-        direct: ::std::os::raw::c_int,
-        attrib_list: *const ::std::os::raw::c_int,
-    ) -> GLXContext;
-}
 pub type PFNGLXGETGPUIDSAMDPROC = ::std::option::Option<
     unsafe extern "C" fn(
         maxCount: ::std::os::raw::c_uint,
@@ -39441,61 +52495,6 @@ pub type PFNGLXBLITCONTEXTFRAMEBUFFERAMDPROC = ::std::option::Option<
         filter: GLenum,
     ),
 >;
-extern "C" {
-    pub fn glXGetGPUIDsAMD(
-        maxCount: ::std::os::raw::c_uint,
-        ids: *mut ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_uint;
-}
-extern "C" {
-    pub fn glXGetGPUInfoAMD(
-        id: ::std::os::raw::c_uint,
-        property: ::std::os::raw::c_int,
-        dataType: GLenum,
-        size: ::std::os::raw::c_uint,
-        data: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetContextGPUIDAMD(ctx: GLXContext) -> ::std::os::raw::c_uint;
-}
-extern "C" {
-    pub fn glXCreateAssociatedContextAMD(
-        id: ::std::os::raw::c_uint,
-        share_list: GLXContext,
-    ) -> GLXContext;
-}
-extern "C" {
-    pub fn glXCreateAssociatedContextAttribsAMD(
-        id: ::std::os::raw::c_uint,
-        share_context: GLXContext,
-        attribList: *const ::std::os::raw::c_int,
-    ) -> GLXContext;
-}
-extern "C" {
-    pub fn glXDeleteAssociatedContextAMD(ctx: GLXContext) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXMakeAssociatedContextCurrentAMD(ctx: GLXContext) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetCurrentAssociatedContextAMD() -> GLXContext;
-}
-extern "C" {
-    pub fn glXBlitContextFramebufferAMD(
-        dstCtx: GLXContext,
-        srcX0: GLint,
-        srcY0: GLint,
-        srcX1: GLint,
-        srcY1: GLint,
-        dstX0: GLint,
-        dstY0: GLint,
-        dstX1: GLint,
-        dstY1: GLint,
-        mask: GLbitfield,
-        filter: GLenum,
-    );
-}
 pub type PFNGLXGETCURRENTDISPLAYEXTPROC =
     ::std::option::Option<unsafe extern "C" fn() -> *mut Display>;
 pub type PFNGLXQUERYCONTEXTINFOEXTPROC = ::std::option::Option<
@@ -39513,26 +52512,6 @@ pub type PFNGLXIMPORTCONTEXTEXTPROC = ::std::option::Option<
 >;
 pub type PFNGLXFREECONTEXTEXTPROC =
     ::std::option::Option<unsafe extern "C" fn(dpy: *mut Display, context: GLXContext)>;
-extern "C" {
-    pub fn glXGetCurrentDisplayEXT() -> *mut Display;
-}
-extern "C" {
-    pub fn glXQueryContextInfoEXT(
-        dpy: *mut Display,
-        context: GLXContext,
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetContextIDEXT(context: GLXContext) -> GLXContextID;
-}
-extern "C" {
-    pub fn glXImportContextEXT(dpy: *mut Display, contextID: GLXContextID) -> GLXContext;
-}
-extern "C" {
-    pub fn glXFreeContextEXT(dpy: *mut Display, context: GLXContext);
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GLXStereoNotifyEventEXT {
@@ -39647,13 +52626,6 @@ fn bindgen_test_layout_GLXStereoNotifyEventEXT() {
 pub type PFNGLXSWAPINTERVALEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, drawable: GLXDrawable, interval: ::std::os::raw::c_int),
 >;
-extern "C" {
-    pub fn glXSwapIntervalEXT(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        interval: ::std::os::raw::c_int,
-    );
-}
 pub type PFNGLXBINDTEXIMAGEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39665,27 +52637,9 @@ pub type PFNGLXBINDTEXIMAGEEXTPROC = ::std::option::Option<
 pub type PFNGLXRELEASETEXIMAGEEXTPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, drawable: GLXDrawable, buffer: ::std::os::raw::c_int),
 >;
-extern "C" {
-    pub fn glXBindTexImageEXT(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        buffer: ::std::os::raw::c_int,
-        attrib_list: *const ::std::os::raw::c_int,
-    );
-}
-extern "C" {
-    pub fn glXReleaseTexImageEXT(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        buffer: ::std::os::raw::c_int,
-    );
-}
 pub type PFNGLXGETAGPOFFSETMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(pointer: *const ::std::os::raw::c_void) -> ::std::os::raw::c_uint,
 >;
-extern "C" {
-    pub fn glXGetAGPOffsetMESA(pointer: *const ::std::os::raw::c_void) -> ::std::os::raw::c_uint;
-}
 pub type PFNGLXCOPYSUBBUFFERMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39696,16 +52650,6 @@ pub type PFNGLXCOPYSUBBUFFERMESAPROC = ::std::option::Option<
         height: ::std::os::raw::c_int,
     ),
 >;
-extern "C" {
-    pub fn glXCopySubBufferMESA(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-    );
-}
 pub type PFNGLXCREATEGLXPIXMAPMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39714,14 +52658,6 @@ pub type PFNGLXCREATEGLXPIXMAPMESAPROC = ::std::option::Option<
         cmap: Colormap,
     ) -> GLXPixmap,
 >;
-extern "C" {
-    pub fn glXCreateGLXPixmapMESA(
-        dpy: *mut Display,
-        visual: *mut XVisualInfo,
-        pixmap: Pixmap,
-        cmap: Colormap,
-    ) -> GLXPixmap;
-}
 pub type PFNGLXQUERYCURRENTRENDERERINTEGERMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(
         attribute: ::std::os::raw::c_int,
@@ -39748,57 +52684,16 @@ pub type PFNGLXQUERYRENDERERSTRINGMESAPROC = ::std::option::Option<
         attribute: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char,
 >;
-extern "C" {
-    pub fn glXQueryCurrentRendererIntegerMESA(
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryCurrentRendererStringMESA(
-        attribute: ::std::os::raw::c_int,
-    ) -> *const ::std::os::raw::c_char;
-}
-extern "C" {
-    pub fn glXQueryRendererIntegerMESA(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        renderer: ::std::os::raw::c_int,
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryRendererStringMESA(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        renderer: ::std::os::raw::c_int,
-        attribute: ::std::os::raw::c_int,
-    ) -> *const ::std::os::raw::c_char;
-}
 pub type PFNGLXRELEASEBUFFERSMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, drawable: GLXDrawable) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXReleaseBuffersMESA(dpy: *mut Display, drawable: GLXDrawable)
-        -> ::std::os::raw::c_int;
-}
 pub type PFNGLXSET3DFXMODEMESAPROC =
     ::std::option::Option<unsafe extern "C" fn(mode: GLint) -> GLboolean>;
-extern "C" {
-    pub fn glXSet3DfxModeMESA(mode: GLint) -> GLboolean;
-}
 pub type PFNGLXGETSWAPINTERVALMESAPROC =
     ::std::option::Option<unsafe extern "C" fn() -> ::std::os::raw::c_int>;
 pub type PFNGLXSWAPINTERVALMESAPROC = ::std::option::Option<
     unsafe extern "C" fn(interval: ::std::os::raw::c_uint) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXGetSwapIntervalMESA() -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXSwapIntervalMESA(interval: ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXCOPYBUFFERSUBDATANVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39823,30 +52718,6 @@ pub type PFNGLXNAMEDCOPYBUFFERSUBDATANVPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-extern "C" {
-    pub fn glXCopyBufferSubDataNV(
-        dpy: *mut Display,
-        readCtx: GLXContext,
-        writeCtx: GLXContext,
-        readTarget: GLenum,
-        writeTarget: GLenum,
-        readOffset: GLintptr,
-        writeOffset: GLintptr,
-        size: GLsizeiptr,
-    );
-}
-extern "C" {
-    pub fn glXNamedCopyBufferSubDataNV(
-        dpy: *mut Display,
-        readCtx: GLXContext,
-        writeCtx: GLXContext,
-        readBuffer: GLuint,
-        writeBuffer: GLuint,
-        readOffset: GLintptr,
-        writeOffset: GLintptr,
-        size: GLsizeiptr,
-    );
-}
 pub type PFNGLXCOPYIMAGESUBDATANVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39869,28 +52740,6 @@ pub type PFNGLXCOPYIMAGESUBDATANVPROC = ::std::option::Option<
         depth: GLsizei,
     ),
 >;
-extern "C" {
-    pub fn glXCopyImageSubDataNV(
-        dpy: *mut Display,
-        srcCtx: GLXContext,
-        srcName: GLuint,
-        srcTarget: GLenum,
-        srcLevel: GLint,
-        srcX: GLint,
-        srcY: GLint,
-        srcZ: GLint,
-        dstCtx: GLXContext,
-        dstName: GLuint,
-        dstTarget: GLenum,
-        dstLevel: GLint,
-        dstX: GLint,
-        dstY: GLint,
-        dstZ: GLint,
-        width: GLsizei,
-        height: GLsizei,
-        depth: GLsizei,
-    );
-}
 pub type PFNGLXDELAYBEFORESWAPNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39898,13 +52747,6 @@ pub type PFNGLXDELAYBEFORESWAPNVPROC = ::std::option::Option<
         seconds: GLfloat,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXDelayBeforeSwapNV(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        seconds: GLfloat,
-    ) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXENUMERATEVIDEODEVICESNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39920,21 +52762,6 @@ pub type PFNGLXBINDVIDEODEVICENVPROC = ::std::option::Option<
         attrib_list: *const ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXEnumerateVideoDevicesNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        nelements: *mut ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_uint;
-}
-extern "C" {
-    pub fn glXBindVideoDeviceNV(
-        dpy: *mut Display,
-        video_slot: ::std::os::raw::c_uint,
-        video_device: ::std::os::raw::c_uint,
-        attrib_list: *const ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXJOINSWAPGROUPNVPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -39975,49 +52802,6 @@ pub type PFNGLXQUERYFRAMECOUNTNVPROC = ::std::option::Option<
 pub type PFNGLXRESETFRAMECOUNTNVPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, screen: ::std::os::raw::c_int) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXJoinSwapGroupNV(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        group: GLuint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXBindSwapBarrierNV(
-        dpy: *mut Display,
-        group: GLuint,
-        barrier: GLuint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQuerySwapGroupNV(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        group: *mut GLuint,
-        barrier: *mut GLuint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryMaxSwapGroupsNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        maxGroups: *mut GLuint,
-        maxBarriers: *mut GLuint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryFrameCountNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        count: *mut GLuint,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXResetFrameCountNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
 pub type GLXVideoCaptureDeviceNV = XID;
 pub type PFNGLXBINDVIDEOCAPTUREDEVICENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -40045,34 +52829,6 @@ pub type PFNGLXQUERYVIDEOCAPTUREDEVICENVPROC = ::std::option::Option<
 >;
 pub type PFNGLXRELEASEVIDEOCAPTUREDEVICENVPROC =
     ::std::option::Option<unsafe extern "C" fn(dpy: *mut Display, device: GLXVideoCaptureDeviceNV)>;
-extern "C" {
-    pub fn glXBindVideoCaptureDeviceNV(
-        dpy: *mut Display,
-        video_capture_slot: ::std::os::raw::c_uint,
-        device: GLXVideoCaptureDeviceNV,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXEnumerateVideoCaptureDevicesNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        nelements: *mut ::std::os::raw::c_int,
-    ) -> *mut GLXVideoCaptureDeviceNV;
-}
-extern "C" {
-    pub fn glXLockVideoCaptureDeviceNV(dpy: *mut Display, device: GLXVideoCaptureDeviceNV);
-}
-extern "C" {
-    pub fn glXQueryVideoCaptureDeviceNV(
-        dpy: *mut Display,
-        device: GLXVideoCaptureDeviceNV,
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXReleaseVideoCaptureDeviceNV(dpy: *mut Display, device: GLXVideoCaptureDeviceNV);
-}
 pub type GLXVideoDeviceNV = ::std::os::raw::c_uint;
 pub type PFNGLXGETVIDEODEVICENVPROC = ::std::option::Option<
     unsafe extern "C" fn(
@@ -40118,50 +52874,6 @@ pub type PFNGLXGETVIDEOINFONVPROC = ::std::option::Option<
         pulCounterOutputVideo: *mut ::std::os::raw::c_ulong,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXGetVideoDeviceNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        numVideoDevices: ::std::os::raw::c_int,
-        pVideoDevice: *mut GLXVideoDeviceNV,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXReleaseVideoDeviceNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        VideoDevice: GLXVideoDeviceNV,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXBindVideoImageNV(
-        dpy: *mut Display,
-        VideoDevice: GLXVideoDeviceNV,
-        pbuf: GLXPbuffer,
-        iVideoBuffer: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXReleaseVideoImageNV(dpy: *mut Display, pbuf: GLXPbuffer) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXSendPbufferToVideoNV(
-        dpy: *mut Display,
-        pbuf: GLXPbuffer,
-        iBufferType: ::std::os::raw::c_int,
-        pulCounterPbuffer: *mut ::std::os::raw::c_ulong,
-        bBlock: GLboolean,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetVideoInfoNV(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        VideoDevice: GLXVideoDeviceNV,
-        pulCounterOutputPbuffer: *mut ::std::os::raw::c_ulong,
-        pulCounterOutputVideo: *mut ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
-}
 pub type __gwchar_t = ::std::os::raw::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -40284,54 +52996,6 @@ pub type PFNGLXWAITFORSBCOMLPROC = ::std::option::Option<
         sbc: *mut i64,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXGetSyncValuesOML(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        ust: *mut i64,
-        msc: *mut i64,
-        sbc: *mut i64,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetMscRateOML(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        numerator: *mut i32,
-        denominator: *mut i32,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXSwapBuffersMscOML(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        target_msc: i64,
-        divisor: i64,
-        remainder: i64,
-    ) -> i64;
-}
-extern "C" {
-    pub fn glXWaitForMscOML(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        target_msc: i64,
-        divisor: i64,
-        remainder: i64,
-        ust: *mut i64,
-        msc: *mut i64,
-        sbc: *mut i64,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXWaitForSbcOML(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        target_sbc: i64,
-        ust: *mut i64,
-        msc: *mut i64,
-        sbc: *mut i64,
-    ) -> ::std::os::raw::c_int;
-}
 pub type GLXPbufferSGIX = XID;
 pub type GLXFBConfigSGIX = *mut __GLXFBConfigRec;
 pub type PFNGLXGETFBCONFIGATTRIBSGIXPROC = ::std::option::Option<
@@ -40368,50 +53032,6 @@ pub type PFNGLXGETVISUALFROMFBCONFIGSGIXPROC = ::std::option::Option<
 pub type PFNGLXGETFBCONFIGFROMVISUALSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, vis: *mut XVisualInfo) -> GLXFBConfigSGIX,
 >;
-extern "C" {
-    pub fn glXGetFBConfigAttribSGIX(
-        dpy: *mut Display,
-        config: GLXFBConfigSGIX,
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXChooseFBConfigSGIX(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        attrib_list: *mut ::std::os::raw::c_int,
-        nelements: *mut ::std::os::raw::c_int,
-    ) -> *mut GLXFBConfigSGIX;
-}
-extern "C" {
-    pub fn glXCreateGLXPixmapWithConfigSGIX(
-        dpy: *mut Display,
-        config: GLXFBConfigSGIX,
-        pixmap: Pixmap,
-    ) -> GLXPixmap;
-}
-extern "C" {
-    pub fn glXCreateContextWithConfigSGIX(
-        dpy: *mut Display,
-        config: GLXFBConfigSGIX,
-        render_type: ::std::os::raw::c_int,
-        share_list: GLXContext,
-        direct: ::std::os::raw::c_int,
-    ) -> GLXContext;
-}
-extern "C" {
-    pub fn glXGetVisualFromFBConfigSGIX(
-        dpy: *mut Display,
-        config: GLXFBConfigSGIX,
-    ) -> *mut XVisualInfo;
-}
-extern "C" {
-    pub fn glXGetFBConfigFromVisualSGIX(
-        dpy: *mut Display,
-        vis: *mut XVisualInfo,
-    ) -> GLXFBConfigSGIX;
-}
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct GLXHyperpipeNetworkSGIX {
@@ -40765,68 +53385,6 @@ pub type PFNGLXQUERYHYPERPIPEATTRIBSGIXPROC = ::std::option::Option<
         returnAttribList: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXQueryHyperpipeNetworkSGIX(
-        dpy: *mut Display,
-        npipes: *mut ::std::os::raw::c_int,
-    ) -> *mut GLXHyperpipeNetworkSGIX;
-}
-extern "C" {
-    pub fn glXHyperpipeConfigSGIX(
-        dpy: *mut Display,
-        networkId: ::std::os::raw::c_int,
-        npipes: ::std::os::raw::c_int,
-        cfg: *mut GLXHyperpipeConfigSGIX,
-        hpId: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryHyperpipeConfigSGIX(
-        dpy: *mut Display,
-        hpId: ::std::os::raw::c_int,
-        npipes: *mut ::std::os::raw::c_int,
-    ) -> *mut GLXHyperpipeConfigSGIX;
-}
-extern "C" {
-    pub fn glXDestroyHyperpipeConfigSGIX(
-        dpy: *mut Display,
-        hpId: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXBindHyperpipeSGIX(
-        dpy: *mut Display,
-        hpId: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryHyperpipeBestAttribSGIX(
-        dpy: *mut Display,
-        timeSlice: ::std::os::raw::c_int,
-        attrib: ::std::os::raw::c_int,
-        size: ::std::os::raw::c_int,
-        attribList: *mut ::std::os::raw::c_void,
-        returnAttribList: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXHyperpipeAttribSGIX(
-        dpy: *mut Display,
-        timeSlice: ::std::os::raw::c_int,
-        attrib: ::std::os::raw::c_int,
-        size: ::std::os::raw::c_int,
-        attribList: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryHyperpipeAttribSGIX(
-        dpy: *mut Display,
-        timeSlice: ::std::os::raw::c_int,
-        attrib: ::std::os::raw::c_int,
-        size: ::std::os::raw::c_int,
-        returnAttribList: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXCREATEGLXPBUFFERSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -40856,40 +53414,6 @@ pub type PFNGLXGETSELECTEDEVENTSGIXPROC = ::std::option::Option<
         mask: *mut ::std::os::raw::c_ulong,
     ),
 >;
-extern "C" {
-    pub fn glXCreateGLXPbufferSGIX(
-        dpy: *mut Display,
-        config: GLXFBConfigSGIX,
-        width: ::std::os::raw::c_uint,
-        height: ::std::os::raw::c_uint,
-        attrib_list: *mut ::std::os::raw::c_int,
-    ) -> GLXPbufferSGIX;
-}
-extern "C" {
-    pub fn glXDestroyGLXPbufferSGIX(dpy: *mut Display, pbuf: GLXPbufferSGIX);
-}
-extern "C" {
-    pub fn glXQueryGLXPbufferSGIX(
-        dpy: *mut Display,
-        pbuf: GLXPbufferSGIX,
-        attribute: ::std::os::raw::c_int,
-        value: *mut ::std::os::raw::c_uint,
-    );
-}
-extern "C" {
-    pub fn glXSelectEventSGIX(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        mask: ::std::os::raw::c_ulong,
-    );
-}
-extern "C" {
-    pub fn glXGetSelectedEventSGIX(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        mask: *mut ::std::os::raw::c_ulong,
-    );
-}
 pub type PFNGLXBINDSWAPBARRIERSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, drawable: GLXDrawable, barrier: ::std::os::raw::c_int),
 >;
@@ -40900,26 +53424,9 @@ pub type PFNGLXQUERYMAXSWAPBARRIERSSGIXPROC = ::std::option::Option<
         max: *mut ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXBindSwapBarrierSGIX(
-        dpy: *mut Display,
-        drawable: GLXDrawable,
-        barrier: ::std::os::raw::c_int,
-    );
-}
-extern "C" {
-    pub fn glXQueryMaxSwapBarriersSGIX(
-        dpy: *mut Display,
-        screen: ::std::os::raw::c_int,
-        max: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXJOINSWAPGROUPSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(dpy: *mut Display, drawable: GLXDrawable, member: GLXDrawable),
 >;
-extern "C" {
-    pub fn glXJoinSwapGroupSGIX(dpy: *mut Display, drawable: GLXDrawable, member: GLXDrawable);
-}
 pub type PFNGLXBINDCHANNELTOWINDOWSGIXPROC = ::std::option::Option<
     unsafe extern "C" fn(
         display: *mut Display,
@@ -40969,61 +53476,9 @@ pub type PFNGLXCHANNELRECTSYNCSGIXPROC = ::std::option::Option<
         synctype: GLenum,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXBindChannelToWindowSGIX(
-        display: *mut Display,
-        screen: ::std::os::raw::c_int,
-        channel: ::std::os::raw::c_int,
-        window: Window,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXChannelRectSGIX(
-        display: *mut Display,
-        screen: ::std::os::raw::c_int,
-        channel: ::std::os::raw::c_int,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryChannelRectSGIX(
-        display: *mut Display,
-        screen: ::std::os::raw::c_int,
-        channel: ::std::os::raw::c_int,
-        dx: *mut ::std::os::raw::c_int,
-        dy: *mut ::std::os::raw::c_int,
-        dw: *mut ::std::os::raw::c_int,
-        dh: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXQueryChannelDeltasSGIX(
-        display: *mut Display,
-        screen: ::std::os::raw::c_int,
-        channel: ::std::os::raw::c_int,
-        x: *mut ::std::os::raw::c_int,
-        y: *mut ::std::os::raw::c_int,
-        w: *mut ::std::os::raw::c_int,
-        h: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXChannelRectSyncSGIX(
-        display: *mut Display,
-        screen: ::std::os::raw::c_int,
-        channel: ::std::os::raw::c_int,
-        synctype: GLenum,
-    ) -> ::std::os::raw::c_int;
-}
 pub type GLXVideoSourceSGIX = XID;
 pub type PFNGLXCUSHIONSGIPROC =
     ::std::option::Option<unsafe extern "C" fn(dpy: *mut Display, window: Window, cushion: f32)>;
-extern "C" {
-    pub fn glXCushionSGI(dpy: *mut Display, window: Window, cushion: f32);
-}
 pub type PFNGLXMAKECURRENTREADSGIPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -41034,23 +53489,9 @@ pub type PFNGLXMAKECURRENTREADSGIPROC = ::std::option::Option<
 >;
 pub type PFNGLXGETCURRENTREADDRAWABLESGIPROC =
     ::std::option::Option<unsafe extern "C" fn() -> GLXDrawable>;
-extern "C" {
-    pub fn glXMakeCurrentReadSGI(
-        dpy: *mut Display,
-        draw: GLXDrawable,
-        read: GLXDrawable,
-        ctx: GLXContext,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXGetCurrentReadDrawableSGI() -> GLXDrawable;
-}
 pub type PFNGLXSWAPINTERVALSGIPROC = ::std::option::Option<
     unsafe extern "C" fn(interval: ::std::os::raw::c_int) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXSwapIntervalSGI(interval: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXGETVIDEOSYNCSGIPROC = ::std::option::Option<
     unsafe extern "C" fn(count: *mut ::std::os::raw::c_uint) -> ::std::os::raw::c_int,
 >;
@@ -41061,16 +53502,6 @@ pub type PFNGLXWAITVIDEOSYNCSGIPROC = ::std::option::Option<
         count: *mut ::std::os::raw::c_uint,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXGetVideoSyncSGI(count: *mut ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn glXWaitVideoSyncSGI(
-        divisor: ::std::os::raw::c_int,
-        remainder: ::std::os::raw::c_int,
-        count: *mut ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int;
-}
 pub type PFNGLXGETTRANSPARENTINDEXSUNPROC = ::std::option::Option<
     unsafe extern "C" fn(
         dpy: *mut Display,
@@ -41079,14 +53510,6 @@ pub type PFNGLXGETTRANSPARENTINDEXSUNPROC = ::std::option::Option<
         pTransparentIndex: *mut ::std::os::raw::c_ulong,
     ) -> ::std::os::raw::c_int,
 >;
-extern "C" {
-    pub fn glXGetTransparentIndexSUN(
-        dpy: *mut Display,
-        overlay: Window,
-        underlay: Window,
-        pTransparentIndex: *mut ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
-}
 extern "C" {
     pub fn glXAllocateMemoryNV(
         size: GLsizei,

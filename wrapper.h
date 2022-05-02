@@ -1,4 +1,4 @@
-#define GLX_GLXEXT_PROTOTYPES
+#define GL_GLEXT_PROTOTYPES
 #include <X11/X.h>
 #include <X11/Xlib.h>
 #include <X11/extensions/Xcomposite.h>

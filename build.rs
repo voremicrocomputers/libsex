@@ -10,6 +10,7 @@ fn main() {
     println!("cargo:rustc-link-lib=Xext");
     println!("cargo:rustc-link-lib=GL");
     println!("cargo:rustc-link-lib=GLU");
+    println!("cargo:rustc-link-arg=-DGL_GLEXT_PROTOTYPES");
 
     println!("cargo:rerun-if-changed=wrapper.h");
 
