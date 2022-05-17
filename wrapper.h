@@ -5,6 +5,8 @@
 #include <X11/extensions/Xrender.h>
 #include <X11/extensions/Xfixes.h>
 #include <X11/extensions/shape.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <GL/gl.h>
 #include <GL/glcorearb.h>
 #include <GL/glext.h>
