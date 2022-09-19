@@ -1,6 +1,6 @@
 [package]
 name = "libsex"
-version = "0.1.1"
+version = "0.1.1-ht2"
 edition = "2021"
 license-file = "LICENSE"
 description = "Some Extensions for using glX (in rust)"

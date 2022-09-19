@@ -1,9 +1,2 @@
-#define GL_GLEXT_PROTOTYPES
-#include <GL/glew.h>
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
-#include <GL/gl.h>
-#include <GL/glcorearb.h>
-#include <GL/glext.h>
-#include <GL/glx.h>
-#include <GL/glxext.h>
-#include <GL/glu.h>
