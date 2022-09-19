@@ -1,10 +1,4 @@
 #define GL_GLEXT_PROTOTYPES
-#include <X11/X.h>
-#include <X11/Xlib.h>
-#include <X11/extensions/Xcomposite.h>
-#include <X11/extensions/Xrender.h>
-#include <X11/extensions/Xfixes.h>
-#include <X11/extensions/shape.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
